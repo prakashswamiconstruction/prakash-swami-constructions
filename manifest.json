@@ -1,8 +1,11 @@
 {
+  "id": "/prakash-swami-constructions/",
   "name": "Prakash Swami Constructions",
   "short_name": "Swami Constructions",
   "start_url": "/prakash-swami-constructions/",
+  "scope": "/prakash-swami-constructions/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#1e3a8a",
   "description": "Prakash Swami Construction Services Application",
@@ -10,12 +13,14 @@
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
