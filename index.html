@@ -332,7 +332,12 @@
             </a>
             <a href="#projects" class="btn btn-outline"><i class="fa-solid fa-images"></i> प्रोजेक्ट्स देखें</a>
           </div>
-
+<!-- App Install Button -->
+<div style="text-align: center; margin: 15px 0;">
+  <button id="installAppBtn" style="display: none; width: 100%; max-width: 320px; background-color: #1e3a8a; color: #ffffff; border: 2px solid #fbbf24; padding: 14px 20px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+    📲 हमारा मोबाइल ऐप इंस्टॉल करें
+  </button>
+</div>
           <div class="hero-stats">
             <div class="stat-item"><h3>25+</h3><p>वर्षों का अनुभव</p></div>
             <div class="stat-item"><h3>100+</h3><p>सफल मकान</p></div>
@@ -926,6 +931,42 @@ function handleContactSubmit(e) {
   const waText = encodeURIComponent(`नमस्ते प्रकाश स्वामी जी,\nमेरा नाम: ${name}\nमोबाइल: ${phone}\nस्थान: ${address}\nकार्य का प्रकार: ${type}\nविवरण: ${msg ? msg : 'कोई अतिरिक्त विवरण नहीं'}`);
   window.open(`https://wa.me/919785438345?text=${waText}`, '_blank');
 }
+</script>
+  <!-- PWA Install Script -->
+<script>
+  let deferredPrompt;
+  const installBtn = document.getElementById('installAppBtn');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // ब्राउज़र का डिफ़ॉल्ट बैनर रोकें
+    e.preventDefault();
+    deferredPrompt = e;
+    // अगर ऐप पहले से इंस्टॉल नहीं है, तो बटन को स्क्रीन पर दिखाएं
+    if (installBtn) {
+      installBtn.style.display = 'inline-block';
+    }
+  });
+
+  if (installBtn) {
+    installBtn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('App successfully installed');
+        }
+        deferredPrompt = null;
+        installBtn.style.display = 'none';
+      }
+    });
+  }
+
+  // अगर यूजर पहले ही ऐप इंस्टॉल कर चुका है, तो बटन छिपा दें
+  window.addEventListener('appinstalled', () => {
+    if (installBtn) {
+      installBtn.style.display = 'none';
+    }
+  });
 </script>
 </body>
 </html>
