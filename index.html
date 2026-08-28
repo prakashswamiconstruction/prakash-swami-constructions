@@ -330,6 +330,23 @@
 
 <!-- 2. Header & Navigation -->
 <header class="nav">
+  <!-- 15-Day Auto-Rotating Special Offer Banner -->
+<div id="autoOfferBanner" style="background: linear-gradient(90deg, #d7a43b 0%, #b45309 50%, #d7a43b 100%); color: #0a1628; padding: 10px 16px; text-align: center; font-weight: 800; font-size: 13.5px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative; z-index: 85;">
+  <div class="wrap" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;">
+    <span id="offerBadge" style="background: #0a1628; color: #f5c767; padding: 3px 8px; border-radius: 6px; font-size: 11px; text-transform: uppercase;">
+      🔥 स्पेशल ऑफर
+    </span>
+    <span id="offerText">
+      लोड हो रहा है...
+    </span>
+    <span id="offerDaysLeft" style="background: rgba(10,22,40,0.15); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 900; color: #0a1628; border: 1px dashed #0a1628;">
+      ⏳ सीमित समय
+    </span>
+    <a id="offerClaimBtn" href="#" target="_blank" style="background: #0a1628; color: #ffffff; padding: 5px 14px; border-radius: 8px; font-size: 12px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;">
+      <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> ऑफर क्लेम करें →
+    </a>
+  </div>
+</div>
   <div class="wrap navin">
     <a class="logo" href="#home">
       <span class="mark">PS</span>
@@ -902,6 +919,59 @@ function showProjectLightbox(idx) {
 
 window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
 </script>
+<!-- Automatic 15-Day Offer Rotation Engine -->
+<script>
+const ROTATING_OFFERS = [
+  {
+    title: "नया मकान बुक करने पर ₹15,000 का 2D वास्तु नक्शा व 3D फ्रंट एलिवेशन 100% फ्री!",
+    tag: "🎉 ऑफर: फ्री 3D नक्शा",
+    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे आपकी वेबसाइट पर 'फ्री 2D वास्तु नक्शा व 3D डिजाइन' वाले 15-दिवसीय ऑफर का लाभ लेना है।"
+  },
+  {
+    title: "1000+ Sq.Ft RCC छत ढलाई कराने पर लीकेज-प्रूफ वॉटरप्रूफिंग केमिकल कार्य बिल्कुल फ्री!",
+    tag: "💧 ऑफर: फ्री वॉटरप्रूफिंग",
+    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे 'फ्री वॉटरप्रूफिंग छत ढलाई' वाले 15-दिवसीय ऑफर की जानकारी चाहिए।"
+  },
+  {
+    title: "विद-मटेरियल मकान निर्माण अनुबंध पर प्रीमियम फ्लोरिंग टाइल्स अपग्रेड व फ्री साइट विजिट!",
+    tag: "✨ ऑफर: टाइल्स अपग्रेड",
+    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे 'विद-मटेरियल मकान निर्माण टाइल्स अपग्रेड' ऑफर की जानकारी चाहिए।"
+  },
+  {
+    title: "सम्पूर्ण बाउंड्री वॉल व चारदीवारी निर्माण पर मेन गेट पिलर डिजाइनिंग कार्य फ्री!",
+    tag: "🛡️ ऑफर: चारदीवारी स्पेशल",
+    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे 'चारदीवारी व पिलर निर्माण' वाले ऑफर की जानकारी चाहिए।"
+  }
+];
 
+function updateRotatingOffer() {
+  const fifteenDaysInMs = 15 * 24 * 60 * 60 * 1000;
+  
+  // आज की तारीख के हिसाब से 15 दिन का चक्र निकालना
+  const cycleIndex = Math.floor(Date.now() / fifteenDaysInMs) % ROTATING_OFFERS.length;
+  const currentOffer = ROTATING_OFFERS[cycleIndex];
+
+  // वर्तमान 15 दिन में कितने दिन शेष बचे हैं
+  const msPassedInCycle = Date.now() % fifteenDaysInMs;
+  const daysRemaining = Math.max(1, Math.ceil((fifteenDaysInMs - msPassedInCycle) / (24 * 60 * 60 * 1000)));
+
+  // स्क्रीन पर अपडेट करना
+  const textEl = document.getElementById('offerText');
+  const badgeEl = document.getElementById('offerBadge');
+  const daysEl = document.getElementById('offerDaysLeft');
+  const btnEl = document.getElementById('offerClaimBtn');
+
+  if (textEl) textEl.innerHTML = `<b>${currentOffer.title}</b>`;
+  if (badgeEl) badgeEl.textContent = currentOffer.tag;
+  if (daysEl) daysEl.textContent = `⏳ ${daysRemaining} दिन शेष`;
+  
+  if (btnEl) {
+    const waUrl = `https://wa.me/919785438345?text=${encodeURIComponent(currentOffer.waMsg)}`;
+    btnEl.href = waUrl;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', updateRotatingOffer);
+</script>
 </body>
 </html>
