@@ -6,12 +6,15 @@
   <meta name="theme-color" content="#0b1220">
   <meta name="description" content="Prakash Swami Constructions - Mandawara, Jhunjhunu, Rajasthan. 25+ वर्षों का अनुभव, संपूर्ण मकान निर्माण (With Material & Labour), RCC छत ढलाई, प्लास्टर, टाइल्स एवं चारदीवारी कार्य। संपर्क: 9785438345">
   <title>Prakash Swami Constructions — Mandawara, Jhunjhunu (भवन निर्माण विशेषज्ञ)</title>
-  <!-- Canonical & Social Meta URLs -->
+  
   <link rel="canonical" href="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
   <meta property="og:url" content="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
+  
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase JS Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
   <style>
     :root {
       --dark: #0b1220;
@@ -89,19 +92,19 @@
       overflow: hidden;
     }
     .hero-video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(1) contrast(1); /* 100% साफ और ब्राइट */
-}
-.hero-overlay {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(7, 13, 24, 0.35) 0%, rgba(11, 18, 32, 0.2) 50%, rgba(7, 13, 24, 0.4) 100%); /* हल्का पर्दा ताकि वीडियो साफ दिखे */
-  backdrop-filter: none;
-  z-index: -1;
-}
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(1) contrast(1);
+    }
+    .hero-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(7, 13, 24, 0.35) 0%, rgba(11, 18, 32, 0.2) 50%, rgba(7, 13, 24, 0.4) 100%);
+      backdrop-filter: none;
+      z-index: -1;
+    }
     .video-sound-toggle {
       position: fixed;
       bottom: 24px;
@@ -155,7 +158,7 @@
     .sec-head h2 { font-size: 30px; font-weight: 900; color: var(--dark); margin-bottom: 10px; }
     .sec-head p { font-size: 15px; color: var(--muted); }
     
-    /* 3 Columns Services Grid (As shown in screenshot) */
+    /* 3 Columns Services Grid */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .service-card { background: #fff; border-radius: 16px; border: 1px solid var(--line); padding: 26px 22px; box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; display: flex; flex-direction: column; justify-content: space-between; }
     .service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 35px rgba(0,0,0,0.08); border-color: var(--gold); }
@@ -170,7 +173,7 @@
     .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
     .about-pt { background: #fff; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); font-size: 13.5px; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
     
-    /* 3 Columns Projects Gallery (As shown in screenshot) */
+    /* 3 Columns Projects Gallery Grid */
     .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .gallery-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; display: flex; flex-direction: column; }
     .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 18px 32px rgba(0,0,0,0.1); border-color: var(--gold); }
@@ -182,7 +185,7 @@
     .gallery-info h3 { font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
     .gallery-info p { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin-bottom: 14px; }
     
-    /* 4 Columns Work Process (As shown in screenshot) */
+    /* 4 Columns Work Process */
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .process-card { background: #fff; padding: 24px 20px; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow); position: relative; }
     .process-num { width: 34px; height: 34px; background: var(--gold); color: #111827; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 14px; margin-bottom: 14px; }
@@ -248,15 +251,15 @@
       .contact-box { padding: 20px; }
     }
   </style>
+  
   <!-- PWA Settings -->
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1e3a8a">
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e3a8a">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </head>
 <body>
 
@@ -303,7 +306,6 @@
 
   <!-- 3. Premium Corporate Hero Section with Background Video -->
   <section class="hero">
-    
     <div class="hero-video-bg">
       <video id="heroVideo" autoplay muted loop playsinline poster="project-house-3.jpg.jpeg">
         <source src="construction-video.mp4" type="video/mp4">
@@ -315,7 +317,7 @@
 
     <!-- Sound Control Button -->
     <button id="videoSoundBtn" class="video-sound-toggle" onclick="toggleHeroVideoSound()" title="Sound On / Off">
-      
+      <i class="fa-solid fa-volume-xmark" id="soundIcon"></i> <span id="soundText">आवाज़</span>
     </button>
 
     <div class="wrap">
@@ -332,12 +334,14 @@
             </a>
             <a href="#projects" class="btn btn-outline"><i class="fa-solid fa-images"></i> प्रोजेक्ट्स देखें</a>
           </div>
-<!-- App Install Button -->
-<div style="text-align: center; margin: 15px 0;">
-  <button id="installAppBtn" style="display: none; width: 100%; max-width: 320px; background-color: #1e3a8a; color: #ffffff; border: 2px solid #fbbf24; padding: 14px 20px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-    📲 हमारा मोबाइल ऐप इंस्टॉल करें
-  </button>
-</div>
+
+          <!-- App Install Button -->
+          <div style="text-align: center; margin: 15px 0;">
+            <button id="installAppBtn" style="display: none; width: 100%; max-width: 320px; background-color: #1e3a8a; color: #ffffff; border: 2px solid #fbbf24; padding: 14px 20px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+              📲 हमारा मोबाइल ऐप इंस्टॉल करें
+            </button>
+          </div>
+
           <div class="hero-stats">
             <div class="stat-item"><h3>25+</h3><p>वर्षों का अनुभव</p></div>
             <div class="stat-item"><h3>100+</h3><p>सफल मकान</p></div>
@@ -371,7 +375,6 @@
       </div>
 
       <div class="services-grid">
-        <!-- 1. नया मकान निर्माण -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
@@ -381,7 +384,6 @@
           <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
         </div>
 
-        <!-- 2. RCC छत ढलाई -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
@@ -391,7 +393,6 @@
           <a href="tel:9785438345" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
         </div>
 
-        <!-- 3. दीवार चिनाई व प्लिंथ बीम -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
@@ -401,7 +402,6 @@
           <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
         </div>
 
-        <!-- 4. प्लास्टर कार्य -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
@@ -411,7 +411,6 @@
           <a href="tel:9785438345" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> कॉल करें</a>
         </div>
 
-        <!-- 5. टाइल्स व फ्लोरिंग -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
@@ -421,7 +420,6 @@
           <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
         </div>
 
-        <!-- 6. 2D नक्शा व 3D डिजाइन -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
@@ -431,7 +429,6 @@
           <a href="https://wa.me/919785438345?text=मुझे%20मकान%20का%20नक्शा%20चाहिए" target="_blank" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-brands fa-whatsapp"></i> नक्शा मंगाएं</a>
         </div>
 
-        <!-- 7. बाउंड्री वॉल व चारदीवारी -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-shield"></i></div>
@@ -441,7 +438,6 @@
           <a href="tel:9785438345" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> बात करें</a>
         </div>
 
-        <!-- 8. रेनोवेशन व मरम्मत -->
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
@@ -484,22 +480,23 @@
     </div>
   </section>
 
-  <!-- 6. 12 Real House Construction Projects Gallery (3 Columns Grid) -->
+  <!-- 6. Real House Construction Projects Gallery (3 Columns Grid) -->
   <section id="projects" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
         <div class="eyebrow eyebrow-blue"><i class="fa-solid fa-images"></i> वास्तविक कार्य गैलरी (Real Work Gallery)</div>
         <h2>हमारे द्वारा बनाए गए वास्तविक मकान व कार्य</h2>
-        <p>मंडावरा, झुंझुनूं व शेखावाटी में पूर्ण किए गए और वर्तमान में चल रहे 12 प्रमुख निर्माण कार्य। किसी भी फोटो पर क्लिक करके पूरा विवरण देखें।</p>
+        <p>मंडावरा, झुंझुनूं व शेखावाटी में पूर्ण किए गए और वर्तमान में चल रहे निर्माण कार्य। किसी भी फोटो पर क्लिक करके पूरा विवरण देखें।</p>
       </div>
 
-      <div class="gallery-grid">
-        
-       <div id="liveGalleryContainer" class="projects-grid">
-  <!-- यह बॉक्स खाली रहेगा, इसमें फ़ोटो अपने आप लोड होंगी -->
-</div>
+      <!-- Live Dynamic Supabase Gallery Grid -->
+      <div id="liveGalleryContainer" class="gallery-grid">
+        <!-- यहाँ सिर्फ वही फोटो दिखेंगी जो डैशबोर्ड में होंगी -->
+      </div>
+    </div>
+  </section>
 
-  <!-- 7. Work Process (4 Columns Grid as in screenshot) -->
+  <!-- 7. Work Process (4 Columns Grid) -->
   <section id="process">
     <div class="wrap">
       <div class="sec-head">
@@ -610,7 +607,7 @@
 
 </main>
 
-<!-- 9. Footer (4 Columns as in screenshot) -->
+<!-- 9. Footer (4 Columns) -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -688,14 +685,9 @@ function toggleMenu() {
   const menu = document.getElementById('navMenu');
   const icon = document.getElementById('menuIcon');
   if (!menu) return;
-
   menu.classList.toggle('active');
   if (icon) {
-    if (menu.classList.contains('active')) {
-      icon.className = 'fa-solid fa-xmark';
-    } else {
-      icon.className = 'fa-solid fa-bars';
-    }
+    icon.className = menu.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
   }
 }
 
@@ -756,14 +748,11 @@ function closeLightbox() {
   }
 }
 
-// Close Lightbox on ESC Key
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeLightbox();
-  }
+  if (e.key === 'Escape') closeLightbox();
 });
 
-// Contact / WhatsApp Form Handler
+// WhatsApp Form Handler
 function handleContactSubmit(e) {
   e.preventDefault();
   const name = document.getElementById('cfName').value.trim();
@@ -776,19 +765,16 @@ function handleContactSubmit(e) {
   window.open(`https://wa.me/919785438345?text=${waText}`, '_blank');
 }
 </script>
-  <!-- PWA Install Script -->
+
+<!-- PWA Install Script -->
 <script>
   let deferredPrompt;
   const installBtn = document.getElementById('installAppBtn');
 
   window.addEventListener('beforeinstallprompt', (e) => {
-    // ब्राउज़र का डिफ़ॉल्ट बैनर रोकें
     e.preventDefault();
     deferredPrompt = e;
-    // अगर ऐप पहले से इंस्टॉल नहीं है, तो बटन को स्क्रीन पर दिखाएं
-    if (installBtn) {
-      installBtn.style.display = 'inline-block';
-    }
+    if (installBtn) installBtn.style.display = 'inline-block';
   });
 
   if (installBtn) {
@@ -796,37 +782,22 @@ function handleContactSubmit(e) {
       if (deferredPrompt) {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-          console.log('App successfully installed');
-        }
         deferredPrompt = null;
         installBtn.style.display = 'none';
       }
     });
   }
 
-  // अगर यूजर पहले ही ऐप इंस्टॉल कर चुका है, तो बटन छिपा दें
   window.addEventListener('appinstalled', () => {
-    if (installBtn) {
-      installBtn.style.display = 'none';
-    }
+    if (installBtn) installBtn.style.display = 'none';
   });
 </script>
-        <!-- Supabase लाइव गैलरी स्क्रिप्ट -->
+
+<!-- 100% Live Supabase Gallery Sync Script -->
 <script>
 const SUPABASE_URL = 'https://aamstyeeewncmgqdxpoh.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_fOzZvfiio6HSaEgplYUgOA_lWy1tbVe';
 const dbClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
-
-// डिफ़ॉल्ट प्रोजेक्ट्स (बैकअप के लिए)
-const DEFAULT_PROJECTS = [
-  { id: 'def-1', title: '१. 3 BHK स्वतंत्र विलेज रेजिडेंस', location: 'मंडावरा साइट', description: '3 कमरे, बड़ा आँगन व हॉल', image_url: 'project-house-1.jpg.jpeg', category: 'Completed' },
-  { id: 'def-2', title: '२. 2-मंज़िला आधुनिक डुप्लेक्स कोठी', location: 'झुंझुनूं शहर', description: '4 बेडरूम, बालकनी व पोर्च', image_url: 'project-house-2.jpg.jpeg', category: 'Completed' },
-  { id: 'def-3', title: '३. RCC छत ढलाई व शटरिंग', location: 'उदयपुरवाटी साइट', description: '1200 Sq.Ft छत ढलाई', image_url: 'project-house-3.jpg.jpeg', category: 'Live Work' },
-  { id: 'def-4', title: '४. दीवार चिनाई व लेंटेल लेवल', location: 'मंडावरा', description: 'सुपरस्ट्रक्चर चिनाई कार्य', image_url: 'project-house-4.jpg.jpeg', category: 'Under Construction' },
-  { id: 'def-5', title: '५. प्लिंथ बीम व नींव निर्माण', location: 'शेखावाटी क्षेत्र', description: 'मजबूत डीपीसी बेस', image_url: 'project-house-5.jpg.jpeg', category: 'Foundation' },
-  { id: 'def-6', title: '६. सीमेंट प्लास्टर व फिनिशिंग', location: 'गुढ़ा साइट', description: 'चिकना व वाटरप्रूफ प्लास्टर', image_url: 'project-house-6.jpg.jpeg', category: 'Finishing' }
-];
 
 async function loadMainWebsiteProjects() {
   const container = document.getElementById('liveGalleryContainer');
@@ -835,30 +806,41 @@ async function loadMainWebsiteProjects() {
   let dbProjects = [];
   if (dbClient) {
     try {
-      const { data, error } = await dbClient.from('gallery_projects').select('*').order('created_at', { ascending: false });
+      const { data, error } = await dbClient
+        .from('gallery_projects')
+        .select('*')
+        .order('created_at', { ascending: false });
       if (!error && data) dbProjects = data;
     } catch (e) {
       console.warn('Gallery load error:', e);
     }
   }
 
-  // अगर Supabase में फोटो हैं तो वो दिखाओ, नहीं तो डिफ़ॉल्ट दिखाओ
-  const displayProjects = dbProjects.length > 0 ? dbProjects : DEFAULT_PROJECTS;
-
-  container.innerHTML = displayProjects.map(p => `
-    <div class="project-card" style="background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.08); display:flex; flex-direction:column; border:1px solid #e2e8f0;">
-      <div style="position:relative; height:200px; width:100%; background:#0b1220; overflow:hidden;">
-        <img src="${p.image_url}" alt="${p.title}" style="width:100%; height:100%; object-fit:cover;">
-        <span style="position:absolute; top:10px; right:10px; background:#d7a43b; color:#0b1220; font-weight:800; font-size:11px; padding:3px 8px; border-radius:4px; text-transform:uppercase;">
-          ${p.category || 'Project'}
-        </span>
+  // 1. अगर डैशबोर्ड में कोई फोटो नहीं है:
+  if (dbProjects.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; grid-column:1/-1; padding:40px 20px; color:#64748b; background:#fff; border-radius:14px; border:1px dashed #cbd5e1; width:100%;">
+        <i class="fa-solid fa-images" style="font-size:32px; opacity:0.4; margin-bottom:10px;"></i>
+        <h4 style="font-size:15px; font-weight:700; color:#1e293b;">वर्तमान में कोई प्रोजेक्ट फ़ोटो उपलब्ध नहीं है</h4>
+        <p style="font-size:12.5px; margin-top:4px; color:#94a3b8;">एडमिन डैशबोर्ड से नई फ़ोटो जोड़ते ही वह यहाँ लाइव दिखने लगेगी।</p>
       </div>
-      <div style="padding:16px; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+    `;
+    return;
+  }
+
+  // 2. सिर्फ वही फोटो दिखेंगी जो डैशबोर्ड में मौजूद हैं:
+  container.innerHTML = dbProjects.map(p => `
+    <div class="gallery-card" onclick="openLightbox('${p.image_url}', '${escapeHtml(p.title)}', '${escapeHtml((p.location ? p.location + ' • ' : '') + (p.description || ''))}')">
+      <div class="gallery-thumb">
+        <img src="${p.image_url}" alt="${p.title}">
+        <span class="gallery-badge">${p.category || 'Project'}</span>
+      </div>
+      <div class="gallery-info">
         <div>
-          <h3 style="font-size:16px; font-weight:800; color:#0b1220; margin-bottom:4px;">${p.title}</h3>
-          <p style="font-size:12.5px; color:#64748b; margin-bottom:12px;">${p.location} • ${p.description}</p>
+          <h3>${p.title}</h3>
+          <p>${p.location ? p.location + ' • ' : ''}${p.description || ''}</p>
         </div>
-        <button onclick="alert('${p.title}\\nस्थान: ${p.location}\\nविवरण: ${p.description}')" style="width:100%; padding:10px; background:#d7a43b; color:#fff; border:0; border-radius:8px; font-weight:700; cursor:pointer; font-size:13px;">
+        <button class="btn-sm btn-gold" style="width:100%; justify-content:center; margin-top:8px;">
           फ़ोटो व विवरण देखें
         </button>
       </div>
@@ -866,9 +848,13 @@ async function loadMainWebsiteProjects() {
   `).join('');
 }
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
 window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
 </script>
-</body>
-</html>
+
 </body>
 </html>
