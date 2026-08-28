@@ -634,6 +634,19 @@
                 <option value="रेनोवेशन, मरम्मत व वॉटरप्रूफिंग">८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग</option>
               </select>
             </div>
+            <!-- 9. विशेष ऑफर्स एवं छूट (Special Offers & Deals) -->
+        <div class="service-card" style="border: 1.5px solid var(--gold); background: linear-gradient(145deg, #0f1f38 0%, #162a4a 100%); cursor: pointer;" onclick="openOffersModal()">
+          <div>
+            <div class="service-icon" style="background: var(--gold); color: #0a1628;">
+              <i class="fa-solid fa-gift"></i>
+            </div>
+            <h3 style="color: var(--gold-light);">९. विशेष निर्माण ऑफर्स एवं छूट (Special Offers)</h3>
+            <p style="color: #cbd5e1;">नया मकान, छत ढलाई व चारदीवारी पर हमारे <b>७ विशेष ऑफर्स</b> (फ्री नक्शा, पानी का टांका, टाइल्स फिटिंग आदि)। टैप करके सभी ७ ऑफर देखें।</p>
+          </div>
+          <button type="button" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px; font-weight:800;" onclick="event.stopPropagation(); openOffersModal();">
+            <i class="fa-solid fa-tags"></i> सभी ७ ऑफर्स देखें
+          </button>
+        </div>
             <div class="form-group">
               <label for="cfMsg">संदेश / विवरण (वैकल्पिक)</label>
               <textarea id="cfMsg" rows="3" placeholder="प्लॉट साइज या कोई विशेष बात..."></textarea>
@@ -752,6 +765,102 @@
 
 <!-- Lightbox Modal for Project Details & Visiting Card -->
 <div id="lightboxModal" class="lightbox-backdrop" onclick="if(event.target===this) closeLightbox()">
+  <!-- 7 Special Offers Popup Modal -->
+<div id="offersModal" class="lightbox-backdrop" onclick="if(event.target===this) closeOffersModal()">
+  <div class="lightbox-card" style="max-width: 780px;">
+    <div style="padding: 16px 20px; background: var(--navy-primary); color: #fff; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line);">
+      <h3 style="font-size: 17px; font-weight: 800; color: var(--gold);">
+        <i class="fa-solid fa-gift" style="color: var(--gold);"></i> हमारे ७ विशेष निर्माण ऑफर्स (Special Offers)
+      </h3>
+      <button type="button" onclick="closeOffersModal()" style="background: transparent; border: 0; color: #fff; font-size: 26px; cursor: pointer; padding: 2px 6px;">&times;</button>
+    </div>
+    
+    <div style="padding: 20px; overflow-y: auto; flex: 1; max-height: 70vh; display: flex; flex-direction: column; gap: 14px;">
+      
+      <!-- Offer 1 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🎁 १. फ्री 2D वास्तु नक्शा + 3D फ्रंट एलिवेशन ऑफर</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“नया मकान निर्माण का अनुबंध करने पर ₹15,000 मूल्य का 100% वास्तु सम्मत 2D फ्लोर प्लान और 3D फ्रंट एलिवेशन डिजाइन बिल्कुल मुफ़्त!”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%202D%20वास्तु%20नक्शा%20+%203D%20डिजाइन'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+      <!-- Offer 2 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🏷️ २. सीजनल / त्योहारी बुकिंग डिस्काउंट</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“इस माह नया मकान (With Material) बुक करने पर प्रति वर्ग फीट ₹15 से ₹20 की विशेष छूट।”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'सीजनल%20बुकिंग%20डिस्काउंट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+      <!-- Offer 3 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">💧 ३. मुफ्त भूमिगत पानी का टांका (Underground Tank / हौद)</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“1200 Sq.Ft से बड़े मकान का पूरा निर्माण कराने पर 10,000 लीटर क्षमता का पक्का वाटरप्रूफ टांका (हौद) लेबर चार्ज फ्री!”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'मुफ्त%20पानी%20का%20टांका%20(हौद)'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+      <!-- Offer 4 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🚿 ४. फ्री बाथरूम प्रीमियम टाइल्स फिटिंग</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“3 BHK या डुप्लेक्स मकान विद-मटेरियल बनवाने पर 1 मास्टर बाथरूम की डिजाइनर टाइल्स फिटिंग बिल्कुल मुफ़्त।”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%20बाथरूम%20टाइल्स%20फिटिंग'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+      <!-- Offer 5 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🧱 ५. मकान के साथ चारदीवारी (Boundary Wall) पर 20% छूट</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“मकान निर्माण के साथ प्लॉट की बाउंड्री वॉल / चारदीवारी बनवाने पर बाउंड्री के लेबर रेट में 20% की विशेष छूट।”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'चारदीवारी%20पर%2020%%20छूट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+      <!-- Offer 6 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">📍 ६. 100% मुफ़्त साइट विजिट व मिट्टी जांच सलाह</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“मंडावरा, झुंझुनूं, उदयपुरवाटी व सीकर क्षेत्र में आपके प्लॉट पर फ्री साइट विजिट, लेवलिंग जांच और तकनीकी मार्गदर्शन।”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%20साइट%20विजिट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+      <!-- Offer 7 -->
+      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">📊 ७. विस्तृत लागत व सामग्री बजट एस्टीमेट (Free BOQ)</h4>
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“अपने प्लॉट के साइज अनुसार सीमेंट, सरिया, ईंट और कुल बजट का विस्तृत लिखित एस्टीमेट बिना किसी शुल्क के प्राप्त करें।”</p>
+        </div>
+        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%20लागत%20एस्टीमेट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
+          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
+        </a>
+      </div>
+
+    </div>
+    
+    <div style="padding: 14px 20px; border-top: 1px solid var(--line); background: var(--navy-primary); text-align: right;">
+      <button type="button" class="btn btn-dark" onclick="closeOffersModal()" style="padding: 8px 18px; font-size: 13px;">बंद करें</button>
+    </div>
+  </div>
+</div>
   <div class="lightbox-card">
     <div style="padding:16px 20px; background:var(--navy-primary); color:#fff; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line);">
       <h3 id="lbTitle" style="font-size:17px; font-weight:800; color:var(--gold);">विवरण</h3>
@@ -771,6 +880,21 @@
 </div>
 
 <script>
+  function openOffersModal() {
+  const modal = document.getElementById('offersModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeOffersModal() {
+  const modal = document.getElementById('offersModal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
 // Mobile Navigation Toggle
 function toggleMenu() {
   const menu = document.getElementById('navMenu');
@@ -948,28 +1072,6 @@ window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
 
 <!-- Automatic 15-Day Offer Rotation Engine -->
 <script>
-const ROTATING_OFFERS = [
-  {
-    title: "नया मकान बुक करने पर ₹15,000 का 2D वास्तु नक्शा व 3D फ्रंट एलिवेशन 100% फ्री!",
-    tag: "🎉 ऑफर: फ्री 3D नक्शा",
-    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे आपकी वेबसाइट पर 'फ्री 2D वास्तु नक्शा व 3D डिजाइन' वाले 15-दिवसीय ऑफर का लाभ लेना है।"
-  },
-  {
-    title: "1000+ Sq.Ft RCC छत ढलाई कराने पर लीकेज-प्रूफ वॉटरप्रूफिंग केमिकल कार्य बिल्कुल फ्री!",
-    tag: "🏗️ ऑफर: फ्री वॉटरप्रूफिंग",
-    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे 'फ्री वॉटरप्रूफिंग छत ढलाई' वाले 15-दिवसीय ऑफर की जानकारी चाहिए।"
-  },
-  {
-    title: "विद-मटेरियल मकान निर्माण अनुबंध पर प्रीमियम फ्लोरिंग टाइल्स अपग्रेड व फ्री साइट विजिट!",
-    tag: "✨ ऑफर: टाइल्स अपग्रेड",
-    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे 'विद-मटेरियल मकान निर्माण टाइल्स अपग्रेड' ऑफर की जानकारी चाहिए।"
-  },
-  {
-    title: "सम्पूर्ण बाउंड्री वॉल व चारदीवारी निर्माण पर मेन गेट पिलर डिजाइनिंग कार्य फ्री!",
-    tag: "🛡️ ऑफर: चारदीवारी स्पेशल",
-    waMsg: "नमस्ते प्रकाश स्वामी जी, मुझे 'चारदीवारी व पिलर निर्माण' वाले ऑफर की जानकारी चाहिए।"
-  }
-];
 
 function updateRotatingOffer() {
   const fifteenDaysInMs = 15 * 24 * 60 * 60 * 1000;
