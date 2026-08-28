@@ -35,13 +35,13 @@
     html { scroll-behavior: smooth; }
     body { font-family: "Segoe UI", Arial, "Noto Sans Devanagari", system-ui, -apple-system, sans-serif; color: #1e293b; line-height: 1.6; background: #ffffff; }
     img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
+    a { text-decoration: none; color: inherit; cursor: pointer; }
     button, input, textarea, select { font: inherit; }
     
     .wrap { width: min(1200px, calc(100% - 40px)); margin: auto; }
     
-    /* 1. Top Bar - Deep Royal Navy */
-    .top { background: var(--navy-darkest); color: #cbd5e1; font-size: 13px; padding: 9px 0; border-bottom: 1px solid rgba(215, 164, 59, 0.2); }
+    /* 1. Top Bar */
+    .top { background: var(--navy-darkest); color: #cbd5e1; font-size: 13px; padding: 9px 0; border-bottom: 1px solid rgba(215, 164, 59, 0.2); position: relative; z-index: 95; }
     .top .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .top a { color: #cbd5e1; transition: color 0.2s; }
     .top a:hover { color: var(--gold); }
@@ -75,7 +75,7 @@
     .btn-whatsapp:hover { background: #1eb954; color: #fff; }
     .btn-sm { padding: 9px 14px; font-size: 13px; border-radius: 8px; font-weight: 800; border: 0; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
     
-    /* Hero Section */
+    /* Hero Section - FIXED NO OVERLAY INTERFERENCE */
     .hero {
       position: relative;
       color: #fff;
@@ -93,6 +93,7 @@
       height: 100%;
       z-index: 1;
       overflow: hidden;
+      pointer-events: none; /* जरूरी ताकि क्लिक ब्लॉक न हो */
     }
     .hero-video-bg video {
       width: 100%;
@@ -102,14 +103,14 @@
       filter: brightness(1) contrast(1);
     }
     .hero-overlay {
-      position: fixed;
+      position: absolute; /* FIXED से ABSOLUTE किया गया */
       inset: 0;
       background: linear-gradient(135deg, rgba(7, 13, 24, 0.4) 0%, rgba(10, 22, 40, 0.25) 50%, rgba(7, 13, 24, 0.45) 100%);
-      backdrop-filter: none;
-      z-index: -1;
+      pointer-events: none; /* जरूरी ताकि क्लिक ब्लॉक न हो */
+      z-index: 2;
     }
 
-    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; position: relative; z-index: 3; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; position: relative; z-index: 5; }
     .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 25px; font-size: 12.5px; font-weight: 700; margin-bottom: 18px; width: fit-content; }
     .eyebrow-gold { background: rgba(215, 164, 59, 0.18); color: var(--gold); border: 1px solid rgba(215, 164, 59, 0.4); }
     .eyebrow-blue { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
@@ -126,11 +127,11 @@
     .stat-item p { font-size: 12px; color: #cbd5e1; font-weight: 600; }
     
     /* Hero Showcase Card */
-    .hero-visual-card { background: rgba(10,22,40,0.9); border: 1.5px solid rgba(215, 164, 59, 0.45); border-radius: 18px; padding: 18px; backdrop-filter: blur(14px); box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+    .hero-visual-card { background: rgba(10,22,40,0.9); border: 1.5px solid rgba(215, 164, 59, 0.45); border-radius: 18px; padding: 18px; backdrop-filter: blur(14px); box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative; z-index: 5; }
     .hero-visual-card img { border-radius: 12px; height: auto; max-height: 420px; width: 100%; object-fit: contain; margin-bottom: 14px; }
     
     /* Sections */
-    section { padding: 75px 0; background: #ffffff; }
+    section { padding: 75px 0; background: #ffffff; position: relative; z-index: 10; }
     .section-alt { background: var(--cream); }
     .sec-head { text-align: center; max-width: 760px; margin: 0 auto 45px; display: flex; flex-direction: column; align-items: center; }
     .sec-head h2 { font-size: 30px; font-weight: 900; color: var(--navy-primary); margin-bottom: 10px; }
@@ -138,7 +139,7 @@
     
     /* 3 Columns Services Grid */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .service-card { background: #fff; border-radius: 16px; border: 1.5px solid var(--line); padding: 26px 22px; box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; display: flex; flex-direction: column; justify-content: space-between; }
+    .service-card { background: #fff; border-radius: 16px; border: 1.5px solid var(--line); padding: 26px 22px; box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; display: flex; flex-direction: column; justify-content: space-between; position: relative; z-index: 10; }
     .service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 35px rgba(10,22,40,0.1); border-color: var(--gold); }
     .service-icon { width: 50px; height: 50px; background: rgba(215,164,59,0.15); color: #b45309; border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 16px; border: 1px solid rgba(215,164,59,0.3); }
     .service-card h3 { font-size: 17px; font-weight: 800; color: var(--navy-primary); margin-bottom: 8px; }
@@ -153,7 +154,7 @@
     
     /* 3 Columns Projects Gallery Grid - Navy Premium */
     .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .gallery-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1.5px solid var(--line); box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; cursor: pointer; display: flex; flex-direction: column; }
+    .gallery-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1.5px solid var(--line); box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; cursor: pointer; display: flex; flex-direction: column; position: relative; z-index: 10; }
     .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 18px 32px rgba(10,22,40,0.12); border-color: var(--gold); }
     .gallery-thumb { height: 215px; width: 100%; position: relative; overflow: hidden; background: var(--navy-primary); }
     .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
@@ -165,19 +166,19 @@
     
     /* 4 Columns Work Process */
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .process-card { background: #fff; padding: 24px 20px; border-radius: 16px; border: 1.5px solid var(--line); box-shadow: var(--shadow); position: relative; }
+    .process-card { background: #fff; padding: 24px 20px; border-radius: 16px; border: 1.5px solid var(--line); box-shadow: var(--shadow); position: relative; z-index: 10; }
     .process-num { width: 34px; height: 34px; background: var(--gold); color: #0a1628; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 14px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(215,164,59,0.3); }
     
     /* Contact & Form */
     .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; }
-    .contact-box { background: #fff; padding: 30px; border-radius: 16px; border: 1.5px solid var(--line); box-shadow: var(--shadow); }
+    .contact-box { background: #fff; padding: 30px; border-radius: 16px; border: 1.5px solid var(--line); box-shadow: var(--shadow); position: relative; z-index: 10; }
     .form-group { margin-bottom: 16px; }
     .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--navy-primary); margin-bottom: 6px; }
     .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; font-size: 14px; outline: none; background: #fff; transition: border-color 0.2s; }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
     
-    /* Footer - Royal Dark Navy */
-    footer { background: var(--navy-darkest); color: #94a3b8; padding: 50px 0 24px; border-top: 1px solid rgba(215,164,59,0.2); font-size: 13.5px; }
+    /* Footer */
+    footer { background: var(--navy-darkest); color: #94a3b8; padding: 50px 0 24px; border-top: 1px solid rgba(215,164,59,0.2); font-size: 13.5px; position: relative; z-index: 10; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 36px; margin-bottom: 36px; }
     .footer-col h4 { color: #fff; font-size: 15px; font-weight: 800; margin-bottom: 16px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -185,8 +186,8 @@
     .footer-col a:hover { color: var(--gold); }
     
     /* Lightbox Modal */
-    .lightbox-backdrop { position: fixed; inset: 0; background: rgba(7,13,24,0.88); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(6px); }
-    .lightbox-card { background: #fff; width: 100%; max-width: 720px; border-radius: 18px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
+    .lightbox-backdrop { position: fixed; inset: 0; background: rgba(7,13,24,0.88); z-index: 999999; display: none; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(6px); }
+    .lightbox-card { background: #fff; width: 100%; max-width: 720px; border-radius: 18px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.6); position: relative; z-index: 1000000; }
 
     /* Responsive Queries */
     @media (max-width: 992px) {
@@ -211,6 +212,7 @@
         border-bottom: 1px solid rgba(215,164,59,0.3);
         gap: 16px;
         text-align: center;
+        z-index: 99;
       }
       .menu.active { display: flex; }
       .top .wrap { justify-content: center; text-align: center; }
@@ -636,7 +638,7 @@
   <div class="lightbox-card">
     <div style="padding:16px 20px; background:var(--navy-primary); color:#fff; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(215,164,59,0.3);">
       <h3 id="lbTitle" style="font-size:17px; font-weight:800; color:var(--gold);">Project Details</h3>
-      <button onclick="closeLightbox()" style="background:transparent; border:0; color:#fff; font-size:26px; cursor:pointer; padding:2px 6px;">&times;</button>
+      <button type="button" onclick="closeLightbox()" style="background:transparent; border:0; color:#fff; font-size:26px; cursor:pointer; padding:2px 6px;">&times;</button>
     </div>
     <div style="padding:20px; overflow-y:auto; flex:1;">
       <img id="lbImg" src="" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px;" alt="Project Detail">
@@ -645,7 +647,7 @@
         <a id="lbWaBtn" href="#" target="_blank" class="btn btn-whatsapp" style="padding:10px 20px; font-size:13.5px;">
           <i class="fa-brands fa-whatsapp"></i> इस कार्य की लागत व कोटेशन पूछें
         </a>
-        <button class="btn btn-dark" onclick="closeLightbox()" style="padding:10px 20px; font-size:13.5px;">बंद करें</button>
+        <button type="button" class="btn btn-dark" onclick="closeLightbox()" style="padding:10px 20px; font-size:13.5px;">बंद करें</button>
       </div>
     </div>
   </div>
@@ -726,7 +728,7 @@ function handleContactSubmit(e) {
   });
 </script>
 
-<!-- 100% Guaranteed Tap / Click Supabase Live Gallery Script -->
+<!-- 100% Live Supabase Gallery Script -->
 <script>
 const SUPABASE_URL = 'https://aamstyeeewncmgqdxpoh.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_fOzZvfiio6HSaEgplYUgOA_lWy1tbVe';
@@ -752,7 +754,6 @@ async function loadMainWebsiteProjects() {
     }
   }
 
-  // अगर डेटाबेस में कोई फोटो नहीं है
   if (!globalProjectsList || globalProjectsList.length === 0) {
     container.innerHTML = `
       <div style="text-align:center; grid-column:1/-1; padding:40px 20px; color:#64748b; background:#fff; border-radius:14px; border:1px dashed #cbd5e1; width:100%;">
@@ -764,7 +765,6 @@ async function loadMainWebsiteProjects() {
     return;
   }
 
-  // कार्ड रेंडर करें (क्लिक/टैप 100% काम करेगा)
   container.innerHTML = globalProjectsList.map((p, idx) => `
     <div class="gallery-card" onclick="showProjectLightbox(${idx})">
       <div class="gallery-thumb">
@@ -786,7 +786,6 @@ async function loadMainWebsiteProjects() {
   `).join('');
 }
 
-// सुरक्षित लाइटबॉक्स पॉपअप फ़ंक्शन (बिना किसी एरर के तुरंत खुलेगा)
 function showProjectLightbox(idx) {
   const p = globalProjectsList[idx];
   if (!p) return;
