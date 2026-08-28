@@ -69,7 +69,25 @@
     .btn-login:hover { background: #ffffff; color: #0a1628 !important; }
 
     .menu-toggle { display: none; background: transparent; border: 0; color: #fff; font-size: 22px; cursor: pointer; padding: 6px 10px; }
-    
+    /* Language Toggle Button (Navy & Gold) */
+.btn-lang {
+  background: rgba(215, 164, 59, 0.15);
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+.btn-lang:hover {
+  background: var(--gold);
+  color: #0a1628;
+}
     /* Buttons */
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; transition: 0.2s; border: 0; text-decoration: none; }
     .btn-gold { background: var(--gold); color: #0a1628; font-weight: 800; }
@@ -347,7 +365,10 @@
       <a href="#about" onclick="closeMenu()">हमारे बारे में</a>
       <a href="#projects" onclick="closeMenu()">प्रोजेक्ट गैलरी</a>
       <a href="#contact" onclick="closeMenu()">संपर्क</a>
-      
+      <!-- Language Switcher Button -->
+<button type="button" class="btn-lang" id="langToggleBtn" onclick="toggleLanguage()" title="Change Language / भाषा बदलें">
+  <i class="fa-solid fa-globe"></i> <span id="langBtnText">English</span>
+</button>
       <a href="dashboard.html" class="btn-login" title="Admin, Customer & Worker Portal Login" onclick="closeMenu()">
         <i class="fa-solid fa-right-to-bracket"></i> Login
       </a>
@@ -902,6 +923,71 @@ function showProjectLightbox(idx) {
 
 window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
 </script>
+<!-- Language Switcher Script (Hindi / English) -->
+<script>
+let currentLanguage = localStorage.getItem('ps_site_lang') || 'hi';
 
+const translations = {
+  hi: {
+    btn: "English",
+    navHome: "होम",
+    navServices: "सेवाएँ",
+    navAbout: "हमारे बारे में",
+    navProjects: "प्रोजेक्ट गैलरी",
+    navContact: "संपर्क",
+    heroHeading: "मजबूत नींव, बेहतरीन कारीगरी एवं <em>आधुनिक भवन निर्माण</em>।",
+    heroDesc: "गांव व कस्बों के लिए टिकाऊ, सुंदर और 100% वास्तु सम्मत मकानों का निर्माण। नींव खुदाई से लेकर RCC छत ढलाई, चिनाई, प्लास्टर, टाइल्स और चाबी सौंपने तक का पूरा काम लिखित अनुबंध के साथ।",
+    heroCall: '<i class="fa-solid fa-phone"></i> 9785438345 पर कॉल करें',
+    heroWa: '<i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp पर बात करें',
+    heroProj: '<i class="fa-solid fa-images"></i> प्रोजेक्ट्स देखें'
+  },
+  en: {
+    btn: "हिंदी",
+    navHome: "Home",
+    navServices: "Services",
+    navAbout: "About Us",
+    navProjects: "Projects",
+    navContact: "Contact",
+    heroHeading: "Solid Foundation, Superior Craftsmanship & <em>Modern Construction</em>.",
+    heroDesc: "Durable, aesthetic, and 100% Vastu-compliant home construction. Complete turnkey solutions from foundation to RCC slab casting, masonry, plastering, tiles, and timely handover with legal contracts.",
+    heroCall: '<i class="fa-solid fa-phone"></i> Call 9785438345',
+    heroWa: '<i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp',
+    heroProj: '<i class="fa-solid fa-images"></i> View Projects'
+  }
+};
+
+function applyLanguage(lang) {
+  currentLanguage = lang;
+  localStorage.setItem('ps_site_lang', lang);
+  
+  const data = translations[lang];
+  const btnText = document.getElementById('langBtnText');
+  if (btnText) btnText.innerText = data.btn;
+
+  const nh = document.getElementById('navHome'); if (nh) nh.innerText = data.navHome;
+  const ns = document.getElementById('navServices'); if (ns) ns.innerText = data.navServices;
+  const na = document.getElementById('navAbout'); if (na) na.innerText = data.navAbout;
+  const np = document.getElementById('navProjects'); if (np) np.innerText = data.navProjects;
+  const nc = document.getElementById('navContact'); if (nc) nc.innerText = data.navContact;
+
+  const hh = document.querySelector('.hero h1'); if (hh) hh.innerHTML = data.heroHeading;
+  const hd = document.querySelector('.hero p'); if (hd) hd.innerText = data.heroDesc;
+  
+  const ctaBtns = document.querySelectorAll('.hero-cta a');
+  if (ctaBtns[0]) ctaBtns[0].innerHTML = data.heroCall;
+  if (ctaBtns) ctaBtns.innerHTML = data.heroWa;
+  if (ctaBtns) ctaBtns.innerHTML = data.heroProj;
+}
+
+function toggleLanguage() {
+  const nextLang = currentLanguage === 'hi' ? 'en' : 'hi';
+  applyLanguage(nextLang);
+}
+
+// पेज लोड होने पर भाषा सेट करें
+window.addEventListener('DOMContentLoaded', () => {
+  applyLanguage(currentLanguage);
+});
+</script>
 </body>
 </html>
