@@ -983,7 +983,93 @@ function toggleLanguage() {
   const nextLang = currentLanguage === 'hi' ? 'en' : 'hi';
   applyLanguage(nextLang);
 }
+// --- BILINGUAL (HINDI / ENGLISH) DICTIONARY ---
+let currentLang = 'hi'; // डिफ़ॉल्ट हिंदी
 
+const siteTranslations = {
+  hi: {
+    nav_home: "होम",
+    nav_services: "सेवाएँ",
+    nav_about: "हमारे बारे में",
+    nav_projects: "प्रोजेक्ट गैलरी",
+    nav_contact: "संपर्क",
+    hero_title: "मजबूत नींव, बेहतरीन कारीगरी एवं <em>आधुनिक भवन निर्माण</em>।",
+    hero_desc: "गांव व कस्बों के लिए टिकाऊ, सुंदर और 100% वास्तु सम्मत मकानों का निर्माण। नींव खुदाई से लेकर RCC छत ढलाई, चिनाई, प्लास्टर, टाइल्स और चाबी सौंपने तक का पूरा काम लिखित अनुबंध के साथ।",
+    hero_call: "9785438345 पर कॉल करें",
+    hero_wa: "WhatsApp पर बात करें",
+    hero_view_proj: "प्रोजेक्ट्स देखें",
+    sec_services_title: "निर्माण का हर काम, पूरी मजबूती और सही तरीके से।",
+    sec_services_sub: "नींव की खुदाई से लेकर फिनिशिंग तक हर काम अनुभवी कारीगरों, आधुनिक टूल्स और उच्च गुणवत्ता वाले मटेरियल से किया जाता है।",
+    sec_proj_title: "हमारे द्वारा बनाए गए वास्तविक मकान व कार्य",
+    sec_proj_sub: "मंडावरा, झुंझुनूं व शेखावाटी में पूर्ण किए गए और वर्तमान में चल रहे निर्माण कार्य। किसी भी फोटो पर क्लिक करके पूरा विवरण देखें।",
+    sec_process_title: "बात से काम तक, 4 आसान कदम।",
+    sec_process_sub: "हम हर प्रोजेक्ट को एक सुव्यवस्थित, पारदर्शी और लिखित नियमों के साथ पूरा करते हैं।"
+  },
+  en: {
+    nav_home: "Home",
+    nav_services: "Services",
+    nav_about: "About Us",
+    nav_projects: "Projects",
+    nav_contact: "Contact",
+    hero_title: "Strong Foundation, Quality Craftsmanship & <em>Modern Construction</em>.",
+    hero_desc: "Durable, aesthetic, and 100% Vastu-compliant residential home construction. Complete turnkey solutions from foundation excavation to RCC roof slab casting, masonry, plaster, tiles, and timely handover with written contracts.",
+    hero_call: "Call 9785438345",
+    hero_wa: "Chat on WhatsApp",
+    hero_view_proj: "View Projects",
+    sec_services_title: "Complete Construction Services with Quality & Precision.",
+    sec_services_sub: "From foundation laying to final finishing, every project is executed by experienced masons using modern tools and certified building materials.",
+    sec_proj_title: "Our Real House Construction Projects",
+    sec_proj_sub: "Explore completed and ongoing residential construction projects across Mandawara, Jhunjhunu, and Shekhawati. Tap any card for full details.",
+    sec_process_title: "From Discussion to Delivery in 4 Easy Steps.",
+    sec_process_sub: "We execute every project with transparency, disciplined planning, and legal agreements."
+  }
+};
+
+function toggleLanguage() {
+  currentLang = (currentLang === 'hi') ? 'en' : 'hi';
+  document.getElementById('langBtnText').innerText = (currentLang === 'hi') ? 'English' : 'हिंदी';
+  
+  // HTML lang attribute update
+  document.documentElement.lang = currentLang;
+
+  // Apply translations
+  const t = siteTranslations[currentLang];
+  
+  // Update Navigation
+  const menuLinks = document.querySelectorAll('#navMenu a:not(.btn-login)');
+  if (menuLinks.length >= 5) {
+    menuLinks[0].innerText = t.nav_home;
+    menuLinks.innerText = t.nav_services;
+    menuLinks.innerText = t.nav_about;
+    menuLinks.innerText = t.nav_projects;
+    menuLinks.innerText = t.nav_contact;
+  }
+
+  // Update Hero & Section Headings
+  const heroH1 = document.querySelector('.hero h1');
+  if (heroH1) heroH1.innerHTML = t.hero_title;
+
+  const heroP = document.querySelector('.hero p');
+  if (heroP) heroP.innerText = t.hero_desc;
+
+  const secServicesH2 = document.querySelector('#services .sec-head h2');
+  if (secServicesH2) secServicesH2.innerText = t.sec_services_title;
+
+  const secServicesP = document.querySelector('#services .sec-head p');
+  if (secServicesP) secServicesP.innerText = t.sec_services_sub;
+
+  const secProjH2 = document.querySelector('#projects .sec-head h2');
+  if (secProjH2) secProjH2.innerText = t.sec_proj_title;
+
+  const secProjP = document.querySelector('#projects .sec-head p');
+  if (secProjP) secProjP.innerText = t.sec_proj_sub;
+
+  const secProcessH2 = document.querySelector('#process .sec-head h2');
+  if (secProcessH2) secProcessH2.innerText = t.sec_process_title;
+
+  const secProcessP = document.querySelector('#process .sec-head p');
+  if (secProcessP) secProcessP.innerText = t.sec_process_sub;
+}
 // पेज लोड होने पर भाषा सेट करें
 window.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLanguage);
