@@ -1991,14 +1991,24 @@ const DEFAULT_GALLERY_ITEMS = [
 async function getMergedGalleryProjects() {
   let dbItems = [];
   try {
-    const { data, error } = await db.from('gallery_projects').select('*').order('created_at', { ascending: false });
-    if (!error && data) dbItems = data;
-  } catch(e) {}
+    if (db) {
+      const { data, error } = await db.from('gallery_projects').select('*').order('created_at', { ascending: false });
+      if (!error && data) dbItems = data;
+    }
+  } catch(e) {
+    console.warn('DB error:', e);
+  }
 
   const deletedIds = JSON.parse(localStorage.getItem('ps_deleted_gallery_ids') || '[]');
-  const activeDefaults = DEFAULT_GALLERY_ITEMS.filter(item => !deletedIds.includes(item.id));
 
-  return [...dbItems, ...activeDefaults];
+  // डेटाबेस और डिफ़ॉल्ट दोनों से डिलीट की गई फ़ोटो हटाएँ
+  const filteredDbItems = dbItems.filter(item => !deletedIds.includes(String(item.id)));
+  const activeDefaults = DEFAULT_GALLERY_ITEMS.filter(item => 
+    !deletedIds.includes(String(item.id)) && 
+    !filteredDbItems.some(dbItem => dbItem.title === item.title)
+  );
+
+  return [...filteredDbItems, ...activeDefaults];
 }
 
 async function renderAdminGalleryManagement(container) {
@@ -2141,25 +2151,39 @@ async function saveGalleryProjectSubmit(e) {
 
   if (!photoBase64) return alert('कृपया एक फ़ोटो चुनें!');
 
-  const newProject = {
-    title: title,
-    location: location,
-    category: category,
-    description: description,
-    image_url: photoBase64,
-    created_by: currentUser?.id,
-    created_at: new Date().toISOString()
-  };
-
-  try {
-    await db.from('gallery_projects').insert(newProject);
-  } catch(err) {
-    console.error('Supabase gallery insert err:', err);
+  const btn = e.target.querySelector('button[type="submit"]');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> सेव हो रहा है...';
   }
 
-  alert('प्रोजेक्ट फ़ोटो सफलतापूर्वक मुख्य वेबसाइट पर जुड़ गई है! ✅');
-  $('modalContainer').classList.add('hidden');
-  openView('gallery_mgmt');
+  try {
+    const newProject = {
+      title: title,
+      location: location,
+      category: category,
+      description: description,
+      image_url: photoBase64,
+      created_by: currentUser?.id || null,
+      created_at: new Date().toISOString()
+    };
+
+    const { error } = await db.from('gallery_projects').insert(newProject);
+    if (error) throw error;
+
+    if (typeof appCache !== 'undefined') appCache.clear();
+    alert('प्रोजेक्ट फ़ोटो सफलतापूर्वक मुख्य वेबसाइट पर जुड़ गई है! ✅');
+    $('modalContainer').classList.add('hidden');
+    openView('gallery_mgmt');
+  } catch(err) {
+    console.error('Insert error:', err);
+    alert('सेव करने में त्रुटि: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> वेबसाइट पर पब्लिश करें';
+    }
+  }
 }
 
 async function openEditGalleryProjectModal(id) {
@@ -2257,19 +2281,35 @@ async function updateGalleryProjectSubmit(e, id) {
 
 async function deleteGalleryProject(id) {
   if (!confirm('क्या आप इस फ़ोटो को वेबसाइट गैलरी से हटाना चाहते हैं?')) return;
-  
-  if (id.startsWith('def-')) {
+
+  try {
+    // 1. Supabase से डिलीट करें
+    if (db) {
+      const { error } = await db.from('gallery_projects').delete().eq('id', id);
+      if (error) console.warn('Supabase delete:', error.message);
+    }
+
+    // 2. लोकल स्टोरेज में डिलीट मार्क करें
     const deletedIds = JSON.parse(localStorage.getItem('ps_deleted_gallery_ids') || '[]');
-    if (!deletedIds.includes(id)) deletedIds.push(id);
-    localStorage.setItem('ps_deleted_gallery_ids', JSON.stringify(deletedIds));
-  } else {
-    await db.from('gallery_projects').delete().eq('id', id);
+    if (!deletedIds.includes(String(id))) {
+      deletedIds.push(String(id));
+      localStorage.setItem('ps_deleted_gallery_ids', JSON.stringify(deletedIds));
+    }
+
+    // 3. पुराना कैश साफ़ करें
+    if (typeof appCache !== 'undefined') {
+      appCache.clear();
+    }
+
+    alert('फ़ोटो सफलतापूर्वक हटा दी गई! ✅');
+    
+    // 4. तुरंत स्क्रीन को रीफ्रेश करें
+    await renderAdminGalleryManagement(document.getElementById('mainContent'));
+  } catch (err) {
+    console.error('Delete error:', err);
+    alert('डिलीट करने में समस्या: ' + err.message);
   }
-
-  alert('फ़ोटो हटा दी गई!');
-  openView('gallery_mgmt');
 }
-
 // ==========================================
 // ADMIN: OVERVIEW & UNIVERSAL SEARCH
 // ==========================================
