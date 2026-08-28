@@ -799,6 +799,11 @@ const SUPABASE_URL = 'https://aamstyeeewncmgqdxpoh.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_fOzZvfiio6HSaEgplYUgOA_lWy1tbVe';
 const dbClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
+<script>
+const SUPABASE_URL = 'https://aamstyeeewncmgqdxpoh.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_fOzZvfiio6HSaEgplYUgOA_lWy1tbVe';
+const dbClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
 async function loadMainWebsiteProjects() {
   const container = document.getElementById('liveGalleryContainer');
   if (!container) return;
@@ -816,7 +821,7 @@ async function loadMainWebsiteProjects() {
     }
   }
 
-  // 1. अगर डैशबोर्ड में कोई फोटो नहीं है:
+  // अगर कोई प्रोजेक्ट नहीं है
   if (dbProjects.length === 0) {
     container.innerHTML = `
       <div style="text-align:center; grid-column:1/-1; padding:40px 20px; color:#64748b; background:#fff; border-radius:14px; border:1px dashed #cbd5e1; width:100%;">
@@ -828,24 +833,59 @@ async function loadMainWebsiteProjects() {
     return;
   }
 
-  // 2. सिर्फ वही फोटो दिखेंगी जो डैशबोर्ड में मौजूद हैं:
+  // ✅ कार्ड पर सिर्फ: फ़ोटो, मकान का नाम, लोकेशन और बटन दिखेगा (बड़ा विवरण यहाँ नहीं दिखेगा)
   container.innerHTML = dbProjects.map(p => `
-    <div class="gallery-card" onclick="openLightbox('${p.image_url}', '${escapeHtml(p.title)}', '${escapeHtml((p.location ? p.location + ' • ' : '') + (p.description || ''))}')">
+    <div class="gallery-card" onclick="openLightbox('${p.image_url}', '${escapeHtml(p.title)}', '${escapeHtml(p.location || '')}', '${escapeHtml(p.description || '')}', '${escapeHtml(p.category || 'Project')}')">
       <div class="gallery-thumb">
         <img src="${p.image_url}" alt="${p.title}">
         <span class="gallery-badge">${p.category || 'Project'}</span>
       </div>
-      <div class="gallery-info">
+      <div class="gallery-info" style="padding:16px;">
         <div>
-          <h3>${p.title}</h3>
-          <p>${p.location ? p.location + ' • ' : ''}${p.description || ''}</p>
+          <h3 style="font-size:16px; font-weight:800; color:var(--dark); margin-bottom:6px;">${p.title}</h3>
+          <p style="font-size:13px; color:var(--muted); font-weight:600; margin-bottom:14px; display:flex; align-items:center; gap:6px;">
+            <i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> ${p.location || 'साइट'}
+          </p>
         </div>
-        <button class="btn-sm btn-gold" style="width:100%; justify-content:center; margin-top:8px;">
-          फ़ोटो व विवरण देखें
+        <button class="btn-sm btn-gold" style="width:100%; justify-content:center; padding:10px; font-weight:700; font-size:13px;">
+          <i class="fa-solid fa-eye"></i> फ़ोटो व विवरण देखें
         </button>
       </div>
     </div>
   `).join('');
+}
+
+// ✅ जब यूज़र टैप करेगा, तो पूरा विवरण और बड़ी फ़ोटो पॉपअप में खुलेगी
+function openLightbox(imgSrc, title, location, desc, category) {
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lbImg');
+  const t = document.getElementById('lbTitle');
+  const d = document.getElementById('lbDesc');
+  const btn = document.getElementById('lbWaBtn');
+
+  if (img) img.src = imgSrc;
+  if (t) {
+    t.innerHTML = `${title} <span style="font-size:11px; background:var(--gold); color:#0b1220; padding:2px 8px; border-radius:4px; margin-left:8px; vertical-align:middle; font-weight:800;">${category}</span>`;
+  }
+  
+  if (d) {
+    d.innerHTML = `
+      ${location ? `<p style="font-size:13.5px; font-weight:700; color:#d97706; margin-bottom:8px;"><i class="fa-solid fa-location-dot"></i> स्थान: ${location}</p>` : ''}
+      <div style="font-size:14px; color:#334155; line-height:1.7; background:#f8fafc; padding:14px; border-radius:10px; border:1px solid #e2e8f0;">
+        ${desc ? desc.replace(/\n/g, '<br>') : 'विवरण उपलब्ध नहीं है।'}
+      </div>
+    `;
+  }
+
+  if (btn) {
+    const waText = encodeURIComponent(`नमस्ते प्रकाश स्वामी जी, मुझे आपकी वेबसाइट पर '${title}' (${location ? location : ''}) वाला कार्य बहुत पसंद आया। कृपया इसकी अनुमानित लागत बताएं।`);
+    btn.href = `https://wa.me/919785438345?text=${waText}`;
+  }
+
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 function escapeHtml(str) {
