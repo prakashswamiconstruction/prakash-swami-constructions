@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#070d18">
   
-  <!-- Browser Tab Logo (Favicon) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a1628'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%23d7a43b' stroke-width='4'/><text x='50%' y='68%' font-size='48' font-weight='900' font-family='Arial,sans-serif' fill='%23d7a43b' text-anchor='middle'>PS</text></svg>">
-  <link rel="apple-touch-icon" href="prakash-chand-swami-1.jpg.png">
-  
   <title>Prakash Swami Constructions — भवन निर्माण ठेकेदार झुंझुनूं व उदयपुरवाटी | मकान निर्माण विशेषज्ञ</title>
   <meta name="description" content="Prakash Swami Constructions — भवन निर्माण ठेकेदार झुंझुनूं व उदयपुरवाटी। 25+ वर्षों का अनुभव, सम्पूर्ण मकान निर्माण (With Material & Labour), मजबूत RCC छत ढलाई, प्लास्टर, चिनाई व टाइल्स कार्य। संपर्क: 9785438345">
   <meta name="keywords" content="भवन निर्माण ठेकेदार झुंझुनूं, उदयपुरवाटी मकान निर्माण, RCC छत ढलाई ठेकेदार, प्रकाश स्वामी कंस्ट्रक्शन, मंडावरा भवन निर्माण, Building Contractor Jhunjhunu, House Construction Udaipurwati, With Material Home Construction Rajasthan">
 
   <link rel="canonical" href="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
+  <meta property="og:url" content="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
   <meta property="og:title" content="Prakash Swami Constructions — भवन निर्माण ठेकेदार झुंझुनूं व उदयपुरवाटी">
   <meta property="og:description" content="25+ वर्षों का अनुभव, सम्पूर्ण मकान निर्माण, RCC छत ढलाई, प्लास्टर व लिखित कानूनी अनुबंध। संपर्क: 9785438345">
   <meta property="og:image" content="prakash-chand-swami-1.jpg.png">
-  <meta property="og:url" content="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
+
+  <!-- Browser Tab Logo (Favicon) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a1628'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%23d7a43b' stroke-width='4'/><text x='50%' y='68%' font-size='48' font-weight='900' font-family='Arial,sans-serif' fill='%23d7a43b' text-anchor='middle'>PS</text></svg>">
+  <link rel="apple-touch-icon" href="prakash-chand-swami-1.jpg.png">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Supabase JS Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+  
   <style>
     :root {
       --navy-bg: #070d18;          /* मुख्य बैकग्राउंड */
@@ -49,13 +49,40 @@
     
     .wrap { width: min(1200px, calc(100% - 40px)); margin: auto; }
     
-    /* 1. Top Bar */
+    /* 1. Special Offer Top Bar */
+    .offer-topbar {
+      background: linear-gradient(90deg, #d7a43b 0%, #ea580c 50%, #d7a43b 100%);
+      color: #0a1628;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 96;
+    }
+    .offer-btn {
+      background: #0a1628;
+      color: #fff !important;
+      padding: 3px 12px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      transition: transform 0.2s;
+    }
+    .offer-btn:hover { transform: scale(1.04); background: #162a4a; }
+
+    /* 2. Top Info Bar */
     .top { background: var(--navy-bg); color: #cbd5e1; font-size: 13px; padding: 9px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 95; }
     .top .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .top a { color: #cbd5e1; transition: color 0.2s; }
     .top a:hover { color: var(--gold); }
     
-    /* 2. Navbar */
+    /* 3. Navbar */
     .nav { position: sticky; top: 0; z-index: 90; background: var(--navy-primary); color: #fff; border-bottom: 1px solid rgba(215, 164, 59, 0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .navin { min-height: 70px; display: flex; align-items: center; justify-content: space-between; position: relative; }
     .logo { font-weight: 900; font-size: 20px; display: flex; gap: 10px; align-items: center; color: #fff; }
@@ -145,13 +172,13 @@
     .sec-head h2 { font-size: 30px; font-weight: 900; color: var(--navy-primary); margin-bottom: 10px; }
     .sec-head p { font-size: 15px; color: var(--muted); }
     
-    /* 3. Services Grid */
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    /* 3. Services Grid — 4 Columns Clean Balance */
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .service-card { 
       background: var(--navy-card); 
       border-radius: 16px; 
       border: 1.5px solid var(--line); 
-      padding: 26px 22px; 
+      padding: 24px 20px; 
       box-shadow: var(--shadow); 
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; 
       display: flex; 
@@ -166,9 +193,9 @@
       box-shadow: 0 18px 40px rgba(7, 13, 24, 0.45); 
       border-color: var(--gold); 
     }
-    .service-icon { width: 50px; height: 50px; background: rgba(215,164,59,0.18); color: var(--gold); border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 16px; border: 1px solid rgba(215,164,59,0.4); }
-    .service-card h3 { font-size: 17px; font-weight: 800; color: var(--text-white); margin-bottom: 8px; }
-    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+    .service-icon { width: 48px; height: 48px; background: rgba(215,164,59,0.18); color: var(--gold); border-radius: 12px; display: grid; place-items: center; font-size: 20px; margin-bottom: 14px; border: 1px solid rgba(215,164,59,0.4); }
+    .service-card h3 { font-size: 15.5px; font-weight: 800; color: var(--text-white); margin-bottom: 8px; line-height: 1.35; }
+    .service-card p { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px; }
     
     /* 4. About Section */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
@@ -177,7 +204,7 @@
     .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
     .about-pt { background: var(--navy-card); padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--line); font-size: 13.5px; font-weight: 700; color: var(--text-white); display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
     
-    /* 5. Projects Gallery Grid */
+    /* 5. Projects Gallery Grid — Navy Premium */
     .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .gallery-card { 
       background: var(--navy-card); 
@@ -254,7 +281,7 @@
     }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
     
-    /* 8. Footer */
+    /* Footer */
     footer { background: var(--navy-bg); color: #94a3b8; padding: 50px 0 24px; border-top: 1px solid var(--line); font-size: 13.5px; position: relative; z-index: 10; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 36px; margin-bottom: 36px; }
     .footer-col h4 { color: #fff; font-size: 15px; font-weight: 800; margin-bottom: 16px; }
@@ -267,8 +294,9 @@
     .lightbox-card { background: var(--navy-card); color: #fff; width: 100%; max-width: 720px; border-radius: 18px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.7); position: relative; z-index: 1000000; border: 1.5px solid var(--line); }
 
     /* Responsive Queries */
-    @media (max-width: 992px) {
-      .services-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 1050px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-grid, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
       .hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -319,10 +347,20 @@
 </head>
 <body>
 
-<!-- 1. Top Bar -->
+<!-- 1. Special Offer Announcement Bar -->
+<div class="offer-topbar">
+  <div class="wrap" style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:6px;">
+    <span><i class="fa-solid fa-gift"></i> <b>स्पेशल ऑफर:</b> नया मकान निर्माण बुक करने पर 2D वास्तु नक्शा व 3D डिजाइन बिल्कुल मुफ़्त!</span>
+    <a href="https://wa.me/919785438345?text=नमस्ते%20मुझे%20फ्री%20नक्शा%20ऑफर%20का%20लाभ%20लेना%20है" target="_blank" class="offer-btn">
+      <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें →
+    </a>
+  </div>
+</div>
+
+<!-- 2. Top Info Bar -->
 <div class="top">
   <div class="wrap">
-    <div><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <b>कार्यालय:</b> मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</div>
+    <div><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <b>कार्यालय:</b> मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.) 333302</div>
     <div style="display:flex; gap:16px; align-items:center;">
       <a href="tel:9785438345"><i class="fa-solid fa-phone" style="color:var(--gold);"></i> 9785438345</a>
       <a href="https://wa.me/919785438345" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp Help</a>
@@ -330,25 +368,8 @@
   </div>
 </div>
 
-<!-- 2. Header & Navigation with 15-Day Offer Banner -->
+<!-- 3. Header & Navigation -->
 <header class="nav">
-  <div id="autoOfferBanner" style="background: linear-gradient(90deg, #d7a43b 0%, #b45309 50%, #d7a43b 100%); color: #0a1628; padding: 10px 16px; text-align: center; font-weight: 800; font-size: 13.5px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative; z-index: 85;">
-    <div class="wrap" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;">
-      <span id="offerBadge" style="background: #0a1628; color: #f5c767; padding: 3px 8px; border-radius: 6px; font-size: 11px; text-transform: uppercase;">
-        स्पेशल ऑफर
-      </span>
-      <span id="offerText">
-        लोड हो रहा है...
-      </span>
-      <span id="offerDaysLeft" style="background: rgba(10,22,40,0.15); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 900; color: #0a1628; border: 1px dashed #0a1628;">
-        सीमित समय
-      </span>
-      <a id="offerClaimBtn" href="#" target="_blank" style="background: #0a1628; color: #ffffff; padding: 5px 14px; border-radius: 8px; font-size: 12px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; transition: 0.2s;">
-        <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> ऑफर क्लेम करें →
-      </a>
-    </div>
-  </div>
-
   <div class="wrap navin">
     <a class="logo" href="#home">
       <span class="mark">PS</span>
@@ -375,7 +396,7 @@
 
 <main id="home">
 
-  <!-- 3. Hero Section -->
+  <!-- 4. Hero Section -->
   <section class="hero">
     <div class="hero-video-bg">
       <video id="heroVideo" autoplay muted loop playsinline poster="project-house-3.jpg.jpeg">
@@ -429,7 +450,7 @@
     </div>
   </section>
 
-  <!-- 4. Services Section -->
+  <!-- 5. 8 Types of Services (4x2 Clean Grid) -->
   <section id="services" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
@@ -442,79 +463,79 @@
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
-            <h3>१. नया मकान निर्माण (Complete Home Construction)</h3>
-            <p>नींव खुदाई से लेकर चाबी सौंपने तक का पूरा काम। विद मटेरियल (With Material) या सिर्फ लेबर रेट दोनों में उपलब्ध।</p>
+            <h3>१. नया मकान निर्माण</h3>
+            <p>नींव खुदाई से लेकर चाबी सौंपने तक का पूरा काम। विद मटेरियल या लेबर रेट में उपलब्ध।</p>
           </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <h3>२. RCC छत ढलाई एवं शटरिंग (RCC Slab)</h3>
-            <p>सरिया बांधना, मजबूत प्लेट शटरिंग, लेवलिंग, वाइब्रेटर का उपयोग और 100% लीकेज-प्रूफ कंक्रीट छत ढलाई।</p>
+            <h3>२. RCC छत ढलाई</h3>
+            <p>सरिया बांधना, मजबूत प्लेट शटरिंग, वाइब्रेटर कॉम्पैक्शन व 100% लीकेज-प्रूफ स्लैब।</p>
           </div>
-          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
+          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
-            <h3>३. दीवार चिनाई व प्लिंथ बीम (Brick Masonry)</h3>
-            <p>ईंट व पत्थर की साहुल-सूत में सीधी चिनाई, डीपीसी (DPC), प्लिंथ प्रोटेक्शन और मजबूत कॉलम बीम निर्माण।</p>
+            <h3>३. दीवार चिनाई व बीम</h3>
+            <p>साहुल-सूत में सीधी ईंट चिनाई, डीपीसी (DPC), प्लिंथ व मजबूत लेंटेल बीम निर्माण।</p>
           </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
-            <h3>४. अंदरूनी व बाहरी प्लास्टर (Cement Plaster)</h3>
-            <p>दीवारों और छत का बिल्कुल समतल, चिकना और वाटरप्रूफ सिंगल/डबल कोट सीमेंट प्लास्टर फिनिशिंग कार्य।</p>
+            <h3>४. प्लास्टर फिनिशिंग</h3>
+            <p>दीवारों व छत का बिल्कुल समतल, चिकना और वाटरप्रूफ सिंगल/डबल कोट सीमेंट प्लास्टर।</p>
           </div>
-          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> कॉल करें</a>
+          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-phone"></i> कॉल करें</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
-            <h3>५. टाइल्स, मार्बल व फ्लोरिंग (Tiles & Marble)</h3>
-            <p>कमरों, हॉल, सीढ़ियों, किचन और बाथरूम में विट्रीफाइड टाइल्स, मार्बल व ग्रेनाइट की सही ढलान के साथ फिटिंग।</p>
+            <h3>५. टाइल्स व फ्लोरिंग</h3>
+            <p>कमरों, हॉल व सीढ़ियों में सही ढलान के साथ विट्रीफाइड टाइल्स, मार्बल व ग्रेनाइट फिटिंग।</p>
           </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-            <h3>६. 2D नक्शा व 3D फ्रंट एलिवेशन (House Design)</h3>
-            <p>100% वास्तु सम्मत 2D फ्लोर प्लान, कमरों का सटीक नाप (Feet & Inches), खुला आँगन व सुंदर 3D फ्रंट लुक।</p>
+            <h3>६. 2D नक्शा व 3D लुक</h3>
+            <p>100% वास्तु सम्मत 2D फ्लोर प्लान, कमरों का सटीक नाप व सुंदर 3D फ्रंट एलिवेशन डिजाइन।</p>
           </div>
-          <a href="https://wa.me/919785438345?text=मुझे%20मकान%20का%20नक्शा%20चाहिए" target="_blank" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-brands fa-whatsapp"></i> नक्शा मंगाएं</a>
+          <a href="https://wa.me/919785438345?text=मुझे%20मकान%20का%20नक्शा%20चाहिए" target="_blank" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-brands fa-whatsapp"></i> नक्शा मंगाएं</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-shield"></i></div>
-            <h3>७. बाउंड्री वॉल व चारदीवारी (Boundary Wall)</h3>
-            <p>प्लॉट, खेत, फार्महाउस और मकान की मजबूत बाउंड्री वॉल, पिलर, तारबंदी व मेन गेट का निर्माण कार्य।</p>
+            <h3>७. बाउंड्री वॉल / चारदीवारी</h3>
+            <p>प्लॉट, खेत व मकान की मजबूत बाउंड्री वॉल, पिलर, तारबंदी व मेन गेट का निर्माण कार्य।</p>
           </div>
-          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> बात करें</a>
+          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-phone"></i> बात करें</a>
         </div>
 
         <div class="service-card">
           <div>
             <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
-            <h3>८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग (Renovation)</h3>
-            <p>पुराने मकान का नवीनीकरण, ऊपर नई मंजिल का निर्माण, छत की वॉटरप्रूफिंग व सीलन की स्थायी रोकथाम।</p>
+            <h3>८. रेनोवेशन व मरम्मत</h3>
+            <p>पुराने मकान का नवीनीकरण, ऊपर नई मंजिल का निर्माण व छत की सीलन की स्थायी रोकथाम।</p>
           </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:9px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. About Founder -->
+  <!-- 6. About Founder -->
   <section id="about">
     <div class="wrap">
       <div class="about-grid">
@@ -544,7 +565,7 @@
     </div>
   </section>
 
-  <!-- 6. Real House Construction Projects Gallery -->
+  <!-- 7. Real House Construction Projects Gallery -->
   <section id="projects" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
@@ -559,7 +580,7 @@
     </div>
   </section>
 
-  <!-- 7. Work Process -->
+  <!-- 8. Work Process -->
   <section id="process">
     <div class="wrap">
       <div class="sec-head">
@@ -596,7 +617,7 @@
     </div>
   </section>
 
-  <!-- 8. Contact & Location Section -->
+  <!-- 9. Contact Section with Static Visiting Card & Directions -->
   <section id="contact" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
@@ -606,6 +627,7 @@
       </div>
 
       <div class="contact-grid">
+        <!-- Left Column: Form -->
         <div class="contact-box">
           <h3 style="font-size:19px; font-weight:800; margin-bottom:18px;"><i class="fa-solid fa-file-pen" style="color:var(--gold);"></i> मुफ्त परामर्श फॉर्म (Free Enquiry)</h3>
           <form onsubmit="handleContactSubmit(event)">
@@ -634,19 +656,6 @@
                 <option value="रेनोवेशन, मरम्मत व वॉटरप्रूफिंग">८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग</option>
               </select>
             </div>
-            <!-- 9. विशेष ऑफर्स एवं छूट (Special Offers & Deals) -->
-        <div class="service-card" style="border: 1.5px solid var(--gold); background: linear-gradient(145deg, #0f1f38 0%, #162a4a 100%); cursor: pointer;" onclick="openOffersModal()">
-          <div>
-            <div class="service-icon" style="background: var(--gold); color: #0a1628;">
-              <i class="fa-solid fa-gift"></i>
-            </div>
-            <h3 style="color: var(--gold-light);">९. विशेष निर्माण ऑफर्स एवं छूट (Special Offers)</h3>
-            <p style="color: #cbd5e1;">नया मकान, छत ढलाई व चारदीवारी पर हमारे <b>७ विशेष ऑफर्स</b> (फ्री नक्शा, पानी का टांका, टाइल्स फिटिंग आदि)। टैप करके सभी ७ ऑफर देखें।</p>
-          </div>
-          <button type="button" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px; font-weight:800;" onclick="event.stopPropagation(); openOffersModal();">
-            <i class="fa-solid fa-tags"></i> सभी ७ ऑफर्स देखें
-          </button>
-        </div>
             <div class="form-group">
               <label for="cfMsg">संदेश / विवरण (वैकल्पिक)</label>
               <textarea id="cfMsg" rows="3" placeholder="प्लॉट साइज या कोई विशेष बात..."></textarea>
@@ -655,9 +664,11 @@
           </form>
         </div>
 
-        <div style="display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
-          <!-- 1. Founder Contact Card -->
-          <div style="background:var(--navy-card); padding:26px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow); color:#fff;">
+        <!-- Right Column: Info + Static Visiting Card + Login -->
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          
+          <!-- Office Address & Get Directions -->
+          <div style="background:var(--navy-card); padding:24px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow); color:#fff;">
             <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
               <img src="prakash-chand-swami-4.jpg.jpg" onerror="this.onerror=null; this.src='prakash-chand-swami-4.jpg';" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);" alt="Prakash Chand Swami">
               <div>
@@ -666,42 +677,33 @@
               </div>
             </div>
 
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> फोन / हेल्पलाइन:</b> <a href="tel:9785438345" style="color:#fff; font-weight:700;">9785438345</a></p>
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp:</b> <a href="https://wa.me/919785438345" target="_blank" style="color:#22c55e; font-weight:700;">9785438345</a></p>
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-qrcode" style="color:var(--gold);"></i> UPI ID:</b> 9785438345@axl</p>
-            
-            <!-- Google Maps Address Link (Fixed & Working) -->
-            <p style="font-size:14px; color:#cbd5e1; line-height:1.6; margin-bottom:14px;">
-              <b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> पता:</b>
-              <a href="https://maps.app.goo.gl/pT3eDtt6zwiCq4jF7" target="_blank" style="color:#ffffff; text-decoration:underline; text-decoration-color:var(--gold); font-weight:600; cursor:pointer;" title="Google Maps पर ऑफिस लोकेशन देखें">
-                कार्यालय: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राज.) 333302
-              </a>
-            </p>
+            <p style="margin-bottom:8px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> फोन / हेल्पलाइन:</b> <a href="tel:9785438345" style="color:#fff; font-weight:700;">9785438345</a></p>
+            <p style="margin-bottom:8px; font-size:14px; color:#cbd5e1;"><b><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp:</b> <a href="https://wa.me/919785438345" target="_blank" style="color:#22c55e; font-weight:700;">9785438345</a></p>
+            <p style="margin-bottom:8px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-qrcode" style="color:var(--gold);"></i> UPI ID:</b> 9785438345@axl</p>
+            <p style="margin-bottom:14px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> पता:</b> कार्यालय: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राज.) 333302</p>
 
-            <a href="https://maps.app.goo.gl/pT3eDtt6zwiCq4jF7" target="_blank" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px; text-decoration:none;">
+            <a href="https://www.google.com/maps/search/?api=1&query=PRAKASH+SWAMI+CONSTRUCTION+Mandawara" target="_blank" class="btn btn-gold" style="width:100%; justify-content:center; padding:11px; font-size:13.5px;">
               <i class="fa-solid fa-diamond-turn-right"></i> Google Maps पर रास्ता देखें (Get Directions)
             </a>
           </div>
 
-          <!-- 2. Satpal Swami (Co-Founder) Visiting Card (Fixed Tap & Popup) -->
-          <div style="background:var(--navy-card); border-radius:16px; border:1.5px solid var(--line); overflow:hidden; box-shadow:var(--shadow);">
-            <div style="padding:10px 14px; background:rgba(7,13,24,0.6); display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line);">
-              <span style="color:#fff; font-size:12.5px; font-weight:700;"><i class="fa-solid fa-id-card" style="color:var(--gold);"></i> डिजिटल विज़िटिंग कार्ड</span>
-              <span style="color:var(--gold); font-size:11px; font-weight:700;">टैप करके बड़ा देखें 🔍</span>
+          <!-- STATIC VISITING CARD (NO TAP / NO MODAL) -->
+          <div style="background:var(--navy-card); padding:16px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom:1px solid var(--line); padding-bottom:8px;">
+              <span style="font-weight:800; font-size:13px; color:#fff; display:flex; align-items:center; gap:8px;">
+                <i class="fa-solid fa-address-card" style="color:var(--gold);"></i> डिजिटल विजिटिंग कार्ड
+              </span>
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">Satpal Swami (Co-Founder)</span>
             </div>
-            <img src="satpal-swami-card.png"
-                 onerror="this.onerror=null; this.src='satpal-swami-card.jpg';"
-                 alt="Satpal Swami - Co-Founder & Managing Partner"
-                 style="width:100%; height:auto; display:block; cursor:pointer; transition: transform 0.2s;"
-                 onmouseover="this.style.transform='scale(1.02)'"
-                 onmouseout="this.style.transform='scale(1)'"
-                 onclick="openLightbox(this.src, 'Satpal Swami', 'मंडावरा, झुंझुनूं (राज.)', 'Prakash Swami Constructions • Co-Founder & Managing Partner • संपर्क: 9929718264', 'Co-Founder')">
+            <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(215,164,59,0.35);">
+              <img src="prakash-chand-swami-1.jpg.png" onerror="this.onerror=null; this.src='prakash-chand-swami-1.jpg';" style="width:100%; height:auto; display:block;" alt="Prakash Swami Constructions Visiting Card">
+            </div>
           </div>
 
-          <!-- 3. Dashboard Portal Login -->
+          <!-- Portal Login Card -->
           <div style="background:var(--navy-primary); color:#fff; padding:22px; border-radius:16px; text-align:center; border:2px solid var(--gold); box-shadow: 0 10px 30px rgba(7,13,24,0.45);">
-            <h4 style="color:var(--gold); font-size:16px; margin-bottom:8px;">पोर्टल लॉगिन (Admin / Customer / Worker)</h4>
-            <p style="font-size:13px; color:#cbd5e1; margin-bottom:16px;">अपने प्रोजेक्ट्स, डिजिटल अनुबंध, हाजिरी और भुगतान देखने के लिए डैशबोर्ड में लॉगिन करें।</p>
+            <h4 style="color:var(--gold); font-size:16px; margin-bottom:6px;">पोर्टल लॉगिन (Admin / Customer / Worker)</h4>
+            <p style="font-size:13px; color:#cbd5e1; margin-bottom:14px;">अपने प्रोजेक्ट्स, डिजिटल अनुबंध, हाजिरी और भुगतान देखने के लिए डैशबोर्ड में लॉगिन करें।</p>
             <a href="dashboard.html" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-right-to-bracket"></i> Dashboard Login</a>
           </div>
         </div>
@@ -711,7 +713,7 @@
 
 </main>
 
-<!-- 9. Footer -->
+<!-- 10. Footer -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -763,111 +765,15 @@
   </div>
 </footer>
 
-<!-- Lightbox Modal for Project Details & Visiting Card -->
+<!-- Lightbox Modal for Project Details -->
 <div id="lightboxModal" class="lightbox-backdrop" onclick="if(event.target===this) closeLightbox()">
-  <!-- 7 Special Offers Popup Modal -->
-<div id="offersModal" class="lightbox-backdrop" onclick="if(event.target===this) closeOffersModal()">
-  <div class="lightbox-card" style="max-width: 780px;">
-    <div style="padding: 16px 20px; background: var(--navy-primary); color: #fff; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line);">
-      <h3 style="font-size: 17px; font-weight: 800; color: var(--gold);">
-        <i class="fa-solid fa-gift" style="color: var(--gold);"></i> हमारे ७ विशेष निर्माण ऑफर्स (Special Offers)
-      </h3>
-      <button type="button" onclick="closeOffersModal()" style="background: transparent; border: 0; color: #fff; font-size: 26px; cursor: pointer; padding: 2px 6px;">&times;</button>
-    </div>
-    
-    <div style="padding: 20px; overflow-y: auto; flex: 1; max-height: 70vh; display: flex; flex-direction: column; gap: 14px;">
-      
-      <!-- Offer 1 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🎁 १. फ्री 2D वास्तु नक्शा + 3D फ्रंट एलिवेशन ऑफर</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“नया मकान निर्माण का अनुबंध करने पर ₹15,000 मूल्य का 100% वास्तु सम्मत 2D फ्लोर प्लान और 3D फ्रंट एलिवेशन डिजाइन बिल्कुल मुफ़्त!”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%202D%20वास्तु%20नक्शा%20+%203D%20डिजाइन'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-      <!-- Offer 2 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🏷️ २. सीजनल / त्योहारी बुकिंग डिस्काउंट</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“इस माह नया मकान (With Material) बुक करने पर प्रति वर्ग फीट ₹15 से ₹20 की विशेष छूट।”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'सीजनल%20बुकिंग%20डिस्काउंट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-      <!-- Offer 3 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">💧 ३. मुफ्त भूमिगत पानी का टांका (Underground Tank / हौद)</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“1200 Sq.Ft से बड़े मकान का पूरा निर्माण कराने पर 10,000 लीटर क्षमता का पक्का वाटरप्रूफ टांका (हौद) लेबर चार्ज फ्री!”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'मुफ्त%20पानी%20का%20टांका%20(हौद)'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-      <!-- Offer 4 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🚿 ४. फ्री बाथरूम प्रीमियम टाइल्स फिटिंग</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“3 BHK या डुप्लेक्स मकान विद-मटेरियल बनवाने पर 1 मास्टर बाथरूम की डिजाइनर टाइल्स फिटिंग बिल्कुल मुफ़्त।”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%20बाथरूम%20टाइल्स%20फिटिंग'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-      <!-- Offer 5 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">🧱 ५. मकान के साथ चारदीवारी (Boundary Wall) पर 20% छूट</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“मकान निर्माण के साथ प्लॉट की बाउंड्री वॉल / चारदीवारी बनवाने पर बाउंड्री के लेबर रेट में 20% की विशेष छूट।”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'चारदीवारी%20पर%2020%%20छूट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-      <!-- Offer 6 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">📍 ६. 100% मुफ़्त साइट विजिट व मिट्टी जांच सलाह</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“मंडावरा, झुंझुनूं, उदयपुरवाटी व सीकर क्षेत्र में आपके प्लॉट पर फ्री साइट विजिट, लेवलिंग जांच और तकनीकी मार्गदर्शन।”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%20साइट%20विजिट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-      <!-- Offer 7 -->
-      <div style="background: #070d18; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="flex: 1; min-width: 260px;">
-          <h4 style="color: var(--gold); font-size: 15px; margin-bottom: 4px;">📊 ७. विस्तृत लागत व सामग्री बजट एस्टीमेट (Free BOQ)</h4>
-          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">“अपने प्लॉट के साइज अनुसार सीमेंट, सरिया, ईंट और कुल बजट का विस्तृत लिखित एस्टीमेट बिना किसी शुल्क के प्राप्त करें।”</p>
-        </div>
-        <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी,%20मुझे%20'फ्री%20लागत%20एस्टीमेट'%20ऑफर%20का%20लाभ%20लेना%20है।" target="_blank" class="btn-sm btn-gold" style="white-space: nowrap;">
-          <i class="fa-brands fa-whatsapp"></i> ऑफर क्लेम करें
-        </a>
-      </div>
-
-    </div>
-    
-    <div style="padding: 14px 20px; border-top: 1px solid var(--line); background: var(--navy-primary); text-align: right;">
-      <button type="button" class="btn btn-dark" onclick="closeOffersModal()" style="padding: 8px 18px; font-size: 13px;">बंद करें</button>
-    </div>
-  </div>
-</div>
   <div class="lightbox-card">
     <div style="padding:16px 20px; background:var(--navy-primary); color:#fff; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line);">
-      <h3 id="lbTitle" style="font-size:17px; font-weight:800; color:var(--gold);">विवरण</h3>
+      <h3 id="lbTitle" style="font-size:17px; font-weight:800; color:var(--gold);">Project Details</h3>
       <button type="button" onclick="closeLightbox()" style="background:transparent; border:0; color:#fff; font-size:26px; cursor:pointer; padding:2px 6px;">&times;</button>
     </div>
     <div style="padding:20px; overflow-y:auto; flex:1;">
-      <img id="lbImg" src="" style="width:100%; max-height:420px; object-fit:contain; background:#070d18; border-radius:12px; margin-bottom:16px; border:1px solid var(--line);" alt="Detail View">
+      <img id="lbImg" src="" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px; border:1px solid var(--line);" alt="Project Detail">
       <div id="lbDesc"></div>
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid var(--line); padding-top:16px; margin-top:16px;">
         <a id="lbWaBtn" href="#" target="_blank" class="btn btn-whatsapp" style="padding:10px 20px; font-size:13.5px;">
@@ -880,21 +786,6 @@
 </div>
 
 <script>
-  function openOffersModal() {
-  const modal = document.getElementById('offersModal');
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeOffersModal() {
-  const modal = document.getElementById('offersModal');
-  if (modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-}
 // Mobile Navigation Toggle
 function toggleMenu() {
   const menu = document.getElementById('navMenu');
@@ -915,41 +806,7 @@ function closeMenu() {
   }
 }
 
-// Universal Lightbox Modal Functions (Works for both Gallery & Visiting Card)
-function openLightbox(imgSrc, title, location, desc, category) {
-  const modal = document.getElementById('lightboxModal');
-  const img = document.getElementById('lbImg');
-  const t = document.getElementById('lbTitle');
-  const d = document.getElementById('lbDesc');
-  const btn = document.getElementById('lbWaBtn');
-
-  if (img) img.src = imgSrc || '';
-  if (t) {
-    t.innerHTML = `${title || 'विवरण'} ${category ? `<span style="font-size:11px; background:var(--gold); color:#0a1628; padding:3px 8px; border-radius:4px; margin-left:8px; vertical-align:middle; font-weight:800;">${category}</span>` : ''}`;
-  }
-  
-  if (d) {
-    d.innerHTML = `
-      ${location ? `<p style="font-size:13.5px; font-weight:700; color:var(--gold); margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i> ${location}</p>` : ''}
-      <div style="font-size:14px; color:#cbd5e1; line-height:1.7; background:#070d18; padding:16px; border-radius:12px; border:1px solid var(--line);">
-        ${desc ? desc.split('\n').join('<br>') : 'विवरण उपलब्ध नहीं है।'}
-      </div>
-    `;
-  }
-
-  if (btn) {
-    const titleText = title || 'प्रोजेक्ट';
-    const locText = location ? ` (${location})` : '';
-    const waText = encodeURIComponent(`नमस्ते प्रकाश स्वामी जी, मुझे आपकी वेबसाइट पर '${titleText}'${locText} के संबंध में बात करनी है।`);
-    btn.href = `https://wa.me/919785438345?text=${waText}`;
-  }
-
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-}
-
+// Lightbox Modal Functions
 function closeLightbox() {
   const modal = document.getElementById('lightboxModal');
   if (modal) {
@@ -1064,39 +921,41 @@ async function loadMainWebsiteProjects() {
 function showProjectLightbox(idx) {
   const p = globalProjectsList[idx];
   if (!p) return;
-  openLightbox(p.image_url, p.title, p.location ? `स्थान: ${p.location}` : '', p.description, p.category || 'Project');
-}
 
-window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
-</script>
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lbImg');
+  const t = document.getElementById('lbTitle');
+  const d = document.getElementById('lbDesc');
+  const btn = document.getElementById('lbWaBtn');
 
-<!-- Automatic 15-Day Offer Rotation Engine -->
-<script>
-
-function updateRotatingOffer() {
-  const fifteenDaysInMs = 15 * 24 * 60 * 60 * 1000;
-  const cycleIndex = Math.floor(Date.now() / fifteenDaysInMs) % ROTATING_OFFERS.length;
-  const currentOffer = ROTATING_OFFERS[cycleIndex];
-
-  const msPassedInCycle = Date.now() % fifteenDaysInMs;
-  const daysRemaining = Math.max(1, Math.ceil((fifteenDaysInMs - msPassedInCycle) / (24 * 60 * 60 * 1000)));
-
-  const textEl = document.getElementById('offerText');
-  const badgeEl = document.getElementById('offerBadge');
-  const daysEl = document.getElementById('offerDaysLeft');
-  const btnEl = document.getElementById('offerClaimBtn');
-
-  if (textEl) textEl.innerHTML = `<b>${currentOffer.title}</b>`;
-  if (badgeEl) badgeEl.textContent = currentOffer.tag;
-  if (daysEl) daysEl.textContent = `⏳ ${daysRemaining} दिन शेष`;
+  if (img) img.src = p.image_url || '';
+  if (t) {
+    t.innerHTML = `${p.title || 'प्रोजेक्ट विवरण'} <span style="font-size:11px; background:var(--gold); color:#0a1628; padding:3px 8px; border-radius:4px; margin-left:8px; vertical-align:middle; font-weight:800;">${p.category || 'Project'}</span>`;
+  }
   
-  if (btnEl) {
-    const waUrl = `https://wa.me/919785438345?text=${encodeURIComponent(currentOffer.waMsg)}`;
-    btnEl.href = waUrl;
+  if (d) {
+    d.innerHTML = `
+      ${p.location ? `<p style="font-size:13.5px; font-weight:700; color:var(--gold); margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i> स्थान: ${p.location}</p>` : ''}
+      <div style="font-size:14px; color:#cbd5e1; line-height:1.7; background:#070d18; padding:16px; border-radius:12px; border:1px solid var(--line);">
+        ${p.description ? p.description.split('\n').join('<br>') : 'विवरण उपलब्ध नहीं है।'}
+      </div>
+    `;
+  }
+
+  if (btn) {
+    const titleText = p.title || 'प्रोजेक्ट';
+    const locText = p.location ? ` (${p.location})` : '';
+    const waText = encodeURIComponent(`नमस्ते प्रकाश स्वामी जी, मुझे आपकी वेबसाइट पर '${titleText}'${locText} वाला कार्य बहुत पसंद आया। कृपया इसकी अनुमानित लागत व जानकारी बताएं।`);
+    btn.href = `https://wa.me/919785438345?text=${waText}`;
+  }
+
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 }
 
-window.addEventListener('DOMContentLoaded', updateRotatingOffer);
+window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
 </script>
 
 </body>
