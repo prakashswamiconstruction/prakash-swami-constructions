@@ -325,6 +325,24 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#070d18">
   <script>
+    // वेबसाइट की भाषा को डैशबोर्ड के साथ सिंक करना
+let currentLang = localStorage.getItem('ps_lang') || 'hi';
+
+function syncDashboardLanguage() {
+  const loginBtns = document.querySelectorAll('a[href*="dashboard.html"]');
+  loginBtns.forEach(btn => {
+    btn.href = `dashboard.html?lang=${currentLang}`;
+  });
+}
+
+// भाषा बदलने का फ़ंक्शन (अगर वेबसाइट पर बटन लगाना चाहें)
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('ps_lang', lang);
+  syncDashboardLanguage();
+}
+
+window.addEventListener('DOMContentLoaded', syncDashboardLanguage);
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
     }
