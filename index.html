@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0a1628">
+  <meta name="theme-color" content="#070d18">
   <meta name="description" content="Prakash Swami Constructions - Mandawara, Jhunjhunu, Rajasthan. 25+ वर्षों का अनुभव, संपूर्ण मकान निर्माण (With Material & Labour), RCC छत ढलाई, प्लास्टर, टाइल्स एवं चारदीवारी कार्य। संपर्क: 9785438345">
   <title>Prakash Swami Constructions — Mandawara, Jhunjhunu (भवन निर्माण विशेषज्ञ)</title>
   
@@ -17,19 +17,19 @@
   
   <style>
     :root {
-      --navy-darkest: #070d18;
-      --navy-primary: #0a1628;
-      --navy-card: #0f1f38;
-      --navy-light: #162a4a;
-      --gold: #d7a43b;
-      --gold-light: #f5c767;
-      --gold-hover: #c4922f;
-      --cream: #f4f7fb;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --white: #ffffff;
+      --navy-bg: #070d18;          /* मुख्य बैकग्राउंड */
+      --navy-primary: #0a1628;     /* नेवी शेड */
+      --navy-card: #0f1f38;        /* नेवी प्रीमियम कार्ड बैकग्राउंड */
+      --navy-light: #162a4a;       /* होवर शेड */
+      --gold: #d7a43b;             /* रिच गोल्ड */
+      --gold-hover: #c4922f;       /* डार्क गोल्ड */
+      --cream-bg: #0a1424;         /* ऑल्टरनेटिव सेक्शन बैकग्राउंड */
+      --text-white: #ffffff;       /* हेडिंग टेक्स्ट */
+      --text-muted: #cbd5e1;       /* विवरण टेक्स्ट */
+      --line: rgba(215, 164, 59, 0.22); /* गोल्ड बॉर्डर लाइन */
+      --line-hover: rgba(215, 164, 59, 0.7);
       --success: #16a34a;
-      --shadow: 0 10px 25px -5px rgba(10,22,40,0.07), 0 8px 10px -6px rgba(10,22,40,0.03);
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -41,13 +41,13 @@
     .wrap { width: min(1200px, calc(100% - 40px)); margin: auto; }
     
     /* 1. Top Bar */
-    .top { background: var(--navy-darkest); color: #cbd5e1; font-size: 13px; padding: 9px 0; border-bottom: 1px solid rgba(215, 164, 59, 0.2); position: relative; z-index: 95; }
+    .top { background: var(--navy-bg); color: #cbd5e1; font-size: 13px; padding: 9px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 95; }
     .top .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .top a { color: #cbd5e1; transition: color 0.2s; }
     .top a:hover { color: var(--gold); }
     
-    /* 2. Navbar - Navy Premium */
-    .nav { position: sticky; top: 0; z-index: 90; background: var(--navy-primary); color: #fff; border-bottom: 1px solid rgba(215, 164, 59, 0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    /* 2. Navbar */
+    .nav { position: sticky; top: 0; z-index: 90; background: var(--navy-primary); color: #fff; border-bottom: 1px solid rgba(215, 164, 59, 0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
     .navin { min-height: 70px; display: flex; align-items: center; justify-content: space-between; position: relative; }
     .logo { font-weight: 900; font-size: 20px; display: flex; gap: 10px; align-items: center; color: #fff; }
     .mark { background: var(--gold); color: #0a1628; padding: 6px 10px; border-radius: 8px; font-weight: 900; font-size: 16px; box-shadow: 0 2px 8px rgba(215,164,59,0.35); }
@@ -60,14 +60,13 @@
     .btn-login { background: var(--gold); color: #0a1628 !important; font-weight: 800; padding: 9px 18px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; box-shadow: 0 2px 10px rgba(215,164,59,0.3); }
     .btn-login:hover { background: #ffffff; color: #0a1628 !important; }
 
-    /* Mobile Hamburger Icon */
     .menu-toggle { display: none; background: transparent; border: 0; color: #fff; font-size: 22px; cursor: pointer; padding: 6px 10px; }
     
     /* Buttons */
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; transition: 0.2s; border: 0; text-decoration: none; }
     .btn-gold { background: var(--gold); color: #0a1628; font-weight: 800; }
     .btn-gold:hover { background: var(--gold-hover); color: #fff; }
-    .btn-dark { background: var(--navy-primary); color: #fff; border: 1px solid rgba(215,164,59,0.3); }
+    .btn-dark { background: var(--navy-card); color: #fff; border: 1.5px solid var(--line); }
     .btn-dark:hover { background: var(--navy-light); color: #fff; border-color: var(--gold); }
     .btn-outline { background: rgba(10,22,40,0.7); border: 1.5px solid rgba(215,164,59,0.5); color: #fff; backdrop-filter: blur(4px); }
     .btn-outline:hover { background: rgba(215,164,59,0.2); border-color: var(--gold); }
@@ -75,7 +74,7 @@
     .btn-whatsapp:hover { background: #1eb954; color: #fff; }
     .btn-sm { padding: 9px 14px; font-size: 13px; border-radius: 8px; font-weight: 800; border: 0; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
     
-    /* Hero Section - FIXED NO OVERLAY INTERFERENCE */
+    /* Hero Section */
     .hero {
       position: relative;
       color: #fff;
@@ -83,7 +82,7 @@
       min-height: 600px;
       display: flex;
       align-items: center;
-      background: var(--navy-darkest);
+      background: var(--navy-bg);
       overflow: hidden;
     }
     .hero-video-bg {
@@ -93,7 +92,7 @@
       height: 100%;
       z-index: 1;
       overflow: hidden;
-      pointer-events: none; /* जरूरी ताकि क्लिक ब्लॉक न हो */
+      pointer-events: none;
     }
     .hero-video-bg video {
       width: 100%;
@@ -103,19 +102,19 @@
       filter: brightness(1) contrast(1);
     }
     .hero-overlay {
-      position: absolute; /* FIXED से ABSOLUTE किया गया */
+      position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(7, 13, 24, 0.4) 0%, rgba(10, 22, 40, 0.25) 50%, rgba(7, 13, 24, 0.45) 100%);
-      pointer-events: none; /* जरूरी ताकि क्लिक ब्लॉक न हो */
+      background: linear-gradient(135deg, rgba(7, 13, 24, 0.45) 0%, rgba(10, 22, 40, 0.3) 50%, rgba(7, 13, 24, 0.5) 100%);
+      pointer-events: none;
       z-index: 2;
     }
 
     .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; position: relative; z-index: 5; }
     .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 25px; font-size: 12.5px; font-weight: 700; margin-bottom: 18px; width: fit-content; }
     .eyebrow-gold { background: rgba(215, 164, 59, 0.18); color: var(--gold); border: 1px solid rgba(215, 164, 59, 0.4); }
-    .eyebrow-blue { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
-    .eyebrow-orange { background: #ffedd5; color: #ea580c; border: 1px solid #fed7aa; }
-    .eyebrow-yellow { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+    .eyebrow-blue { background: rgba(2, 132, 199, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
+    .eyebrow-orange { background: rgba(234, 88, 12, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.35); }
+    .eyebrow-yellow { background: rgba(217, 119, 6, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); }
 
     .hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 900; line-height: 1.25; margin-bottom: 18px; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
     .hero h1 em { color: var(--gold); font-style: normal; }
@@ -127,67 +126,136 @@
     .stat-item p { font-size: 12px; color: #cbd5e1; font-weight: 600; }
     
     /* Hero Showcase Card */
-    .hero-visual-card { background: rgba(10,22,40,0.9); border: 1.5px solid rgba(215, 164, 59, 0.45); border-radius: 18px; padding: 18px; backdrop-filter: blur(14px); box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative; z-index: 5; }
+    .hero-visual-card { background: rgba(10,22,40,0.92); border: 1.5px solid rgba(215, 164, 59, 0.45); border-radius: 18px; padding: 18px; backdrop-filter: blur(14px); box-shadow: 0 25px 50px rgba(0,0,0,0.6); position: relative; z-index: 5; }
     .hero-visual-card img { border-radius: 12px; height: auto; max-height: 420px; width: 100%; object-fit: contain; margin-bottom: 14px; }
     
-    /* Sections */
+    /* Sections - Light & Dark Sections */
     section { padding: 75px 0; background: #ffffff; position: relative; z-index: 10; }
-    .section-alt { background: var(--cream); }
+    .section-alt { background: #f4f7fb; }
     .sec-head { text-align: center; max-width: 760px; margin: 0 auto 45px; display: flex; flex-direction: column; align-items: center; }
     .sec-head h2 { font-size: 30px; font-weight: 900; color: var(--navy-primary); margin-bottom: 10px; }
     .sec-head p { font-size: 15px; color: var(--muted); }
     
-    /* 3 Columns Services Grid */
+    /* 3. Services Grid — NAVY PREMIUM CARDS */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .service-card { background: #fff; border-radius: 16px; border: 1.5px solid var(--line); padding: 26px 22px; box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; display: flex; flex-direction: column; justify-content: space-between; position: relative; z-index: 10; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 35px rgba(10,22,40,0.1); border-color: var(--gold); }
-    .service-icon { width: 50px; height: 50px; background: rgba(215,164,59,0.15); color: #b45309; border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 16px; border: 1px solid rgba(215,164,59,0.3); }
-    .service-card h3 { font-size: 17px; font-weight: 800; color: var(--navy-primary); margin-bottom: 8px; }
-    .service-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .service-card { 
+      background: var(--navy-card); 
+      border-radius: 16px; 
+      border: 1.5px solid var(--line); 
+      padding: 26px 22px; 
+      box-shadow: var(--shadow); 
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+      position: relative; 
+      z-index: 10; 
+      color: #fff;
+    }
+    .service-card:hover { 
+      transform: translateY(-6px); 
+      box-shadow: 0 18px 40px rgba(7, 13, 24, 0.45); 
+      border-color: var(--gold); 
+    }
+    .service-icon { width: 50px; height: 50px; background: rgba(215,164,59,0.18); color: var(--gold); border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 16px; border: 1px solid rgba(215,164,59,0.4); }
+    .service-card h3 { font-size: 17px; font-weight: 800; color: var(--text-white); margin-bottom: 8px; }
+    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
     
-    /* About Section */
+    /* 4. About Section */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
     .about-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .about-imgs img { border-radius: 14px; height: auto; max-height: 380px; width: 100%; object-fit: contain; box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .about-imgs img { border-radius: 14px; height: auto; max-height: 380px; width: 100%; object-fit: contain; box-shadow: var(--shadow); border: 1.5px solid var(--line); }
     .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
-    .about-pt { background: #fff; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); font-size: 13.5px; font-weight: 700; color: var(--navy-primary); display: flex; align-items: center; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+    .about-pt { background: var(--navy-card); padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--line); font-size: 13.5px; font-weight: 700; color: var(--text-white); display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
     
-    /* 3 Columns Projects Gallery Grid - Navy Premium */
+    /* 5. Projects Gallery Grid — NAVY PREMIUM CARDS */
     .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .gallery-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1.5px solid var(--line); box-shadow: var(--shadow); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; cursor: pointer; display: flex; flex-direction: column; position: relative; z-index: 10; }
-    .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 18px 32px rgba(10,22,40,0.12); border-color: var(--gold); }
+    .gallery-card { 
+      background: var(--navy-card); 
+      border-radius: 16px; 
+      overflow: hidden; 
+      border: 1.5px solid var(--line); 
+      box-shadow: var(--shadow); 
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; 
+      cursor: pointer; 
+      display: flex; 
+      flex-direction: column; 
+      position: relative; 
+      z-index: 10; 
+    }
+    .gallery-card:hover { 
+      transform: translateY(-6px); 
+      box-shadow: 0 20px 42px rgba(7, 13, 24, 0.5); 
+      border-color: var(--gold); 
+    }
     .gallery-thumb { height: 215px; width: 100%; position: relative; overflow: hidden; background: var(--navy-primary); }
     .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
     .gallery-card:hover .gallery-thumb img { transform: scale(1.05); }
-    .gallery-badge { position: absolute; top: 10px; right: 10px; background: rgba(7, 13, 24, 0.9); color: var(--gold); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; backdrop-filter: blur(4px); border: 1px solid rgba(215, 164, 59, 0.4); text-transform: uppercase; }
-    .gallery-info { padding: 16px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .gallery-info h3 { font-size: 16px; font-weight: 800; color: var(--navy-primary); margin-bottom: 6px; }
-    .gallery-loc { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+    .gallery-badge { position: absolute; top: 10px; right: 10px; background: rgba(7, 13, 24, 0.92); color: var(--gold); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; backdrop-filter: blur(4px); border: 1px solid rgba(215, 164, 59, 0.4); text-transform: uppercase; }
+    .gallery-info { padding: 18px 16px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .gallery-info h3 { font-size: 16px; font-weight: 800; color: var(--text-white); margin-bottom: 6px; }
+    .gallery-loc { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
     
-    /* 4 Columns Work Process */
+    /* 6. Work Process Grid — NAVY PREMIUM CARDS */
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .process-card { background: #fff; padding: 24px 20px; border-radius: 16px; border: 1.5px solid var(--line); box-shadow: var(--shadow); position: relative; z-index: 10; }
-    .process-num { width: 34px; height: 34px; background: var(--gold); color: #0a1628; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 14px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(215,164,59,0.3); }
+    .process-card { 
+      background: var(--navy-card); 
+      padding: 24px 20px; 
+      border-radius: 16px; 
+      border: 1.5px solid var(--line); 
+      box-shadow: var(--shadow); 
+      position: relative; 
+      z-index: 10; 
+      color: #fff;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .process-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+    .process-num { width: 36px; height: 36px; background: var(--gold); color: #0a1628; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 15px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(215,164,59,0.4); }
+    .process-card h3 { font-size: 16px; font-weight: 800; color: var(--text-white); margin-bottom: 6px; }
+    .process-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
     
-    /* Contact & Form */
+    /* 7. Contact & Form — NAVY PREMIUM */
     .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; }
-    .contact-box { background: #fff; padding: 30px; border-radius: 16px; border: 1.5px solid var(--line); box-shadow: var(--shadow); position: relative; z-index: 10; }
+    .contact-box { 
+      background: var(--navy-card); 
+      padding: 30px; 
+      border-radius: 16px; 
+      border: 1.5px solid var(--line); 
+      box-shadow: var(--shadow); 
+      position: relative; 
+      z-index: 10; 
+      color: #fff;
+    }
+    .contact-box h3 { color: var(--text-white); }
     .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--navy-primary); margin-bottom: 6px; }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; font-size: 14px; outline: none; background: #fff; transition: border-color 0.2s; }
+    .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--text-white); margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select { 
+      width: 100%; 
+      padding: 12px 14px; 
+      border: 1.5px solid rgba(215,164,59,0.3); 
+      border-radius: 10px; 
+      font-size: 14px; 
+      outline: none; 
+      background: #0a1628; 
+      color: #fff;
+      transition: border-color 0.2s; 
+    }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
     
-    /* Footer */
-    footer { background: var(--navy-darkest); color: #94a3b8; padding: 50px 0 24px; border-top: 1px solid rgba(215,164,59,0.2); font-size: 13.5px; position: relative; z-index: 10; }
+    /* 8. Footer */
+    footer { background: var(--navy-bg); color: #94a3b8; padding: 50px 0 24px; border-top: 1px solid var(--line); font-size: 13.5px; position: relative; z-index: 10; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 36px; margin-bottom: 36px; }
     .footer-col h4 { color: #fff; font-size: 15px; font-weight: 800; margin-bottom: 16px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col a { color: #94a3b8; transition: 0.2s; }
     .footer-col a:hover { color: var(--gold); }
     
-    /* Lightbox Modal */
-    .lightbox-backdrop { position: fixed; inset: 0; background: rgba(7,13,24,0.88); z-index: 999999; display: none; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(6px); }
-    .lightbox-card { background: #fff; width: 100%; max-width: 720px; border-radius: 18px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.6); position: relative; z-index: 1000000; }
+    /* Lightbox Modal — Navy Premium */
+    .lightbox-backdrop { position: fixed; inset: 0; background: rgba(7,13,24,0.92); z-index: 999999; display: none; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(6px); }
+    .lightbox-card { background: var(--navy-card); color: #fff; width: 100%; max-width: 720px; border-radius: 18px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.7); position: relative; z-index: 1000000; border: 1.5px solid var(--line); }
 
     /* Responsive Queries */
     @media (max-width: 992px) {
@@ -233,7 +301,7 @@
   
   <!-- PWA Settings -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0a1628">
+  <meta name="theme-color" content="#070d18">
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
@@ -261,7 +329,6 @@
       <span>Prakash Swami<small>CONSTRUCTIONS</small></span>
     </a>
 
-    <!-- Mobile Hamburger Button -->
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" onclick="toggleMenu()">
       <i class="fa-solid fa-bars" id="menuIcon"></i>
     </button>
@@ -273,7 +340,6 @@
       <a href="#projects" onclick="closeMenu()">प्रोजेक्ट गैलरी</a>
       <a href="#contact" onclick="closeMenu()">संपर्क</a>
       
-      <!-- Direct Portal Login -->
       <a href="dashboard.html" class="btn-login" title="Admin, Customer & Worker Portal Login" onclick="closeMenu()">
         <i class="fa-solid fa-right-to-bracket"></i> Login
       </a>
@@ -283,7 +349,7 @@
 
 <main id="home">
 
-  <!-- 3. Premium Corporate Hero Section with Background Video -->
+  <!-- 3. Hero Section -->
   <section class="hero">
     <div class="hero-video-bg">
       <video id="heroVideo" autoplay muted loop playsinline poster="project-house-3.jpg.jpeg">
@@ -309,9 +375,8 @@
             <a href="#projects" class="btn btn-outline"><i class="fa-solid fa-images"></i> प्रोजेक्ट्स देखें</a>
           </div>
 
-          <!-- App Install Button -->
           <div style="text-align: center; margin: 15px 0;">
-            <button id="installAppBtn" style="display: none; width: 100%; max-width: 320px; background-color: var(--navy-primary); color: #ffffff; border: 2px solid var(--gold); padding: 14px 20px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+            <button id="installAppBtn" style="display: none; width: 100%; max-width: 320px; background-color: var(--navy-card); color: #ffffff; border: 2px solid var(--gold); padding: 14px 20px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
               📲 हमारा मोबाइल ऐप इंस्टॉल करें
             </button>
           </div>
@@ -324,7 +389,6 @@
           </div>
         </div>
 
-        <!-- Hero Visual Showcase -->
         <div class="hero-visual-card">
           <img src="prakash-chand-swami-1.jpg.png" onerror="this.onerror=null; this.src='prakash-chand-swami-1.jpg';" alt="Prakash Chand Swami - Lead Contractor">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
@@ -339,7 +403,7 @@
     </div>
   </section>
 
-  <!-- 4. 8 Types of Construction Services -->
+  <!-- 4. Services Section (Navy Premium Cards) -->
   <section id="services" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
@@ -355,7 +419,7 @@
             <h3>१. नया मकान निर्माण (Complete Home Construction)</h3>
             <p>नींव खुदाई से लेकर चाबी सौंपने तक का पूरा काम। विद मटेरियल (With Material) या सिर्फ लेबर रेट दोनों में उपलब्ध।</p>
           </div>
-          <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
         </div>
 
         <div class="service-card">
@@ -364,7 +428,7 @@
             <h3>२. RCC छत ढलाई एवं शटरिंग (RCC Slab)</h3>
             <p>सरिया बांधना, मजबूत प्लेट शटरिंग, लेवलिंग, वाइब्रेटर का उपयोग और 100% लीकेज-प्रूफ कंक्रीट छत ढलाई।</p>
           </div>
-          <a href="tel:9785438345" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
+          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> सीधे बात करें</a>
         </div>
 
         <div class="service-card">
@@ -373,7 +437,7 @@
             <h3>३. दीवार चिनाई व प्लिंथ बीम (Brick Masonry)</h3>
             <p>ईंट व पत्थर की साहुल-सूत में सीधी चिनाई, डीपीसी (DPC), प्लिंथ प्रोटेक्शन और मजबूत कॉलम बीम निर्माण।</p>
           </div>
-          <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
         </div>
 
         <div class="service-card">
@@ -382,7 +446,7 @@
             <h3>४. अंदरूनी व बाहरी प्लास्टर (Cement Plaster)</h3>
             <p>दीवारों और छत का बिल्कुल समतल, चिकना और वाटरप्रूफ सिंगल/डबल कोट सीमेंट प्लास्टर फिनिशिंग कार्य।</p>
           </div>
-          <a href="tel:9785438345" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> कॉल करें</a>
+          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> कॉल करें</a>
         </div>
 
         <div class="service-card">
@@ -391,7 +455,7 @@
             <h3>५. टाइल्स, मार्बल व फ्लोरिंग (Tiles & Marble)</h3>
             <p>कमरों, हॉल, सीढ़ियों, किचन और बाथरूम में विट्रीफाइड टाइल्स, मार्बल व ग्रेनाइट की सही ढलान के साथ फिटिंग।</p>
           </div>
-          <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-paper-plane"></i> कोटेशन मंगाएं</a>
         </div>
 
         <div class="service-card">
@@ -409,7 +473,7 @@
             <h3>७. बाउंड्री वॉल व चारदीवारी (Boundary Wall)</h3>
             <p>प्लॉट, खेत, फार्महाउस और मकान की मजबूत बाउंड्री वॉल, पिलर, तारबंदी व मेन गेट का निर्माण कार्य।</p>
           </div>
-          <a href="tel:9785438345" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> बात करें</a>
+          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-phone"></i> बात करें</a>
         </div>
 
         <div class="service-card">
@@ -418,7 +482,7 @@
             <h3>८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग (Renovation)</h3>
             <p>पुराने मकान का नवीनीकरण, ऊपर नई मंजिल का निर्माण, छत की वॉटरप्रूफिंग व सीलन की स्थायी रोकथाम।</p>
           </div>
-          <a href="#contact" class="btn btn-dark" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
+          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;"><i class="fa-solid fa-arrow-right"></i> पूछताछ करें</a>
         </div>
       </div>
     </div>
@@ -444,17 +508,17 @@
           </p>
 
           <div class="about-points">
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> 100% मजबूत मटेरियल</div>
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> अनुभवी कारीगर व मिस्त्री</div>
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> कानूनी लिखित अनुबंध</div>
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--success);"></i> समय पर हैंडओवर</div>
+            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> 100% मजबूत मटेरियल</div>
+            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> अनुभवी कारीगर व मिस्त्री</div>
+            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> कानूनी लिखित अनुबंध</div>
+            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> समय पर हैंडओवर</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. Real House Construction Projects Gallery -->
+  <!-- 6. Real House Construction Projects Gallery (Navy Premium Cards) -->
   <section id="projects" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
@@ -463,14 +527,13 @@
         <p>मंडावरा, झुंझुनूं व शेखावाटी में पूर्ण किए गए और वर्तमान में चल रहे निर्माण कार्य। किसी भी फोटो पर क्लिक करके पूरा विवरण देखें।</p>
       </div>
 
-      <!-- Live Dynamic Supabase Gallery Grid -->
       <div id="liveGalleryContainer" class="gallery-grid">
         <!-- यहाँ सिर्फ वही फोटो दिखेंगी जो डैशबोर्ड में होंगी -->
       </div>
     </div>
   </section>
 
-  <!-- 7. Work Process -->
+  <!-- 7. Work Process (Navy Premium Cards) -->
   <section id="process">
     <div class="wrap">
       <div class="sec-head">
@@ -482,32 +545,32 @@
       <div class="process-grid">
         <div class="process-card">
           <div class="process-num">१</div>
-          <h3 style="font-size:16px; font-weight:800; color:var(--navy-primary); margin-bottom:6px;">बात करें व साइट विजिट</h3>
-          <p style="font-size:13px; color:var(--muted);">फोन पर चर्चा करें और अपने प्लॉट पर साइट विजिट तय करें।</p>
+          <h3>बात करें व साइट विजिट</h3>
+          <p>फोन पर चर्चा करें और अपने प्लॉट पर साइट विजिट तय करें।</p>
         </div>
 
         <div class="process-card">
           <div class="process-num">२</div>
-          <h3 style="font-size:16px; font-weight:800; color:var(--navy-primary); margin-bottom:6px;">प्लानिंग व लिखित अनुबंध</h3>
-          <p style="font-size:13px; color:var(--muted);">वास्तु सम्मत प्लानिंग, दर व किस्तों का स्पष्ट कानूनी अनुबंध पत्र।</p>
+          <h3>प्लानिंग व लिखित अनुबंध</h3>
+          <p>वास्तु सम्मत प्लानिंग, दर व किस्तों का स्पष्ट कानूनी अनुबंध पत्र।</p>
         </div>
 
         <div class="process-card">
           <div class="process-num">३</div>
-          <h3 style="font-size:16px; font-weight:800; color:var(--navy-primary); margin-bottom:6px;">मजबूत निर्माण कार्य</h3>
-          <p style="font-size:13px; color:var(--muted);">अनुभवी कारीगरों द्वारा नींव से लेकर छत ढलाई तक मजबूत निर्माण।</p>
+          <h3>मजबूत निर्माण कार्य</h3>
+          <p>अनुभवी कारीगरों द्वारा नींव से लेकर छत ढलाई तक मजबूत निर्माण।</p>
         </div>
 
         <div class="process-card">
           <div class="process-num">४</div>
-          <h3 style="font-size:16px; font-weight:800; color:var(--navy-primary); margin-bottom:6px;">फिनिशिंग व हैंडओवर</h3>
-          <p style="font-size:13px; color:var(--muted);">प्लास्टर, फ्लोरिंग व पूरी जांच के बाद समय पर मकान की चाबी सौंपना।</p>
+          <h3>फिनिशिंग व हैंडओवर</h3>
+          <p>प्लास्टर, फ्लोरिंग व पूरी जांच के बाद समय पर मकान की चाबी सौंपना।</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 8. Contact & Free Consultation Section -->
+  <!-- 8. Contact & Free Consultation Section (Navy Premium Card) -->
   <section id="contact" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
@@ -518,7 +581,7 @@
 
       <div class="contact-grid">
         <div class="contact-box">
-          <h3 style="font-size:19px; font-weight:800; color:var(--navy-primary); margin-bottom:18px;">मुफ्त परामर्श फॉर्म (Free Enquiry)</h3>
+          <h3 style="font-size:19px; font-weight:800; margin-bottom:18px;"><i class="fa-solid fa-file-pen" style="color:var(--gold);"></i> मुफ्त परामर्श फॉर्म (Free Enquiry)</h3>
           <form onsubmit="handleContactSubmit(event)">
             <div class="form-group">
               <label for="cfName">आपका नाम (Full Name)</label>
@@ -554,22 +617,22 @@
         </div>
 
         <div style="display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
-          <div style="background:#fff; padding:26px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow);">
+          <div style="background:var(--navy-card); padding:26px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow); color:#fff;">
             <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
               <img src="prakash-chand-swami-4.jpg.jpg" onerror="this.onerror=null; this.src='prakash-chand-swami-4.jpg';" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);" alt="Prakash Chand Swami">
               <div>
-                <h3 style="font-size:18px; font-weight:800; color:var(--navy-primary);">प्रकाश चन्द स्वामी</h3>
+                <h3 style="font-size:18px; font-weight:800; color:var(--text-white);">प्रकाश चन्द स्वामी</h3>
                 <p style="font-size:12px; color:var(--gold); font-weight:700;">PRAKASH SWAMI CONSTRUCTIONS</p>
               </div>
             </div>
 
-            <p style="margin-bottom:10px; font-size:14px;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> फोन / हेल्पलाइन:</b> <a href="tel:9785438345" style="color:var(--navy-primary); font-weight:700;">9785438345</a></p>
-            <p style="margin-bottom:10px; font-size:14px;"><b><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp:</b> <a href="https://wa.me/919785438345" target="_blank" style="color:#15803d; font-weight:700;">9785438345</a></p>
-            <p style="margin-bottom:10px; font-size:14px;"><b><i class="fa-solid fa-qrcode" style="color:var(--gold);"></i> UPI ID:</b> 9785438345@axl</p>
-            <p style="font-size:14px;"><b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> पता:</b> ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</p>
+            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> फोन / हेल्पलाइन:</b> <a href="tel:9785438345" style="color:#fff; font-weight:700;">9785438345</a></p>
+            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp:</b> <a href="https://wa.me/919785438345" target="_blank" style="color:#22c55e; font-weight:700;">9785438345</a></p>
+            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-qrcode" style="color:var(--gold);"></i> UPI ID:</b> 9785438345@axl</p>
+            <p style="font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> पता:</b> ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</p>
           </div>
 
-          <div style="background:var(--navy-primary); color:#fff; padding:24px; border-radius:16px; text-align:center; border:2px solid var(--gold); box-shadow: 0 10px 30px rgba(10,22,40,0.3);">
+          <div style="background:var(--navy-primary); color:#fff; padding:24px; border-radius:16px; text-align:center; border:2px solid var(--gold); box-shadow: 0 10px 30px rgba(7,13,24,0.45);">
             <h4 style="color:var(--gold); font-size:16px; margin-bottom:8px;">पोर्टल लॉगिन (Admin / Customer / Worker)</h4>
             <p style="font-size:13px; color:#cbd5e1; margin-bottom:16px;">अपने प्रोजेक्ट्स, डिजिटल अनुबंध, हाजिरी और भुगतान देखने के लिए डैशबोर्ड में लॉगिन करें।</p>
             <a href="dashboard.html" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-right-to-bracket"></i> Dashboard Login</a>
@@ -627,7 +690,7 @@
       </div>
     </div>
 
-    <div style="text-align:center; padding-top:20px; border-top:1px solid rgba(215,164,59,0.2); font-size:12px; color:#64748b;">
+    <div style="text-align:center; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:#64748b;">
       © 2026 PRAKASH SWAMI CONSTRUCTIONS. सर्वाधिकार सुरक्षित।
     </div>
   </div>
@@ -636,12 +699,12 @@
 <!-- Lightbox Modal for Project Details -->
 <div id="lightboxModal" class="lightbox-backdrop" onclick="if(event.target===this) closeLightbox()">
   <div class="lightbox-card">
-    <div style="padding:16px 20px; background:var(--navy-primary); color:#fff; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(215,164,59,0.3);">
+    <div style="padding:16px 20px; background:var(--navy-primary); color:#fff; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line);">
       <h3 id="lbTitle" style="font-size:17px; font-weight:800; color:var(--gold);">Project Details</h3>
       <button type="button" onclick="closeLightbox()" style="background:transparent; border:0; color:#fff; font-size:26px; cursor:pointer; padding:2px 6px;">&times;</button>
     </div>
     <div style="padding:20px; overflow-y:auto; flex:1;">
-      <img id="lbImg" src="" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px;" alt="Project Detail">
+      <img id="lbImg" src="" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px; border:1px solid var(--line);" alt="Project Detail">
       <div id="lbDesc"></div>
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid var(--line); padding-top:16px; margin-top:16px;">
         <a id="lbWaBtn" href="#" target="_blank" class="btn btn-whatsapp" style="padding:10px 20px; font-size:13.5px;">
@@ -756,9 +819,9 @@ async function loadMainWebsiteProjects() {
 
   if (!globalProjectsList || globalProjectsList.length === 0) {
     container.innerHTML = `
-      <div style="text-align:center; grid-column:1/-1; padding:40px 20px; color:#64748b; background:#fff; border-radius:14px; border:1px dashed #cbd5e1; width:100%;">
-        <i class="fa-solid fa-images" style="font-size:32px; opacity:0.4; margin-bottom:10px; color:var(--gold);"></i>
-        <h4 style="font-size:15px; font-weight:700; color:var(--navy-primary);">वर्तमान में कोई प्रोजेक्ट फ़ोटो उपलब्ध नहीं है</h4>
+      <div style="text-align:center; grid-column:1/-1; padding:40px 20px; color:#cbd5e1; background:var(--navy-card); border-radius:14px; border:1.5px dashed var(--line); width:100%;">
+        <i class="fa-solid fa-images" style="font-size:32px; opacity:0.6; margin-bottom:10px; color:var(--gold);"></i>
+        <h4 style="font-size:15px; font-weight:700; color:#fff;">वर्तमान में कोई प्रोजेक्ट फ़ोटो उपलब्ध नहीं है</h4>
         <p style="font-size:12.5px; margin-top:4px; color:#94a3b8;">एडमिन डैशबोर्ड से नई फ़ोटो जोड़ते ही वह यहाँ लाइव दिखने लगेगी।</p>
       </div>
     `;
@@ -803,8 +866,8 @@ function showProjectLightbox(idx) {
   
   if (d) {
     d.innerHTML = `
-      ${p.location ? `<p style="font-size:13.5px; font-weight:700; color:#d97706; margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i> स्थान: ${p.location}</p>` : ''}
-      <div style="font-size:14px; color:#334155; line-height:1.7; background:#f4f7fb; padding:16px; border-radius:12px; border:1px solid #e2e8f0;">
+      ${p.location ? `<p style="font-size:13.5px; font-weight:700; color:var(--gold); margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i> स्थान: ${p.location}</p>` : ''}
+      <div style="font-size:14px; color:#cbd5e1; line-height:1.7; background:#070d18; padding:16px; border-radius:12px; border:1px solid var(--line);">
         ${p.description ? p.description.split('\n').join('<br>') : 'विवरण उपलब्ध नहीं है।'}
       </div>
     `;
