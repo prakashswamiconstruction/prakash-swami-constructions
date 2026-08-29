@@ -2,1178 +2,601 @@
 <html lang="hi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#070d18">
-  <meta name="description" content="Prakash Swami Constructions - Mandawara, Jhunjhunu, Rajasthan. 25+ वर्षों का अनुभव, संपूर्ण मकान निर्माण (With Material & Labour), RCC छत ढलाई, प्लास्टर, टाइल्स एवं चारदीवारी कार्य। संपर्क: 9785438345">
-  
-  <!-- Browser Tab Logo (Favicon) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a1628'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%23d7a43b' stroke-width='4'/><text x='50%' y='68%' font-size='48' font-weight='900' font-family='Arial,sans-serif' fill='%23d7a43b' text-anchor='middle'>PS</text></svg>">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Prakash Swami Constructions — Mandawara, Jhunjhunu, Rajasthan. 25+ वर्षों का अनुभव, संपूर्ण मकान निर्माण, RCC छत, प्लास्टर, टाइल्स, चारदीवारी एवं renovation.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2307111f'/><rect x='4' y='4' width='92' height='92' rx='18' fill='none' stroke='%23d7aa45' stroke-width='4'/><text x='50%' y='68%' font-size='45' font-weight='900' font-family='Arial' fill='%23d7aa45' text-anchor='middle'>PS</text></svg>">
   <link rel="apple-touch-icon" href="prakash-chand-swami-1.jpg.png">
-
-  <title id="siteTitle">Prakash Swami Constructions — भवन निर्माण ठेकेदार झुंझुनूं व उदयपुरवाटी | मकान निर्माण विशेषज्ञ</title>
-  
+  <title id="siteTitle">Prakash Swami Constructions</title>
   <link rel="canonical" href="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
-  <meta property="og:url" content="https://prakashswamiconstruction.github.io/prakash-swami-constructions/">
-  <meta property="og:title" content="Prakash Swami Constructions — भवन निर्माण ठेकेदार झुंझुनूं">
-  <meta property="og:description" content="25+ वर्षों का अनुभव, सम्पूर्ण मकान निर्माण, RCC छत ढलाई, प्लास्टर व लिखित कानूनी अनुबंध। संपर्क: 9785438345">
-  <meta property="og:image" content="prakash-chand-swami-1.jpg.png">
-
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Supabase JS Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
+
   <style>
-    :root {
-      --navy-bg: #070d18;
-      --navy-primary: #0a1628;
-      --navy-card: #0f1f38;
-      --navy-light: #162a4a;
-      --gold: #d7a43b;
-      --gold-hover: #c4922f;
-      --cream-bg: #f4f7fb;
-      --text-white: #ffffff;
-      --text-muted: #cbd5e1;
-      --line: rgba(215, 164, 59, 0.25);
-      --success: #16a34a;
-      --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    :root{
+      --navy:#07111f;--navy2:#0b1728;--navy3:#102038;--gold:#d7aa45;--gold2:#f2cc73;
+      --cream:#f7f4ec;--bg:#fff;--text:#172033;--muted:#667085;--line:#e7eaf0;
+      --darkline:rgba(215,170,69,.22);--shadow:0 24px 65px rgba(7,17,31,.14);--r:24px;--max:1180px
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: "Segoe UI", Arial, "Noto Sans Devanagari", system-ui, -apple-system, sans-serif; color: #1e293b; line-height: 1.6; background: #ffffff; }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; cursor: pointer; }
-    button, input, textarea, select { font: inherit; }
-    
-    .wrap { width: min(1200px, calc(100% - 40px)); margin: auto; }
-    
-    /* Top Bar */
-    .top { background: var(--navy-bg); color: #cbd5e1; font-size: 13px; padding: 9px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 95; }
-    .top .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .top a { color: #cbd5e1; transition: color 0.2s; }
-    .top a:hover { color: var(--gold); }
-    
-    /* Navbar */
-    .nav { position: sticky; top: 0; z-index: 90; background: var(--navy-primary); color: #fff; border-bottom: 1px solid rgba(215, 164, 59, 0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-    .navin { min-height: 70px; display: flex; align-items: center; justify-content: space-between; position: relative; }
-    .logo { font-weight: 900; font-size: 20px; display: flex; gap: 10px; align-items: center; color: #fff; }
-    .mark { background: var(--gold); color: #0a1628; padding: 6px 10px; border-radius: 8px; font-weight: 900; font-size: 16px; box-shadow: 0 2px 8px rgba(215,164,59,0.35); }
-    .logo small { display: block; color: #94a3b8; font-size: 9px; letter-spacing: 2px; }
-    
-    .menu { display: flex; gap: 20px; font-size: 14.5px; align-items: center; }
-    .menu a { transition: color 0.2s; font-weight: 600; color: #e2e8f0; }
-    .menu a:hover { color: var(--gold); }
-    
-    /* Language Switcher Button */
-    .btn-lang {
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      border: 1.5px solid var(--gold);
-      padding: 7px 14px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 13.5px;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .btn-lang:hover {
-      background: var(--gold);
-      color: #0a1628;
-      transform: translateY(-2px);
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans","Noto Sans Devanagari",sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+    body.hi{font-family:"Noto Sans Devanagari","DM Sans",sans-serif}
+    h1,h2,h3,h4{font-family:"Manrope","Noto Sans Devanagari",sans-serif;line-height:1.12}
+    body.hi h1,body.hi h2,body.hi h3,body.hi h4{font-family:"Noto Sans Devanagari","Manrope",sans-serif}
+    a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .gold{color:var(--gold2)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:13px}
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+    .section-head{max-width:780px;margin-bottom:40px}.section-head.center{text-align:center;margin-left:auto;margin-right:auto}
+    .section-head.center .eyebrow{justify-content:center}
+    .section-head h2{font-size:clamp(30px,4vw,48px);letter-spacing:-1.7px;margin-bottom:13px}
+    .section-head p{color:var(--muted);font-size:15px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;font-size:14px;font-weight:800;cursor:pointer;transition:.25s}
+    .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 12px 30px rgba(215,170,69,.2)}
+    .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+    .btn-outline{border:1px solid rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.05)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold2)}
+    .btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .btn-light{background:#fff;border:1px solid #e0e4ea;color:var(--navy)}
+    .btn-light:hover{box-shadow:var(--shadow)}
 
-    .btn-login { background: var(--gold); color: #0a1628 !important; font-weight: 800; padding: 9px 18px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; box-shadow: 0 2px 10px rgba(215,164,59,0.3); }
-    .btn-login:hover { background: #ffffff; color: #0a1628 !important; }
+    /* TOP + NAV */
+    .top{background:#040b15;color:#aeb8c8;font-size:12px}
+    .topin{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .top a{color:#fff;font-weight:800}
+    header{position:sticky;top:0;z-index:1000;background:rgba(7,17,31,.93);backdrop-filter:blur(15px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
+    .logo{display:flex;align-items:center;gap:11px;color:#fff}
+    .mark{width:45px;height:45px;border-radius:14px;background:linear-gradient(145deg,var(--gold2),var(--gold));color:var(--navy);display:grid;place-items:center;font-weight:900;font-family:Manrope;box-shadow:0 8px 25px rgba(215,170,69,.2)}
+    .logo strong{font-family:Manrope;font-size:16px}.logo small{display:block;font-size:9px;letter-spacing:1.7px;color:#8d9aaf}
+    .menu{display:flex;align-items:center;gap:4px}.menu a{color:#d9dfeb;font-size:13px;font-weight:800;padding:10px 11px;border-radius:10px}.menu a:hover{background:rgba(255,255,255,.05);color:var(--gold2)}
+    .btn-lang{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;border-radius:11px;padding:9px 12px;font-weight:800;cursor:pointer}
+    .btn-login{background:var(--gold);color:var(--navy)!important;border-radius:11px;padding:10px 15px;font-weight:900;display:inline-flex;align-items:center;gap:7px}
+    .btn-login:hover{background:#fff}.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
 
-    .menu-toggle { display: none; background: transparent; border: 0; color: #fff; font-size: 22px; cursor: pointer; padding: 6px 10px; }
-    
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer; transition: 0.2s; border: 0; text-decoration: none; }
-    .btn-gold { background: var(--gold); color: #0a1628; font-weight: 800; }
-    .btn-gold:hover { background: var(--gold-hover); color: #fff; }
-    .btn-dark { background: var(--navy-card); color: #fff; border: 1.5px solid var(--line); }
-    .btn-dark:hover { background: var(--navy-light); color: #fff; border-color: var(--gold); }
-    .btn-outline { background: rgba(10,22,40,0.7); border: 1.5px solid rgba(215,164,59,0.5); color: #fff; backdrop-filter: blur(4px); }
-    .btn-outline:hover { background: rgba(215,164,59,0.2); border-color: var(--gold); }
-    .btn-whatsapp { background: #25d366; color: #fff; }
-    .btn-whatsapp:hover { background: #1eb954; color: #fff; }
-    .btn-sm { padding: 9px 14px; font-size: 13px; border-radius: 8px; font-weight: 800; border: 0; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-    
-    /* Hero Section */
-    .hero {
-      position: relative;
-      color: #fff;
-      padding: 85px 0 75px;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      background: var(--navy-bg);
-      overflow: hidden;
-    }
-    .hero-video-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .hero-video-bg video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(1) contrast(1);
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(7, 13, 24, 0.45) 0%, rgba(10, 22, 40, 0.3) 50%, rgba(7, 13, 24, 0.5) 100%);
-      pointer-events: none;
-      z-index: 2;
-    }
+    /* HERO */
+    .hero{position:relative;min-height:calc(100vh - 116px);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy)}
+    .hero-video-bg,.hero-video-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,10,19,.94),rgba(3,10,19,.78) 42%,rgba(3,10,19,.34)),linear-gradient(0deg,rgba(7,17,31,.72),transparent 45%)}
+    .hero .wrap{position:relative;z-index:2}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;padding:85px 0 110px}
+    .hero h1{font-size:clamp(43px,6vw,74px);letter-spacing:-3px;max-width:760px}
+    .hero h1 em{font-style:normal;color:var(--gold2)}
+    .hero-desc{max-width:700px;color:#d3dae6;font-size:17px;margin:21px 0 27px}
+    .actions{display:flex;gap:11px;flex-wrap:wrap}
+    .proofs{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}.proof{display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);border-radius:999px;padding:9px 12px;font-size:12px;color:#e7ebf2}.proof i{color:var(--gold2)}
+    .hero-card{background:rgba(7,17,31,.73);border:1px solid rgba(215,170,69,.32);backdrop-filter:blur(14px);padding:25px;border-radius:27px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+    .hero-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.hero-card .tiny{font-size:10px;color:var(--gold2);letter-spacing:1.4px;font-weight:900;text-transform:uppercase}
+    .hero-founder{display:grid;grid-template-columns:110px 1fr;gap:17px;align-items:center}.hero-founder img{width:110px;height:135px;object-fit:cover;border-radius:18px;border:1px solid var(--gold)}
+    .hero-card h3{font-size:23px;margin-bottom:5px}.hero-card p{color:#aeb8c8;font-size:13px}
+    .mini-list{display:grid;gap:10px;margin-top:19px}.mini{display:flex;gap:11px;padding:11px;border-radius:14px;background:rgba(255,255,255,.05)}.mini i{color:var(--gold2);margin-top:3px}.mini strong{display:block;font-size:13px;color:#fff}.mini span{display:block;font-size:11px;color:#95a2b5}
 
-    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; position: relative; z-index: 5; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 25px; font-size: 12.5px; font-weight: 700; margin-bottom: 18px; width: fit-content; }
-    .eyebrow-gold { background: rgba(215, 164, 59, 0.18); color: var(--gold); border: 1px solid rgba(215, 164, 59, 0.4); }
-    .eyebrow-blue { background: rgba(2, 132, 199, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
-    .eyebrow-orange { background: rgba(234, 88, 12, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.35); }
-    .eyebrow-yellow { background: rgba(217, 119, 6, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); }
+    /* STATS */
+    .stats{background:var(--navy);color:#fff;border-top:1px solid var(--darkline);border-bottom:1px solid var(--darkline)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}.stat{text-align:center;padding:25px 12px;border-right:1px solid rgba(255,255,255,.08)}.stat:last-child{border:0}.stat strong{display:block;color:var(--gold2);font:800 30px Manrope}.stat span{font-size:12px;color:#aeb8c8}
 
-    .hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 900; line-height: 1.25; margin-bottom: 18px; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
-    .hero h1 em { color: var(--gold); font-style: normal; }
-    .hero p { font-size: 15.5px; color: #cbd5e1; margin-bottom: 26px; line-height: 1.7; max-width: 600px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
-    
-    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; border-top: 1px solid rgba(215,164,59,0.25); padding-top: 24px; }
-    .stat-item h3 { font-size: 24px; font-weight: 900; color: var(--gold); }
-    .stat-item p { font-size: 12px; color: #cbd5e1; font-weight: 600; }
-    
-    .hero-visual-card { background: rgba(10,22,40,0.92); border: 1.5px solid rgba(215, 164, 59, 0.45); border-radius: 18px; padding: 18px; backdrop-filter: blur(14px); box-shadow: 0 25px 50px rgba(0,0,0,0.6); position: relative; z-index: 5; }
-    .hero-visual-card img { border-radius: 12px; height: auto; max-height: 420px; width: 100%; object-fit: contain; margin-bottom: 14px; }
-    
-    /* Sections */
-    section { padding: 75px 0; background: #ffffff; position: relative; z-index: 10; }
-    .section-alt { background: var(--cream-bg); }
-    .sec-head { text-align: center; max-width: 760px; margin: 0 auto 45px; display: flex; flex-direction: column; align-items: center; }
-    .sec-head h2 { font-size: 30px; font-weight: 900; color: var(--navy-primary); margin-bottom: 10px; }
-    .sec-head p { font-size: 15px; color: var(--muted); }
-    
-    /* Services Grid — Navy Premium Cards */
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .service-card { 
-      background: var(--navy-card); 
-      border-radius: 16px; 
-      border: 1.5px solid var(--line); 
-      padding: 26px 22px; 
-      box-shadow: var(--shadow); 
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: space-between; 
-      position: relative; 
-      z-index: 10; 
-      color: #fff;
-    }
-    .service-card:hover { 
-      transform: translateY(-6px); 
-      box-shadow: 0 18px 40px rgba(7, 13, 24, 0.45); 
-      border-color: var(--gold); 
-    }
-    .service-icon { width: 50px; height: 50px; background: rgba(215,164,59,0.18); color: var(--gold); border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 16px; border: 1px solid rgba(215,164,59,0.4); }
-    .service-card h3 { font-size: 17px; font-weight: 800; color: var(--text-white); margin-bottom: 8px; }
-    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
-    
-    /* About Section */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
-    .about-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .about-imgs img { border-radius: 14px; height: auto; max-height: 380px; width: 100%; object-fit: contain; box-shadow: var(--shadow); border: 1.5px solid var(--line); }
-    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
-    .about-pt { background: var(--navy-card); padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--line); font-size: 13.5px; font-weight: 700; color: var(--text-white); display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-    
-    /* Projects Gallery Grid — Navy Premium Cards */
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .gallery-card { 
-      background: var(--navy-card); 
-      border-radius: 16px; 
-      overflow: hidden; 
-      border: 1.5px solid var(--line); 
-      box-shadow: var(--shadow); 
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; 
-      cursor: pointer; 
-      display: flex; 
-      flex-direction: column; 
-      position: relative; 
-      z-index: 10; 
-    }
-    .gallery-card:hover { 
-      transform: translateY(-6px); 
-      box-shadow: 0 20px 42px rgba(7, 13, 24, 0.5); 
-      border-color: var(--gold); 
-    }
-    .gallery-thumb { height: 215px; width: 100%; position: relative; overflow: hidden; background: var(--navy-primary); }
-    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .gallery-card:hover .gallery-thumb img { transform: scale(1.05); }
-    .gallery-badge { position: absolute; top: 10px; right: 10px; background: rgba(7, 13, 24, 0.92); color: var(--gold); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; backdrop-filter: blur(4px); border: 1px solid rgba(215, 164, 59, 0.4); text-transform: uppercase; }
-    .gallery-info { padding: 18px 16px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .gallery-info h3 { font-size: 16px; font-weight: 800; color: var(--text-white); margin-bottom: 6px; }
-    .gallery-loc { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
-    
-    /* Work Process Grid */
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .process-card { 
-      background: var(--navy-card); 
-      padding: 24px 20px; 
-      border-radius: 16px; 
-      border: 1.5px solid var(--line); 
-      box-shadow: var(--shadow); 
-      position: relative; 
-      z-index: 10; 
-      color: #fff;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-    .process-card:hover { transform: translateY(-5px); border-color: var(--gold); }
-    .process-num { width: 36px; height: 36px; background: var(--gold); color: #0a1628; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 15px; margin-bottom: 14px; box-shadow: 0 2px 10px rgba(215,164,59,0.4); }
-    .process-card h3 { font-size: 16px; font-weight: 800; color: var(--text-white); margin-bottom: 6px; }
-    .process-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    
-    /* Contact & Form */
-    .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; }
-    .contact-box { 
-      background: var(--navy-card); 
-      padding: 30px; 
-      border-radius: 16px; 
-      border: 1.5px solid var(--line); 
-      box-shadow: var(--shadow); 
-      position: relative; 
-      z-index: 10; 
-      color: #fff;
-    }
-    .contact-box h3 { color: var(--text-white); }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--text-white); margin-bottom: 6px; }
-    .form-group input, .form-group textarea, .form-group select { 
-      width: 100%; 
-      padding: 12px 14px; 
-      border: 1.5px solid rgba(215,164,59,0.3); 
-      border-radius: 10px; 
-      font-size: 14px; 
-      outline: none; 
-      background: #0a1628; 
-      color: #fff;
-      transition: border-color 0.2s; 
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
-    
-    /* Footer */
-    footer { background: var(--navy-bg); color: #94a3b8; padding: 50px 0 24px; border-top: 1px solid var(--line); font-size: 13.5px; position: relative; z-index: 10; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 36px; margin-bottom: 36px; }
-    .footer-col h4 { color: #fff; font-size: 15px; font-weight: 800; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col a { color: #94a3b8; transition: 0.2s; }
-    .footer-col a:hover { color: var(--gold); }
-    
-    /* Lightbox Modal */
-    .lightbox-backdrop { position: fixed; inset: 0; background: rgba(7,13,24,0.92); z-index: 999999; display: none; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(6px); }
-    .lightbox-card { background: var(--navy-card); color: #fff; width: 100%; max-width: 720px; border-radius: 18px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.7); position: relative; z-index: 1000000; border: 1.5px solid var(--line); }
+    section{padding:92px 0}.soft{background:#f7f8fa}.cream{background:var(--cream)}
 
-    /* Responsive Queries */
-    @media (max-width: 992px) {
-      .services-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-grid, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: repeat(2, 1fr); }
-      .hero-visual-card img { height: 280px; }
-    }
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.about-photo{position:relative}.about-photo img{width:100%;height:520px;object-fit:cover;border-radius:29px;box-shadow:var(--shadow)}
+    .experience{position:absolute;right:-18px;bottom:25px;background:var(--navy);color:#fff;border:1px solid var(--gold);border-radius:18px;padding:18px 22px;box-shadow:0 20px 45px rgba(7,17,31,.25)}.experience strong{display:block;color:var(--gold2);font:800 32px Manrope}.experience span{font-size:11px;color:#aeb8c8}
+    .about-copy h2{font-size:clamp(30px,4vw,46px);margin-bottom:17px}.about-copy>p{font-size:15px;color:var(--muted);margin-bottom:20px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:22px 0 27px}.check{display:flex;gap:9px;font-size:13px;font-weight:700}.check i{color:var(--gold);margin-top:4px}
 
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--navy-primary);
-        padding: 24px;
-        border-bottom: 1px solid rgba(215,164,59,0.3);
-        gap: 16px;
-        text-align: center;
-        z-index: 99;
-      }
-      .menu.active { display: flex; }
-      .top .wrap { justify-content: center; text-align: center; }
-      .hero { padding: 60px 0 50px; min-height: auto; }
-      .services-grid, .gallery-grid, .process-grid { grid-template-columns: 1fr; }
-      .about-imgs { grid-template-columns: 1fr; }
-      .about-imgs img { height: 230px; }
-      .about-points { grid-template-columns: 1fr; }
-    }
+    /* SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.service{background:#fff;border:1px solid var(--line);border-radius:21px;padding:23px;transition:.25s;position:relative;overflow:hidden}.service:after{content:"";position:absolute;right:-45px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(215,170,69,.08)}.service:hover{transform:translateY(-6px);border-color:rgba(215,170,69,.5);box-shadow:var(--shadow)}.service-icon{width:48px;height:48px;border-radius:14px;background:var(--navy);color:var(--gold2);display:grid;place-items:center;margin-bottom:17px}.service h3{font-size:17px;margin-bottom:7px}.service p{font-size:12px;color:var(--muted)}
 
-    @media (max-width: 480px) {
-      .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .hero-cta { flex-direction: column; }
-      .hero-cta .btn { width: 100%; }
-      .contact-box { padding: 20px; }
+    /* WHY + PROCESS */
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.why-photo{min-height:500px;border-radius:28px;background:url("project-house-4.jpg.jpeg") center/cover;position:relative;overflow:hidden;box-shadow:var(--shadow)}.why-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,17,31,.9),transparent 65%)}.why-caption{position:absolute;z-index:1;bottom:25px;left:25px;right:25px;color:#fff}.why-caption h3{font-size:26px;margin-bottom:7px}.why-caption p{color:#c4ccda;font-size:13px}.reason-list{display:grid;gap:13px;margin-top:22px}.reason{display:flex;gap:14px;padding:17px;background:#fff;border:1px solid #e4e7ec;border-radius:17px}.reason i{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:12px;background:rgba(215,170,69,.13);color:#966d17}.reason h3{font-size:16px;margin-bottom:3px}.reason p{font-size:12px}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.step{background:#fff;border:1px solid var(--line);border-radius:21px;padding:24px}.step-no{font:800 39px Manrope;color:rgba(215,170,69,.35)}.step i{display:block;color:var(--gold);font-size:19px;margin:17px 0 10px}.step h3{font-size:17px;margin-bottom:6px}.step p{font-size:12px;color:var(--muted)}
+
+    /* GALLERY */
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.gallery-card{background:#fff;border:1px solid #e5e8ed;border-radius:21px;overflow:hidden;cursor:pointer;transition:.25s}.gallery-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.gallery-thumb{height:245px;position:relative;overflow:hidden}.gallery-thumb img{width:100%;height:100%;object-fit:cover;transition:.45s}.gallery-card:hover img{transform:scale(1.05)}.gallery-badge{position:absolute;left:13px;top:13px;background:var(--navy);color:var(--gold2);font-size:10px;font-weight:900;padding:6px 9px;border-radius:999px}.gallery-info{padding:17px}.gallery-info h3{font-size:18px;margin-bottom:5px}.gallery-loc{font-size:12px;color:#7b8493;margin-bottom:12px}.gallery-loc i{color:var(--gold)}.empty{grid-column:1/-1;padding:45px 20px;text-align:center;border:1px dashed rgba(215,170,69,.5);border-radius:20px;background:var(--navy2);color:#fff}.empty i{font-size:30px;color:var(--gold2);margin-bottom:10px}
+
+    /* CONSULTATION */
+    .cta{background:var(--navy);color:#fff;position:relative;overflow:hidden}.cta:after{content:"";position:absolute;width:550px;height:550px;border:1px solid rgba(215,170,69,.18);border-radius:50%;right:-250px;top:-260px}.cta-grid{display:flex;align-items:center;justify-content:space-between;gap:35px;position:relative;z-index:1}.cta h2{font-size:clamp(31px,4vw,49px);max-width:700px}.cta p{color:#aeb8c8;max-width:650px;margin-top:10px}
+
+    /* CONTACT / MAP / CARD */
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}.contact-card{background:var(--navy);color:#fff;border-radius:27px;padding:31px}.contact-card h2{font-size:35px;margin-bottom:9px}.contact-card>p{color:#aeb8c8;font-size:13px}.contact-lines{display:grid;gap:14px;margin-top:23px}.contact-line{display:flex;gap:12px}.contact-line i{color:var(--gold2);width:20px;margin-top:4px}.contact-line strong{display:block;font-size:13px}.contact-line span{display:block;color:#aeb8c8;font-size:12px}
+    .map{margin-top:22px;border-radius:18px;overflow:hidden;border:1px solid rgba(215,170,69,.25)}.map iframe{display:block;width:100%;height:240px;border:0}.map-actions{display:flex;gap:9px;padding:12px;background:#091423;flex-wrap:wrap}
+    .form-card{background:#fff;border:1px solid #e4e7ec;border-radius:27px;padding:31px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field.full{grid-column:1/-1}.field label{display:block;font-size:11px;font-weight:900;margin-bottom:6px;color:#344054}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe3e9;border-radius:12px;background:#fbfcfd;padding:12px 13px;outline:0}.field textarea{min-height:115px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(215,170,69,.1)}.form-note{font-size:10px;color:#8a93a2;margin-top:8px}
+
+    /* TEAM + VISITING CARD */
+    .team{background:var(--navy);color:#fff}.team-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}.team-photo{position:relative}.team-photo img{width:100%;max-width:390px;height:430px;object-fit:cover;border-radius:25px;border:1px solid rgba(215,170,69,.4);box-shadow:var(--shadow)}.team-copy h2{font-size:clamp(31px,4vw,46px);margin-bottom:12px}.team-copy>p{color:#aeb8c8;max-width:630px}.team-badges{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.team-badge{padding:9px 12px;border:1px solid rgba(215,170,69,.22);background:rgba(255,255,255,.05);border-radius:999px;font-size:11px}.card-wrap{margin-top:30px;padding:18px;border:1px solid rgba(215,170,69,.25);border-radius:22px;background:#091423}.card-wrap img{width:100%;max-height:430px;object-fit:contain;border-radius:14px;background:#fff}
+
+    /* FOOTER + FLOAT */
+    footer{background:#040b15;color:#fff;padding:52px 0 24px;border-top:1px solid var(--darkline)}.footer-grid{display:grid;grid-template-columns:1.35fr .8fr .9fr 1fr;gap:30px}.footer-col h4{font-size:14px;margin-bottom:13px}.footer-col p,.footer-col a{color:#96a3b6;font-size:12px}.footer-col ul{list-style:none;display:grid;gap:8px}.footer-col a:hover{color:var(--gold2)}.copy{border-top:1px solid rgba(255,255,255,.08);margin-top:32px;padding-top:18px;text-align:center;color:#69768b;font-size:10px}
+    .float{position:fixed;right:17px;bottom:17px;z-index:999;display:grid;gap:9px}.float a{width:53px;height:53px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 12px 30px rgba(0,0,0,.22)}.wa{background:#16a34a}.call{background:var(--navy);border:1px solid var(--gold)}.topbtn{position:fixed;right:18px;bottom:145px;display:none;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--navy);border:1px solid #e0e4ea;z-index:998;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.12)}
+    .reveal{opacity:0;transform:translateY(18px);transition:.65s}.reveal.show{opacity:1;transform:none}
+
+    /* LIGHTBOX */
+    .lightbox{position:fixed;inset:0;background:rgba(3,9,17,.93);z-index:99999;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(8px)}.lightbox-card{width:min(900px,100%);max-height:92vh;overflow:auto;background:var(--navy2);border:1px solid var(--darkline);border-radius:22px;color:#fff;position:relative}.lb-close{position:absolute;right:13px;top:13px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;cursor:pointer;z-index:2}.lb-img{width:100%;max-height:58vh;object-fit:contain;background:#030910}.lb-body{padding:22px}.lb-body h3{font-size:25px;margin-bottom:6px}.lb-body p{color:#b8c2d1;font-size:13px}.lb-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+
+    @media(max-width:1050px){
+      .menu{display:none}.menu.open{display:flex;position:absolute;left:0;right:0;top:78px;background:var(--navy);padding:12px 20px 18px;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.1);align-items:stretch}.menu a{text-align:center}.menu-toggle{display:block}
+      .hero-grid,.about-grid,.why-grid,.team-grid{grid-template-columns:1fr}.hero-grid{padding:70px 0 90px}.hero-card{max-width:680px}.services-grid,.gallery-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:700px){
+      .wrap{width:min(calc(100% - 28px),var(--max))}.topin{justify-content:center}.topin span{display:none}.nav{height:70px}.logo strong{font-size:14px}.logo small{font-size:8px}.nav .btn-login{display:none}.btn-lang{padding:8px 10px}
+      .hero h1{font-size:43px;letter-spacing:-2px}.hero-desc{font-size:14px}.hero-founder{grid-template-columns:90px 1fr}.hero-founder img{width:90px;height:115px}
+      section{padding:70px 0}.stats-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid rgba(255,255,255,.08)}.services-grid,.gallery-grid,.process-grid{grid-template-columns:1fr}.about-photo img{height:390px}.experience{right:10px}.checks{grid-template-columns:1fr}.why-photo{min-height:390px}.cta-grid{flex-direction:column;align-items:flex-start}.contact-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-grid{grid-template-columns:1fr}.team-photo img{height:390px;margin:auto}.topbtn{right:14px}.float{right:13px}.gallery-thumb{height:230px}
     }
   </style>
-  
-  <!-- PWA Settings -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#070d18">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
 </head>
-<body>
 
-<!-- 1. Top Bar -->
-<div class="top">
-  <div class="wrap">
-    <div><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <b data-i18n="top_office">कार्यालय:</b> <span data-i18n="top_address">मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</span></div>
-    <div style="display:flex; gap:16px; align-items:center;">
-      <a href="tel:9785438345"><i class="fa-solid fa-phone" style="color:var(--gold);"></i> 9785438345</a>
-      <a href="https://wa.me/919785438345" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp Help</a>
+<body class="hi">
+  <div class="top">
+    <div class="wrap topin">
+      <span data-i18n="top_tag">25+ वर्षों का अटूट भरोसा • मजबूत नींव • बेहतर कारीगरी</span>
+      <a href="tel:9785438345"><i class="fa-solid fa-phone"></i> 9785438345</a>
     </div>
   </div>
-</div>
 
-<!-- 2. Header & Navigation -->
-<header class="nav">
-  <div class="wrap navin">
-    <a class="logo" href="#home">
-      <span class="mark">PS</span>
-      <span>Prakash Swami<small>CONSTRUCTIONS</small></span>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars" id="menuIcon"></i>
-    </button>
-
-    <nav class="menu" id="navMenu">
-      <a href="#home" data-i18n="nav_home" onclick="closeMenu()">होम</a>
-      <a href="#services" data-i18n="nav_services" onclick="closeMenu()">सेवाएँ</a>
-      <a href="#about" data-i18n="nav_about" onclick="closeMenu()">हमारे बारे में</a>
-      <a href="#projects" data-i18n="nav_projects" onclick="closeMenu()">प्रोजेक्ट गैलरी</a>
-      <a href="#contact" data-i18n="nav_contact" onclick="closeMenu()">संपर्क</a>
-      
-      <!-- 🌐 Working Language Switcher Button -->
-      <button type="button" id="langToggleBtn" class="btn-lang" onclick="toggleLanguage()">
-        <i class="fa-solid fa-globe" style="color:var(--gold);"></i> <span id="langBtnText">English</span>
-      </button>
-
-      <a href="dashboard.html" class="btn-login" title="Admin, Customer & Worker Portal Login" onclick="closeMenu()">
-        <i class="fa-solid fa-right-to-bracket"></i> Login
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#home">
+        <span class="mark">PS</span>
+        <span><strong>Prakash Swami</strong><small>CONSTRUCTIONS</small></span>
       </a>
-    </nav>
-  </div>
-</header>
-
-<main id="home">
-
-  <!-- 3. Hero Section -->
-  <section class="hero">
-    <div class="hero-video-bg">
-      <video id="heroVideo" autoplay muted loop playsinline poster="project-house-3.jpg.jpeg">
-        <source src="construction-video.mp4" type="video/mp4">
-        <source src="site-video.mp4" type="video/mp4">
-        <source src="video.mp4" type="video/mp4">
-      </video>
-      <div class="hero-overlay"></div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu"><i class="fa-solid fa-bars" id="menuIcon"></i></button>
+      <nav class="menu" id="navMenu">
+        <a href="#home" data-i18n="nav_home">होम</a>
+        <a href="#services" data-i18n="nav_services">सेवाएँ</a>
+        <a href="#about" data-i18n="nav_about">हमारे बारे में</a>
+        <a href="#projects" data-i18n="nav_projects">प्रोजेक्ट गैलरी</a>
+        <a href="#process" data-i18n="nav_process">हमारा तरीका</a>
+        <a href="#contact" data-i18n="nav_contact">संपर्क</a>
+        <button class="btn-lang" id="langToggleBtn" onclick="toggleLanguage()"><i class="fa-solid fa-globe"></i> <span id="langBtnText">English</span></button>
+        <a href="dashboard.html" class="btn-login"><i class="fa-solid fa-right-to-bracket"></i> <span data-i18n="login">Login</span></a>
+      </nav>
     </div>
+  </header>
 
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow eyebrow-gold" data-i18n="hero_eyebrow"><i class="fa-solid fa-shield-halved"></i> 25+ वर्षों का अटूट भरोसा • Mandawara, Jhunjhunu</div>
-          <h1 id="heroH1">मजबूत नींव, बेहतरीन कारीगरी एवं <em>आधुनिक भवन निर्माण</em>।</h1>
-          <p id="heroP" data-i18n="hero_desc">गांव व कस्बों के लिए टिकाऊ, सुंदर और 100% वास्तु सम्मत मकानों का निर्माण। नींव खुदाई से लेकर RCC छत ढलाई, चिनाई, प्लास्टर, टाइल्स और चाबी सौंपने तक का पूरा काम लिखित अनुबंध के साथ।</p>
-          
-          <div class="hero-cta">
-            <a href="tel:9785438345" class="btn btn-gold"><i class="fa-solid fa-phone"></i> <span data-i18n="btn_call">9785438345 पर कॉल करें</span></a>
-            <a href="https://wa.me/919785438345?text=नमस्ते%20प्रकाश%20स्वामी%20जी%20मुझे%20मकान%20निर्माण%20का%20कोटेशन%20चाहिए" target="_blank" class="btn btn-whatsapp">
-              <i class="fa-brands fa-whatsapp fa-lg"></i> <span data-i18n="btn_whatsapp">WhatsApp पर बात करें</span>
-            </a>
-            <a href="#projects" class="btn btn-outline"><i class="fa-solid fa-images"></i> <span data-i18n="btn_view_projects">प्रोजेक्ट्स देखें</span></a>
+  <main id="home">
+    <!-- HERO: keeps your original local video filenames -->
+    <section class="hero">
+      <div class="hero-video-bg">
+        <video autoplay muted loop playsinline poster="project-house-3.jpg.jpeg">
+          <source src="construction-video.mp4" type="video/mp4">
+          <source src="site-video.mp4" type="video/mp4">
+          <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span data-i18n="hero_eyebrow">25+ वर्षों का अटूट भरोसा • Mandawara, Jhunjhunu</span></div>
+          <h1 data-i18n="hero_h1">मजबूत नींव, बेहतरीन कारीगरी एवं <em>आधुनिक भवन निर्माण</em>।</h1>
+          <p class="hero-desc" data-i18n="hero_desc">गांव व कस्बों के लिए टिकाऊ, सुंदर और वास्तु सम्मत मकानों का निर्माण। नींव खुदाई से लेकर RCC छत ढलाई, चिनाई, प्लास्टर, टाइल्स और चाबी सौंपने तक का पूरा काम लिखित अनुबंध के साथ।</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="tel:9785438345"><i class="fa-solid fa-phone"></i><span data-i18n="btn_call">9785438345 पर कॉल करें</span></a>
+            <a class="btn btn-outline" target="_blank" href="https://wa.me/919785438345?text=Namaste%20Prakash%20Swami%20Constructions%2C%20mujhe%20construction%20ke%20baare%20mein%20baat%20karni%20hai."><i class="fa-brands fa-whatsapp"></i><span data-i18n="btn_wa">WhatsApp पर बात करें</span></a>
+            <a class="btn btn-outline" href="#projects"><i class="fa-regular fa-images"></i><span data-i18n="btn_projects">प्रोजेक्ट्स देखें</span></a>
           </div>
-
-          <div style="text-align: center; margin: 15px 0;">
-            <button id="installAppBtn" style="display: none; width: 100%; max-width: 320px; background-color: var(--navy-card); color: #ffffff; border: 2px solid var(--gold); padding: 14px 20px; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-              📲 <span data-i18n="btn_install_app">हमारा मोबाइल ऐप इंस्टॉल करें</span>
-            </button>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-item"><h3>25+</h3><p data-i18n="stat_exp">वर्षों का अनुभव</p></div>
-            <div class="stat-item"><h3>100+</h3><p data-i18n="stat_homes">सफल मकान</p></div>
-            <div class="stat-item"><h3>100%</h3><p data-i18n="stat_material">मजबूत मटेरियल</p></div>
-            <div class="stat-item"><h3 data-i18n="stat_contract_val">लिखित</h3><p data-i18n="stat_contract">कानूनी अनुबंध</p></div>
+          <div class="proofs">
+            <div class="proof"><i class="fa-solid fa-circle-check"></i><span data-i18n="proof1">25+ वर्ष अनुभव</span></div>
+            <div class="proof"><i class="fa-solid fa-file-signature"></i><span data-i18n="proof2">लिखित कानूनी अनुबंध</span></div>
+            <div class="proof"><i class="fa-solid fa-house"></i><span data-i18n="proof3">100+ सफल मकान</span></div>
           </div>
         </div>
 
-        <div class="hero-visual-card">
-          <img src="prakash-chand-swami-1.jpg.png" onerror="this.onerror=null; this.src='prakash-chand-swami-1.jpg';" alt="Prakash Chand Swami - Lead Contractor">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <div class="hero-card reveal">
+          <div class="hero-card-top"><span class="tiny" data-i18n="founder_label">संचालक एवं मुख्य ठेकेदार</span><i class="fa-solid fa-crown gold"></i></div>
+          <div class="hero-founder">
+            <img src="prakash-chand-swami-1.jpg.png" onerror="this.onerror=null;this.src='prakash-chand-swami-1.jpg';" alt="Prakash Chand Swami">
             <div>
-              <h4 style="font-size:16px; font-weight:800; color:#fff;" data-i18n="founder_name">प्रकाश चन्द स्वामी</h4>
-              <p style="font-size:12px; color:var(--gold);" data-i18n="founder_title">संचालक एवं मुख्य ठेकेदार (25+ वर्ष अनुभव)</p>
+              <h3 data-i18n="founder_name">प्रकाश चन्द स्वामी</h3>
+              <p data-i18n="founder_title">संचालक एवं मुख्य ठेकेदार (25+ वर्ष अनुभव)</p>
             </div>
-            <a href="#contact" class="btn-sm btn-gold" data-i18n="btn_enquiry_card">Enquiry करें</a>
+          </div>
+          <div class="mini-list">
+            <div class="mini"><i class="fa-solid fa-compass-drafting"></i><div><strong data-i18n="mini1">Planning & Design</strong><span data-i18n="mini1d">2D नक्शा और 3D front elevation guidance</span></div></div>
+            <div class="mini"><i class="fa-solid fa-helmet-safety"></i><div><strong data-i18n="mini2">Complete Construction</strong><span data-i18n="mini2d">Foundation से finishing तक पूरा काम</span></div></div>
+            <div class="mini"><i class="fa-solid fa-location-dot"></i><div><strong data-i18n="mini3">Mandawara Office</strong><span data-i18n="mini3d">Udaipurwati, Jhunjhunu, Rajasthan</span></div></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>25+</strong><span data-i18n="stat_exp">वर्षों का अनुभव</span></div>
+        <div class="stat"><strong>100+</strong><span data-i18n="stat_homes">सफल मकान</span></div>
+        <div class="stat"><strong>8+</strong><span data-i18n="stat_services">मुख्य सेवाएँ</span></div>
+        <div class="stat"><strong>100%</strong><span data-i18n="stat_contract">लिखित अनुबंध विकल्प</span></div>
       </div>
     </div>
-  </section>
 
-  <!-- 4. Services Section -->
-  <section id="services" class="section-alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow eyebrow-blue" data-i18n="sec_services_badge"><i class="fa-solid fa-trowel-bricks"></i> हमारी प्रमुख सेवाएँ (Services)</div>
-        <h2 data-i18n="sec_services_title">निर्माण का हर काम, पूरी मजबूती और सही तरीके से।</h2>
-        <p data-i18n="sec_services_desc">नींव की खुदाई से लेकर फिनिशिंग तक हर काम अनुभवी कारीगरों, आधुनिक टूल्स और उच्च गुणवत्ता वाले मटेरियल से किया जाता है।</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
-            <h3 data-i18n="srv_1_title">१. नया मकान निर्माण (Complete Home Construction)</h3>
-            <p data-i18n="srv_1_desc">नींव खुदाई से लेकर चाबी सौंपने तक का पूरा काम। विद मटेरियल (With Material) या सिर्फ लेबर रेट दोनों में उपलब्ध।</p>
-          </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_quote">कोटेशन मंगाएं</a>
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal">
+          <img src="prakash-chand-swami-1.jpg.png" onerror="this.onerror=null;this.src='prakash-chand-swami-1.jpg';" alt="Prakash Chand Swami">
+          <div class="experience"><strong>25+</strong><span data-i18n="exp_years">वर्षों का निर्माण अनुभव</span></div>
         </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <h3 data-i18n="srv_2_title">२. RCC छत ढलाई एवं शटरिंग (RCC Slab)</h3>
-            <p data-i18n="srv_2_desc">सरिया बांधना, मजबूत प्लेट शटरिंग, लेवलिंग, वाइब्रेटर का उपयोग और 100% लीकेज-प्रूफ कंक्रीट छत ढलाई।</p>
+        <div class="about-copy reveal">
+          <div class="eyebrow" data-i18n="about_badge">हमारे बारे में</div>
+          <h2 data-i18n="about_title">मकान सिर्फ बनाते नहीं — <span class="gold">भरोसा भी बनाते हैं।</span></h2>
+          <p data-i18n="about_desc">Prakash Swami Constructions का focus residential construction को व्यवस्थित, transparent और customer-focused तरीके से पूरा करना है। नींव से लेकर finishing और handover तक हर stage को स्पष्ट रखने पर हमारा जोर है।</p>
+          <div class="checks">
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="check1">अनुभवी कारीगर और site supervision</span></div>
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="check2">उच्च गुणवत्ता वाले material पर focus</span></div>
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="check3">लिखित agreement का विकल्प</span></div>
+            <div class="check"><i class="fa-solid fa-check"></i><span data-i18n="check4">काम की progress की स्पष्ट जानकारी</span></div>
           </div>
-          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_talk">सीधे बात करें</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
-            <h3 data-i18n="srv_3_title">३. दीवार चिनाई व प्लिंथ बीम (Brick Masonry)</h3>
-            <p data-i18n="srv_3_desc">ईंट व पत्थर की साहुल-सूत में सीधी चिनाई, डीपीसी (DPC), प्लिंथ प्रोटेक्शन और मजबूत कॉलम बीम निर्माण।</p>
-          </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_inquire">पूछताछ करें</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
-            <h3 data-i18n="srv_4_title">४. अंदरूनी व बाहरी प्लास्टर (Cement Plaster)</h3>
-            <p data-i18n="srv_4_desc">दीवारों और छत का बिल्कुल समतल, चिकना और वाटरप्रूफ सिंगल/डबल कोट सीमेंट प्लास्टर फिनिशिंग कार्य।</p>
-          </div>
-          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_call_short">कॉल करें</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-border-all"></i></div>
-            <h3 data-i18n="srv_5_title">५. टाइल्स, मार्बल व फ्लोरिंग (Tiles & Marble)</h3>
-            <p data-i18n="srv_5_desc">कमरों, हॉल, सीढ़ियों, किचन और बाथरूम में विट्रीफाइड टाइल्स, मार्बल व ग्रेनाइट की सही ढलान के साथ फिटिंग।</p>
-          </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_quote">कोटेशन मंगाएं</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-            <h3 data-i18n="srv_6_title">६. 2D नक्शा व 3D फ्रंट एलिवेशन (House Design)</h3>
-            <p data-i18n="srv_6_desc">100% वास्तु सम्मत 2D फ्लोर प्लान, कमरों का सटीक नाप (Feet & Inches), खुला आँगन व सुंदर 3D फ्रंट लुक।</p>
-          </div>
-          <a href="https://wa.me/919785438345?text=मुझे%20मकान%20का%20नक्शा%20चाहिए" target="_blank" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_map">नक्शा मंगाएं</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-shield"></i></div>
-            <h3 data-i18n="srv_7_title">७. बाउंड्री वॉल व चारदीवारी (Boundary Wall)</h3>
-            <p data-i18n="srv_7_desc">प्लॉट, खेत, फार्महाउस और मकान की मजबूत बाउंड्री वॉल, पिलर, तारबंदी व मेन गेट का निर्माण कार्य।</p>
-          </div>
-          <a href="tel:9785438345" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_talk">बात करें</a>
-        </div>
-
-        <div class="service-card">
-          <div>
-            <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
-            <h3 data-i18n="srv_8_title">८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग (Renovation)</h3>
-            <p data-i18n="srv_8_desc">पुराने मकान का नवीनीकरण, ऊपर नई मंजिल का निर्माण, छत की वॉटरप्रूफिंग व सीलन की स्थायी रोकथाम।</p>
-          </div>
-          <a href="#contact" class="btn btn-gold" style="width:100%; padding:10px; font-size:13px;" data-i18n="btn_inquire">पूछताछ करें</a>
+          <a class="btn btn-dark" href="#contact"><span data-i18n="about_btn">अपने प्रोजेक्ट पर बात करें</span><i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 5. About Founder -->
-  <section id="about">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-imgs">
-          <img src="prakash-chand-swami-2.jpg.jpg" onerror="this.onerror=null; this.src='prakash-chand-swami-2.jpg';" alt="Prakash Chand Swami - Site Supervision">
-          <img src="prakash-chand-swami-3.jpg.jpg" onerror="this.onerror=null; this.src='prakash-chand-swami-3.jpg';" alt="Prakash Chand Swami - Project Planning">
+    <section id="services" class="soft">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <div class="eyebrow" data-i18n="services_badge">हमारी प्रमुख सेवाएँ</div>
+          <h2 data-i18n="services_title">निर्माण का हर काम, <span class="gold">पूरी मजबूती और सही तरीके से।</span></h2>
+          <p data-i18n="services_desc">नींव की खुदाई से लेकर finishing तक अनुभवी कारीगरों, modern tools और quality material के साथ काम करने का focus।</p>
+        </div>
+        <div class="services-grid">
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-house"></i></div><h3 data-i18n="srv1t">नया मकान निर्माण</h3><p data-i18n="srv1d">नींव खुदाई से चाबी सौंपने तक का पूरा काम। With Material या Labour Rate विकल्प।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-layer-group"></i></div><h3 data-i18n="srv2t">RCC छत ढलाई एवं Shuttering</h3><p data-i18n="srv2d">सरिया, plate shuttering, leveling, vibrator और concrete slab work पर focus।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-border-all"></i></div><h3 data-i18n="srv3t">दीवार चिनाई व Plinth Beam</h3><p data-i18n="srv3d">ईंट/पत्थर की सीधी चिनाई, DPC, plinth protection, columns और beams का काम।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div><h3 data-i18n="srv4t">Cement Plaster</h3><p data-i18n="srv4d">अंदरूनी और बाहरी दीवारों/छत के लिए smooth, level और neat plaster finishing।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-table-cells-large"></i></div><h3 data-i18n="srv5t">Tiles, Marble & Flooring</h3><p data-i18n="srv5d">कमरों, hall, stairs, kitchen और bathroom में tiles, marble और granite fitting।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div><h3 data-i18n="srv6t">2D नक्शा & 3D Front Elevation</h3><p data-i18n="srv6d">वास्तु अनुसार 2D floor plan, room measurements और सुंदर 3D front look guidance।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-road-barrier"></i></div><h3 data-i18n="srv7t">Boundary Wall & चारदीवारी</h3><p data-i18n="srv7d">Plot, farm, farmhouse और home के लिए boundary wall, pillars, fencing और gate work।</p></article>
+          <article class="service reveal"><div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3 data-i18n="srv8t">Renovation & Waterproofing</h3><p data-i18n="srv8d">पुराने मकान की repair, नई मंजिल, roof waterproofing और dampness solutions।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream">
+      <div class="wrap why-grid">
+        <div class="why-photo reveal">
+          <div class="why-caption"><div class="eyebrow" data-i18n="why_badge">क्यों हम?</div><h3 data-i18n="why_title">साफ बात, व्यवस्थित काम, बेहतर परिणाम।</h3><p data-i18n="why_desc">Construction journey में हर जरूरी stage पर clarity और direct communication को प्राथमिकता।</p></div>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow" data-i18n="why2_badge">आपको क्या मिलेगा</div>
+          <h2 data-i18n="why2_title">एक contractor नहीं — <span class="gold">एक जिम्मेदार construction partner.</span></h2>
+          <div class="reason-list">
+            <div class="reason"><i class="fa-solid fa-file-signature"></i><div><h3 data-i18n="r1t">Written Agreement</h3><p data-i18n="r1d">काम और terms को पहले से स्पष्ट रखने का विकल्प।</p></div></div>
+            <div class="reason"><i class="fa-solid fa-people-group"></i><div><h3 data-i18n="r2t">Experienced Team</h3><p data-i18n="r2d">Skilled workers और practical site execution पर focus।</p></div></div>
+            <div class="reason"><i class="fa-solid fa-chart-line"></i><div><h3 data-i18n="r3t">Progress Visibility</h3><p data-i18n="r3d">काम की स्थिति को समझना और update पाना आसान।</p></div></div>
+            <div class="reason"><i class="fa-solid fa-handshake"></i><div><h3 data-i18n="r4t">Direct Communication</h3><p data-i18n="r4d">जरूरत के समय सीधे team से बात करने की सुविधा।</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <div class="eyebrow" data-i18n="process_badge">हमारा तरीका</div>
+          <h2 data-i18n="process_title">चार आसान steps में <span class="gold">construction journey.</span></h2>
+        </div>
+        <div class="process-grid">
+          <div class="step reveal"><div class="step-no">01</div><i class="fa-solid fa-comments"></i><h3 data-i18n="p1t">आपकी जरूरत</h3><p data-i18n="p1d">Call या WhatsApp पर काम की जानकारी और photos भेजें।</p></div>
+          <div class="step reveal"><div class="step-no">02</div><i class="fa-solid fa-location-dot"></i><h3 data-i18n="p2t">Site Discussion</h3><p data-i18n="p2d">काम, जगह और requirement को समझकर discussion किया जाता है।</p></div>
+          <div class="step reveal"><div class="step-no">03</div><i class="fa-solid fa-file-invoice-dollar"></i><h3 data-i18n="p3t">Estimate / Quote</h3><p data-i18n="p3d">काम के अनुसार अनुमानित लागत और contract details पर बात होती है।</p></div>
+          <div class="step reveal"><div class="step-no">04</div><i class="fa-solid fa-helmet-safety"></i><h3 data-i18n="p4t">Construction</h3><p data-i18n="p4d">काम शुरू करके quality और timely completion पर focus किया जाता है।</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="gallery_badge">प्रोजेक्ट गैलरी</div>
+          <h2 data-i18n="gallery_title">हमारा काम — <span class="gold">real project photos.</span></h2>
+          <p data-i18n="gallery_desc">Dashboard से जो projects add होंगे वे यहाँ live दिखाई देंगे। नीचे पुराने website के local project images के लिए fallback भी रखा गया है।</p>
+        </div>
+        <div class="gallery-grid" id="liveGalleryContainer"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap cta-grid">
+        <div class="reveal">
+          <div class="eyebrow" data-i18n="cta_badge">FREE CONSULTATION</div>
+          <h2 data-i18n="cta_title">अपने घर की planning आज से शुरू करें।</h2>
+          <p data-i18n="cta_desc">मकान, RCC, plaster, tiles, boundary wall या renovation के लिए अपनी requirement भेजें।</p>
+        </div>
+        <div class="actions reveal">
+          <a class="btn btn-gold" href="tel:9785438345"><i class="fa-solid fa-phone"></i><span data-i18n="call_short">कॉल करें</span></a>
+          <a class="btn btn-outline" target="_blank" href="https://wa.me/919785438345"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cream">
+      <div class="wrap contact-grid">
+        <div class="contact-card reveal">
+          <div class="eyebrow" data-i18n="contact_badge">संपर्क करें</div>
+          <h2 data-i18n="contact_title">अपने project पर बात करें।</h2>
+          <p data-i18n="contact_desc">Call, WhatsApp या enquiry form के माध्यम से अपनी requirement भेजें।</p>
+          <div class="contact-lines">
+            <a class="contact-line" href="tel:9785438345"><i class="fa-solid fa-phone"></i><div><strong>9785438345</strong><span data-i18n="phone_label">फोन / हेल्पलाइन</span></div></a>
+            <a class="contact-line" href="https://wa.me/919785438345" target="_blank"><i class="fa-brands fa-whatsapp"></i><div><strong>9785438345</strong><span>WhatsApp</span></div></a>
+            <div class="contact-line"><i class="fa-solid fa-qrcode"></i><div><strong>9785438345@axl</strong><span>UPI ID</span></div></div>
+            <div class="contact-line"><i class="fa-solid fa-envelope"></i><div><strong>satpalswami22742@gmail.com</strong><span>Email</span></div></div>
+            <div class="contact-line"><i class="fa-solid fa-location-dot"></i><div><strong data-i18n="address">ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</strong><span data-i18n="service_area">उदयपुरवाटी और आसपास के क्षेत्र</span></div></div>
+          </div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps?q=Mandawara%2C%20Udaipurwati%2C%20Jhunjhunu%2C%20Rajasthan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Prakash Swami Constructions location"></iframe>
+            <div class="map-actions">
+              <a class="btn btn-gold" target="_blank" href="https://maps.app.goo.gl/t3QpEp1CKUiRqoJB7"><i class="fa-solid fa-location-arrow"></i><span data-i18n="map_btn">Google Maps में Location खोलें</span></a>
+            </div>
+          </div>
         </div>
 
+        <form class="form-card reveal" onsubmit="handleContactSubmit(event)">
+          <div class="section-head" style="margin-bottom:24px">
+            <div class="eyebrow" data-i18n="form_badge">ENQUIRY FORM</div>
+            <h2 style="font-size:32px" data-i18n="form_title">अपने काम का Free Quote पूछें</h2>
+            <p data-i18n="form_desc">मकान, छत, plaster, tiles, boundary wall या renovation के लिए enquiry भेजें।</p>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label data-i18n="f_name">नाम / Name</label><input id="cfName" required data-ph-hi="आपका नाम" data-ph-en="Your name" placeholder="आपका नाम"></div>
+            <div class="field"><label data-i18n="f_phone">मोबाइल / Phone</label><input id="cfPhone" required type="tel" data-ph-hi="मोबाइल नंबर" data-ph-en="Mobile number" placeholder="मोबाइल नंबर"></div>
+            <div class="field"><label data-i18n="f_type">काम / Work Type</label><select id="cfType">
+              <option data-hi="नया मकान निर्माण" data-en="New House Construction">नया मकान निर्माण</option>
+              <option data-hi="RCC / छत" data-en="RCC / Roof">RCC / छत</option>
+              <option data-hi="Plaster" data-en="Plaster">Plaster</option>
+              <option data-hi="Tiles / Marble" data-en="Tiles / Marble">Tiles / Marble</option>
+              <option data-hi="Boundary Wall" data-en="Boundary Wall">Boundary Wall</option>
+              <option data-hi="Renovation / Repair" data-en="Renovation / Repair">Renovation / Repair</option>
+              <option data-hi="अन्य" data-en="Other">अन्य</option>
+            </select></div>
+            <div class="field"><label data-i18n="f_location">स्थान / Location</label><input id="cfAddress" data-ph-hi="गांव / शहर / साइट लोकेशन" data-ph-en="Village / city / site location" placeholder="गांव / शहर / साइट लोकेशन"></div>
+            <div class="field full"><label data-i18n="f_details">काम की जानकारी</label><textarea id="cfMsg" data-ph-hi="जैसे: कितने sq ft, कितनी मंजिल, नया मकान या renovation आदि" data-ph-en="Example: area, floors, new house or renovation details" placeholder="जैसे: कितने sq ft, कितनी मंजिल, नया मकान या renovation आदि"></textarea></div>
+            <div class="field full"><button class="btn btn-gold" style="width:100%" type="submit"><i class="fa-brands fa-whatsapp"></i><span data-i18n="f_submit">WhatsApp पर Enquiry भेजें</span></button><div class="form-note" data-i18n="f_note">Submit करने पर WhatsApp खुलेगा और message तैयार मिलेगा।</div></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Founder + visiting card intentionally kept near the end -->
+    <section class="team" id="founder">
+      <div class="wrap team-grid">
+        <div class="team-photo reveal">
+          <img src="prakash-chand-portrait.png" onerror="this.onerror=null;this.src='prakash-chand-swami-1.jpg.png';" alt="Prakash Chand Swami">
+        </div>
+        <div class="team-copy reveal">
+          <div class="eyebrow" data-i18n="team_badge">OUR LEAD</div>
+          <h2 data-i18n="team_title">प्रकाश चन्द स्वामी</h2>
+          <p data-i18n="team_desc">संचालक एवं मुख्य ठेकेदार। Residential construction, RCC work, masonry, plaster, tiles, boundary wall और renovation projects की site planning और execution पर focus।</p>
+          <div class="team-badges">
+            <span class="team-badge" data-i18n="tb1">25+ वर्ष अनुभव</span>
+            <span class="team-badge" data-i18n="tb2">Site Supervision</span>
+            <span class="team-badge" data-i18n="tb3">Residential Construction</span>
+          </div>
+          <div class="actions">
+            <a class="btn btn-gold" href="tel:9785438345"><i class="fa-solid fa-phone"></i><span data-i18n="team_call">सीधे बात करें</span></a>
+            <a class="btn btn-outline" href="https://wa.me/919785438345" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          </div>
+          <div class="card-wrap">
+            <div class="eyebrow" data-i18n="card_badge">VISITING CARD</div>
+            <img src="satpal-swami-card.png" alt="Satpal Swami visiting card">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
         <div>
-          <div class="eyebrow eyebrow-orange" data-i18n="about_eyebrow"><i class="fa-solid fa-user-check"></i> हमारे संस्थापक व टीम</div>
-          <h2 style="font-size:28px; font-weight:900; color:var(--navy-primary); margin-bottom:14px;" data-i18n="about_title">भरोसा ही हमारी सबसे बड़ी पहचान है।</h2>
-          <p style="font-size:15px; color:var(--muted); margin-bottom:12px; line-height:1.7;" data-i18n="about_p1">
-            <b>प्रकाश चन्द स्वामी (PRAKASH SWAMI CONSTRUCTIONS)</b> ने पिछले 25 वर्षों में मंडावरा, झुंझुनूं, उदयपुरवाटी और शेखावाटी में सैकड़ों परिवारों के सपनों के आशियाने बनाए हैं।
-          </p>
-          <p style="font-size:14px; color:var(--muted); margin-bottom:20px; line-height:1.7;" data-i18n="about_p2">
-            हमारा नियम साफ है: <b>कोई छुपा हुआ खर्च नहीं, सिर्फ उच्च दर्जे का मटेरियल (अल्ट्राटेक/एसीसी सीमेंट, टाटा/जिंदल सरिया), अनुभवी कारीगर और समय पर काम पूरा करने का कानूनी लिखित अनुबंध।</b>
-          </p>
-
-          <div class="about-points">
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> <span data-i18n="apt_1">100% मजबूत मटेरियल</span></div>
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> <span data-i18n="apt_2">अनुभवी कारीगर व मिस्त्री</span></div>
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> <span data-i18n="apt_3">कानूनी लिखित अनुबंध</span></div>
-            <div class="about-pt"><i class="fa-solid fa-circle-check" style="color:var(--gold);"></i> <span data-i18n="apt_4">समय पर हैंडओवर</span></div>
-          </div>
+          <a class="logo" href="#home"><span class="mark">PS</span><span><strong>Prakash Swami</strong><small>CONSTRUCTIONS</small></span></a>
+          <p style="margin-top:16px;max-width:330px" data-i18n="footer_about">25+ वर्षों के अनुभव के साथ मंडावरा, झुंझुनूं और आसपास के क्षेत्रों में residential construction, RCC और finishing services।</p>
         </div>
+        <div class="footer-col"><h4 data-i18n="footer_links">मुख्य लिंक्स</h4><ul><li><a href="#home" data-i18n="nav_home">होम</a></li><li><a href="#services" data-i18n="nav_services">सेवाएँ</a></li><li><a href="#about" data-i18n="nav_about">हमारे बारे में</a></li><li><a href="#projects" data-i18n="nav_projects">प्रोजेक्ट गैलरी</a></li><li><a href="#contact" data-i18n="nav_contact">संपर्क</a></li></ul></div>
+        <div class="footer-col"><h4 data-i18n="footer_portal">पोर्टल व लॉगिन</h4><ul><li><a href="dashboard.html#admin">Admin Login</a></li><li><a href="dashboard.html#customer">Customer Portal</a></li><li><a href="dashboard.html#worker">Worker Portal</a></li><li><a href="#contact" data-i18n="free_consult">मुफ्त परामर्श</a></li></ul></div>
+        <div class="footer-col"><h4 data-i18n="footer_contact">संपर्क जानकारी</h4><p>📍 <span data-i18n="footer_loc">मंडावरा, झुंझुनूं (राजि.)</span></p><p style="margin-top:7px">📞 9785438345</p><p style="margin-top:7px">✉️ satpalswami22742@gmail.com</p><a style="display:inline-flex;margin-top:12px" class="btn btn-gold" href="https://wa.me/919785438345" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></div>
       </div>
+      <div class="copy">© <span id="year"></span> PRAKASH SWAMI CONSTRUCTIONS. <span data-i18n="rights">सर्वाधिकार सुरक्षित।</span></div>
     </div>
-  </section>
+  </footer>
 
-  <!-- 6. Real House Construction Projects Gallery -->
-  <section id="projects" class="section-alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow eyebrow-blue" data-i18n="sec_gallery_badge"><i class="fa-solid fa-images"></i> वास्तविक कार्य गैलरी (Real Work Gallery)</div>
-        <h2 data-i18n="sec_gallery_title">हमारे द्वारा बनाए गए वास्तविक मकान व कार्य</h2>
-        <p data-i18n="sec_gallery_desc">मंडावरा, झुंझुनूं व शेखावाटी में पूर्ण किए गए और वर्तमान में चल रहे निर्माण कार्य। किसी भी फोटो पर क्लिक करके पूरा विवरण देखें।</p>
-      </div>
-
-      <div id="liveGalleryContainer" class="gallery-grid"></div>
-    </div>
-  </section>
-
-  <!-- 7. Work Process -->
-  <section id="process">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow eyebrow-yellow" data-i18n="sec_process_badge"><i class="fa-solid fa-list-check"></i> पारदर्शी कार्य प्रक्रिया</div>
-        <h2 data-i18n="sec_process_title">बात से काम तक, 4 आसान कदम।</h2>
-        <p data-i18n="sec_process_desc">हम हर प्रोजेक्ट को एक सुव्यवस्थित, पारदर्शी और लिखित नियमों के साथ पूरा करते हैं।</p>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-card">
-          <div class="process-num">१</div>
-          <h3 data-i18n="proc_1_title">बात करें व साइट विजिट</h3>
-          <p data-i18n="proc_1_desc">फोन पर चर्चा करें और अपने प्लॉट पर साइट विजिट तय करें।</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-num">२</div>
-          <h3 data-i18n="proc_2_title">प्लानिंग व लिखित अनुबंध</h3>
-          <p data-i18n="proc_2_desc">वास्तु सम्मत प्लानिंग, दर व किस्तों का स्पष्ट कानूनी अनुबंध पत्र।</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-num">३</div>
-          <h3 data-i18n="proc_3_title">मजबूत निर्माण कार्य</h3>
-          <p data-i18n="proc_3_desc">अनुभवी कारीगरों द्वारा नींव से लेकर छत ढलाई तक मजबूत निर्माण।</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-num">४</div>
-          <h3 data-i18n="proc_4_title">फिनिशिंग व हैंडओवर</h3>
-          <p data-i18n="proc_4_desc">प्लास्टर, फ्लोरिंग व पूरी जांच के बाद समय पर मकान की चाबी सौंपना।</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- 8. Contact & Free Consultation Section -->
-  <section id="contact" class="section-alt">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow eyebrow-yellow"><i class="fa-solid fa-envelope-open-text"></i> <span data-i18n="sec_contact_badge">संपर्क करें</span></div>
-        <h2 data-i18n="sec_contact_title">अपने प्रोजेक्ट की बात आज ही करें।</h2>
-        <p data-i18n="sec_contact_desc">हमसे फोन या व्हाट्सएप पर बात करें या नीचे दिए गए फॉर्म में अपनी जानकारी भेजें।</p>
-      </div>
-
-      <div class="contact-grid">
-        
-        <!-- १. बायाँ कॉलम: मुफ्त परामर्श फॉर्म -->
-        <div class="contact-box">
-          <h3 style="font-size:19px; font-weight:800; margin-bottom:18px;"><i class="fa-solid fa-file-pen" style="color:var(--gold);"></i> <span data-i18n="form_title">मुफ्त परामर्श फॉर्म (Free Enquiry)</span></h3>
-          <form onsubmit="handleContactSubmit(event)">
-            <div class="form-group">
-              <label for="cfName" data-i18n="form_name">आपका नाम (Full Name)</label>
-              <input id="cfName" required placeholder="अपना पूरा नाम लिखें">
-            </div>
-            <div class="form-group">
-              <label for="cfPhone" data-i18n="form_phone">मोबाइल नंबर (Mobile Number)</label>
-              <input id="cfPhone" type="tel" pattern="[0-9]{10}" required placeholder="१० अंकों का मोबाइल नंबर">
-            </div>
-            <div class="form-group">
-              <label for="cfAddress" data-i18n="form_address">साइट का पता / गाँव (Site Address / Village)</label>
-              <input id="cfAddress" required placeholder="गाँव, तहसील, जिला">
-            </div>
-            <div class="form-group">
-              <label for="cfType" data-i18n="form_type">कार्य का प्रकार (Type of Work)</label>
-              <select id="cfType">
-                <option value="नया मकान निर्माण (Complete Home Construction)" data-i18n="srv_1_title">१. नया मकान निर्माण (Complete Home Construction)</option>
-                <option value="RCC छत ढलाई एवं शटरिंग" data-i18n="srv_2_title">२. RCC छत ढलाई एवं शटरिंग</option>
-                <option value="दीवार चिनाई व प्लिंथ बीम" data-i18n="srv_3_title">३. दीवार चिनाई व प्लिंथ बीम</option>
-                <option value="अंदरूनी व बाहरी प्लास्टर कार्य" data-i18n="srv_4_title">४. अंदरूनी व बाहरी प्लास्टर कार्य</option>
-                <option value="टाइल्स, मार्बल व फ्लोरिंग फिटिंग" data-i18n="srv_5_title">५. टाइल्स, मार्बल व फ्लोरिंग फिटिंग</option>
-                <option value="2D नक्शा व 3D डिजाइन" data-i18n="srv_6_title">६. 2D नक्शा व 3D डिजाइन</option>
-                <option value="बाउंड्री वॉल व चारदीवारी निर्माण" data-i18n="srv_7_title">७. बाउंड्री वॉल व चारदीवारी निर्माण</option>
-                <option value="रेनोवेशन, मरम्मत व वॉटरप्रूफिंग" data-i18n="srv_8_title">८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="cfMsg" data-i18n="form_msg">संदेश / विवरण (वैकल्पिक)</label>
-              <textarea id="cfMsg" rows="3" placeholder="प्लॉट साइज या कोई विशेष बात..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="form_submit">इन्क्वायरी भेजें (WhatsApp)</span></button>
-          </form>
-        </div>
-
-        <!-- २. दायाँ कॉलम: प्रकाश चन्द स्वामी संपर्क विवरण + विज़िटिंग कार्ड + पोर्टल लॉगिन -->
-        <div style="display:flex; flex-direction:column; gap:20px;">
-          
-          <!-- A. प्रकाश चन्द स्वामी जी का संपर्क विवरण (भाषा के साथ ऑटोमैटिक बदलेगा) -->
-          <div style="background:var(--navy-card); padding:26px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow); color:#fff;">
-            <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
-              <img src="prakash-chand-swami-4.jpg.jpg" onerror="this.onerror=null; this.src='prakash-chand-swami-4.jpg';" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);" alt="Prakash Chand Swami">
-              <div>
-                <h3 style="font-size:18px; font-weight:800; color:var(--text-white);" data-i18n="founder_name">प्रकाश चन्द स्वामी</h3>
-                <p style="font-size:12px; color:var(--gold); font-weight:700;" data-i18n="founder_title">संचालक एवं मुख्य ठेकेदार (25+ वर्ष अनुभव)</p>
-              </div>
-            </div>
-
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> <span data-i18n="cnt_phone">फोन / हेल्पलाइन:</span></b> <a href="tel:9785438345" style="color:#fff; font-weight:700;">9785438345</a></p>
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp:</b> <a href="https://wa.me/919785438345" target="_blank" style="color:#22c55e; font-weight:700;">9785438345</a></p>
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-qrcode" style="color:var(--gold);"></i> UPI ID:</b> 9785438345@axl</p>
-            <p style="margin-bottom:0; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <span data-i18n="cnt_address_label">पता:</span></b> <a href="https://maps.app.goo.gl/t3QpEp1CKUiRqoJB7" target="_blank" style="color:#fff; text-decoration:underline; font-weight:600;"><span data-i18n="top_address">ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</span></a></p>
-          </div>
-
-          <!-- B. विज़िटिंग कार्ड -->
-          <div style="border-radius:16px; overflow:hidden; border:1.5px solid var(--line); box-shadow:var(--shadow); background:var(--navy-card);">
-            <img src="satpal-swami-card.png" alt="Satpal Swami - Prakash Swami Constructions" style="width:100%; display:block; border-radius:14px;">
-          </div>
-
-          <!-- C. पोर्टल लॉगिन बॉक्स -->
-          <div style="background:var(--navy-primary); color:#fff; padding:24px; border-radius:16px; text-align:center; border:2px solid var(--gold); box-shadow:0 10px 30px rgba(7,13,24,0.45);">
-            <h4 style="color:var(--gold); font-size:16px; margin-bottom:8px;" data-i18n="portal_title">पोर्टल लॉगिन (Admin / Customer / Worker)</h4>
-            <p style="font-size:13px; color:#cbd5e1; margin-bottom:16px;" data-i18n="portal_desc">अपने प्रोजेक्ट्स, डिजिटल अनुबंध, हाजिरी और भुगतान देखने के लिए डैशबोर्ड में लॉगिन करें।</p>
-            <a href="dashboard.html" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-right-to-bracket"></i> Dashboard Login</a>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- 9. Footer -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="logo" style="margin-bottom:14px;">
-          <span class="mark">PS</span>
-          <span>Prakash Swami<small>CONSTRUCTIONS</small></span>
-        </div>
-        <p style="color:#94a3b8; font-size:13px; line-height:1.6; max-width:320px;" data-i18n="footer_about">
-          25+ वर्षों के अनुभव के साथ मंडावरा, झुंझुनूं व संपूर्ण राजस्थान में मजबूत मकान निर्माण, RCC छत ढलाई एवं फिनिशिंग का विश्वसनीय नाम।
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-i18n="footer_links">मुख्य लिंक्स</h4>
-        <ul>
-          <li><a href="#home" data-i18n="nav_home">होम</a></li>
-          <li><a href="#services" data-i18n="nav_services">सेवाएँ</a></li>
-          <li><a href="#about" data-i18n="nav_about">हमारे बारे में</a></li>
-          <li><a href="#projects" data-i18n="nav_projects">प्रोजेक्ट गैलरी</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">संपर्क</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-i18n="footer_portal_head">पोर्टल व लॉगिन</h4>
-        <ul>
-          <li><a href="dashboard.html#admin">Admin Login</a></li>
-          <li><a href="dashboard.html#customer">Customer Portal</a></li>
-          <li><a href="dashboard.html#worker">Worker Portal</a></li>
-          <li><a href="#contact" data-i18n="nav_consult">मुफ्त परामर्श</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-i18n="footer_contact_head">संपर्क जानकारी</h4>
-        <p style="margin-bottom:8px;">📍 <span data-i18n="footer_loc">मंडावरा, झुंझुनूं (राजि.)</span></p>
-        <p style="margin-bottom:8px;">📞 9785438345</p>
-        <p style="margin-bottom:14px;">✉️ satpalswami22742@gmail.com</p>
-        <a href="https://wa.me/919785438345" target="_blank" class="btn-sm btn-whatsapp" style="padding:7px 14px; font-size:12px; font-weight:700;">
-          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
-        </a>
-      </div>
-    </div>
-
-    <div style="text-align:center; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:#64748b;">
-      © 2026 PRAKASH SWAMI CONSTRUCTIONS. <span data-i18n="footer_rights">सर्वाधिकार सुरक्षित।</span>
-    </div>
+  <div class="float">
+    <a class="wa" href="https://wa.me/919785438345" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a class="call" href="tel:9785438345" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
   </div>
-</footer>
+  <button class="topbtn" id="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-arrow-up"></i></button>
 
-<!-- Lightbox Modal -->
-<div id="lightboxModal" class="lightbox-backdrop" onclick="if(event.target===this) closeLightbox()">
-  <div class="lightbox-card">
-    <div style="padding:16px 20px; background:var(--navy-primary); color:#fff; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line);">
-      <h3 id="lbTitle" style="font-size:17px; font-weight:800; color:var(--gold);">Project Details</h3>
-      <button type="button" onclick="closeLightbox()" style="background:transparent; border:0; color:#fff; font-size:26px; cursor:pointer; padding:2px 6px;">&times;</button>
-    </div>
-    <div style="padding:20px; overflow-y:auto; flex:1;">
-      <img id="lbImg" src="" style="width:100%; max-height:400px; object-fit:cover; border-radius:12px; margin-bottom:16px; border:1px solid var(--line);" alt="Project Detail">
-      <div id="lbDesc"></div>
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid var(--line); padding-top:16px; margin-top:16px;">
-        <a id="lbWaBtn" href="#" target="_blank" class="btn btn-whatsapp" style="padding:10px 20px; font-size:13.5px;">
-          <i class="fa-brands fa-whatsapp"></i> <span id="lbWaBtnText">इस कार्य की लागत व कोटेशन पूछें</span>
-        </a>
-        <button type="button" class="btn btn-dark" onclick="closeLightbox()" style="padding:10px 20px; font-size:13.5px;" id="lbCloseText">बंद करें</button>
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <div class="lightbox-card">
+      <button class="lb-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+      <img class="lb-img" id="lbImg" src="" alt="Project">
+      <div class="lb-body">
+        <h3 id="lbTitle"></h3>
+        <p id="lbLocation"></p>
+        <p id="lbDesc" style="margin-top:10px"></p>
+        <div class="lb-actions"><a class="btn btn-gold" id="lbWa" target="_blank"><i class="fa-brands fa-whatsapp"></i><span data-i18n="lb_wa">इस प्रोजेक्ट के बारे में पूछें</span></a><button class="btn btn-outline" onclick="closeLightbox()" data-i18n="lb_close">बंद करें</button></div>
       </div>
     </div>
   </div>
-</div>
 
 <script>
-// Mobile Navigation Toggle
-function toggleMenu() {
-  const menu = document.getElementById('navMenu');
-  const icon = document.getElementById('menuIcon');
-  if (!menu) return;
-  menu.classList.toggle('active');
-  if (icon) {
-    icon.className = menu.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-  }
-}
-
-function closeMenu() {
-  const menu = document.getElementById('navMenu');
-  const icon = document.getElementById('menuIcon');
-  if (menu && menu.classList.contains('active')) {
-    menu.classList.remove('active');
-    if (icon) icon.className = 'fa-solid fa-bars';
-  }
-}
-
-function closeLightbox() {
-  const modal = document.getElementById('lightboxModal');
-  if (modal) {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeLightbox();
-});
-
-// WhatsApp Form Handler
-function handleContactSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('cfName').value.trim();
-  const phone = document.getElementById('cfPhone').value.trim();
-  const address = document.getElementById('cfAddress').value.trim();
-  const type = document.getElementById('cfType').value;
-  const msg = document.getElementById('cfMsg').value.trim();
-
-  const isEn = currentLang === 'en';
-  const prefix = isEn ? "Hello Prakash Swami Ji," : "नमस्ते प्रकाश स्वामी जी,";
-  const nameLbl = isEn ? "My Name:" : "मेरा नाम:";
-  const phoneLbl = isEn ? "Mobile:" : "मोबाइल:";
-  const locLbl = isEn ? "Location:" : "स्थान:";
-  const typeLbl = isEn ? "Work Type:" : "कार्य का प्रकार:";
-  const msgLbl = isEn ? "Details:" : "विवरण:";
-
-  const waText = encodeURIComponent(`${prefix}\n${nameLbl} ${name}\n${phoneLbl} ${phone}\n${locLbl} ${address}\n${typeLbl} ${type}\n${msgLbl} ${msg ? msg : '-'}`);
-  window.open(`https://wa.me/919785438345?text=${waText}`, '_blank');
-}
-</script>
-
-<!-- ==========================================
-     LANGUAGE TRANSLATION ENGINE (HINDI <-> ENGLISH)
-     ========================================== -->
-<script>
-let currentLang = localStorage.getItem('ps_site_lang') || 'hi';
-
+/* =========================================================
+   100% SINGLE-LANGUAGE TRANSLATION ENGINE
+   Hindi OR English — no mixed page labels.
+   ========================================================= */
 const I18N = {
-  hi: {
-    btn_toggle: "English",
-    site_title: "Prakash Swami Constructions — भवन निर्माण ठेकेदार झुंझुनूं व उदयपुरवाटी | मकान निर्माण विशेषज्ञ",
-    top_office: "कार्यालय:",
-    top_address: "ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)",
-    nav_home: "होम",
-    nav_services: "सेवाएँ",
-    nav_about: "हमारे बारे में",
-    nav_projects: "प्रोजेक्ट गैलरी",
-    nav_contact: "संपर्क",
-    nav_consult: "मुफ्त परामर्श",
-    hero_eyebrow: "25+ वर्षों का अटूट भरोसा • Mandawara, Jhunjhunu",
-    hero_h1: "मजबूत नींव, बेहतरीन कारीगरी एवं <em>आधुनिक भवन निर्माण</em>।",
-    hero_desc: "गांव व कस्बों के लिए टिकाऊ, सुंदर और 100% वास्तु सम्मत मकानों का निर्माण। नींव खुदाई से लेकर RCC छत ढलाई, चिनाई, प्लास्टर, टाइल्स और चाबी सौंपने तक का पूरा काम लिखित अनुबंध के साथ।",
-    btn_call: "9785438345 पर कॉल करें",
-    btn_whatsapp: "WhatsApp पर बात करें",
-    btn_view_projects: "प्रोजेक्ट्स देखें",
-    btn_install_app: "हमारा मोबाइल ऐप इंस्टॉल करें",
-    stat_exp: "वर्षों का अनुभव",
-    stat_homes: "सफल मकान",
-    stat_material: "मजबूत मटेरियल",
-    stat_contract_val: "लिखित",
-    stat_contract: "कानूनी अनुबंध",
-    founder_name: "प्रकाश चन्द स्वामी",
-    founder_title: "संचालक एवं मुख्य ठेकेदार (25+ वर्ष अनुभव)",
-    btn_enquiry_card: "Enquiry करें",
-    sec_services_badge: "हमारी प्रमुख सेवाएँ (Services)",
-    sec_services_title: "निर्माण का हर काम, पूरी मजबूती और सही तरीके से।",
-    sec_services_desc: "नींव की खुदाई से लेकर फिनिशिंग तक हर काम अनुभवी कारीगरों, आधुनिक टूल्स और उच्च गुणवत्ता वाले मटेरियल से किया जाता है।",
-    srv_1_title: "१. नया मकान निर्माण (Complete Home Construction)",
-    srv_1_desc: "नींव खुदाई से लेकर चाबी सौंपने तक का पूरा काम। विद मटेरियल (With Material) या सिर्फ लेबर रेट दोनों में उपलब्ध।",
-    srv_2_title: "२. RCC छत ढलाई एवं शटरिंग (RCC Slab)",
-    srv_2_desc: "सरिया बांधना, मजबूत प्लेट शटरिंग, लेवलिंग, वाइब्रेटर का उपयोग और 100% लीकेज-प्रूफ कंक्रीट छत ढलाई।",
-    srv_3_title: "३. दीवार चिनाई व प्लिंथ बीम (Brick Masonry)",
-    srv_3_desc: "ईंट व पत्थर की साहुल-सूत में सीधी चिनाई, डीपीसी (DPC), प्लिंथ प्रोटेक्शन और मजबूत कॉलम बीम निर्माण।",
-    srv_4_title: "४. अंदरूनी व बाहरी प्लास्टर (Cement Plaster)",
-    srv_4_desc: "दीवारों और छत का बिल्कुल समतल, चिकना और वाटरप्रूफ सिंगल/डबल कोट सीमेंट प्लास्टर फिनिशिंग कार्य।",
-    srv_5_title: "५. टाइल्स, मार्बल व फ्लोरिंग (Tiles & Marble)",
-    srv_5_desc: "कमरों, हॉल, सीढ़ियों, किचन और बाथरूम में विट्रीफाइड टाइल्स, मार्बल व ग्रेनाइट की सही ढलान के साथ फिटिंग।",
-    srv_6_title: "६. 2D नक्शा व 3D फ्रंट एलिवेशन (House Design)",
-    srv_6_desc: "100% वास्तु सम्मत 2D फ्लोर प्लान, कमरों का सटीक नाप (Feet & Inches), खुला आँगन व सुंदर 3D फ्रंट लुक।",
-    srv_7_title: "७. बाउंड्री वॉल व चारदीवारी (Boundary Wall)",
-    srv_7_desc: "प्लॉट, खेत, फार्महाउस और मकान की मजबूत बाउंड्री वॉल, पिलर, तारबंदी व मेन गेट का निर्माण कार्य।",
-    srv_8_title: "८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग (Renovation)",
-    srv_8_desc: "पुराने मकान का नवीनीकरण, ऊपर नई मंजिल का निर्माण, छत की वॉटरप्रूफिंग व सीलन की स्थायी रोकथाम।",
-    btn_quote: "कोटेशन मंगाएं",
-    btn_talk: "सीधे बात करें",
-    btn_inquire: "पूछताछ करें",
-    btn_call_short: "कॉल करें",
-    btn_map: "नक्शा मंगाएं",
-    about_eyebrow: "हमारे संस्थापक व टीम",
-    about_title: "भरोसा ही हमारी सबसे बड़ी पहचान है।",
-    about_p1: "<b>प्रकाश चन्द स्वामी (PRAKASH SWAMI CONSTRUCTIONS)</b> ने पिछले 25 वर्षों में मंडावरा, झुंझुनूं, उदयपुरवाटी और शेखावाटी में सैकड़ों परिवारों के सपनों के आशियाने बनाए हैं।",
-    about_p2: "हमारा नियम साफ है: <b>कोई छुपा हुआ खर्च नहीं, सिर्फ उच्च दर्जे का मटेरियल (अल्ट्राटेक/एसीसी सीमेंट, टाटा/जिंदल सरिया), अनुभवी कारीगर और समय पर काम पूरा करने का कानूनी लिखित अनुबंध।</b>",
-    apt_1: "100% मजबूत मटेरियल",
-    apt_2: "अनुभवी कारीगर व मिस्त्री",
-    apt_3: "कानूनी लिखित अनुबंध",
-    apt_4: "समय पर हैंडओवर",
-    sec_gallery_badge: "वास्तविक कार्य गैलरी (Real Work Gallery)",
-    sec_gallery_title: "हमारे द्वारा बनाए गए वास्तविक मकान व कार्य",
-    sec_gallery_desc: "मंडावरा, झुंझुनूं व शेखावाटी में पूर्ण किए गए और वर्तमान में चल रहे निर्माण कार्य। किसी भी फोटो पर क्लिक करके पूरा विवरण देखें।",
-    sec_process_badge: "पारदर्शी कार्य प्रक्रिया",
-    sec_process_title: "बात से काम तक, 4 आसान कदम।",
-    sec_process_desc: "हम हर प्रोजेक्ट को एक सुव्यवस्थित, पारदर्शी और लिखित नियमों के साथ पूरा करते हैं।",
-    proc_1_title: "बात करें व साइट विजिट",
-    proc_1_desc: "फोन पर चर्चा करें और अपने प्लॉट पर साइट विजिट तय करें।",
-    proc_2_title: "प्लानिंग व लिखित अनुबंध",
-    proc_2_desc: "वास्तु सम्मत प्लानिंग, दर व किस्तों का स्पष्ट कानूनी अनुबंध पत्र।",
-    proc_3_title: "मजबूत निर्माण कार्य",
-    proc_3_desc: "अनुभवी कारीगरों द्वारा नींव से लेकर छत ढलाई तक मजबूत निर्माण।",
-    proc_4_title: "फिनिशिंग व हैंडओवर",
-    proc_4_desc: "प्लास्टर, फ्लोरिंग व पूरी जांच के बाद समय पर मकान की चाबी सौंपना।",
-    sec_contact_badge: "संपर्क करें",
-    sec_contact_title: "अपने प्रोजेक्ट की बात आज ही करें।",
-    sec_contact_desc: "हमसे फोन या व्हाट्सएप पर बात करें या नीचे दिए गए फॉर्म में अपनी जानकारी भेजें।",
-    form_title: "मुफ्त परामर्श फॉर्म (Free Enquiry)",
-    form_name: "आपका नाम (Full Name)",
-    form_phone: "मोबाइल नंबर (Mobile Number)",
-    form_address: "साइट का पता / गाँव (Site Address / Village)",
-    form_type: "कार्य का प्रकार (Type of Work)",
-    form_msg: "संदेश / विवरण (वैकल्पिक)",
-    form_submit: "इन्क्वायरी भेजें (WhatsApp)",
-    cnt_phone: "फोन / हेल्पलाइन:",
-    cnt_address_label: "पता:",
-    portal_title: "पोर्टल लॉगिन (Admin / Customer / Worker)",
-    portal_desc: "अपने प्रोजेक्ट्स, डिजिटल अनुबंध, हाजिरी और भुगतान देखने के लिए डैशबोर्ड में लॉगिन करें।",
-    footer_about: "25+ वर्षों के अनुभव के साथ मंडावरा, झुंझुनूं व संपूर्ण राजस्थान में मजबूत मकान निर्माण, RCC छत ढलाई एवं फिनिशिंग का विश्वसनीय नाम।",
-    footer_links: "मुख्य लिंक्स",
-    footer_portal_head: "पोर्टल व लॉगिन",
-    footer_contact_head: "संपर्क जानकारी",
-    footer_loc: "मंडावरा, झुंझुनूं (राजि.)",
-    footer_rights: "सर्वाधिकार सुरक्षित।",
-    lb_btn_wa: "इस कार्य की लागत व कोटेशन पूछें",
-    lb_btn_close: "बंद करें",
-    gallery_view_btn: "फ़ोटो व विवरण देखें",
-    gallery_site: "साइट"
+  hi:{
+    top_tag:"25+ वर्षों का अटूट भरोसा • मजबूत नींव • बेहतर कारीगरी",nav_home:"होम",nav_services:"सेवाएँ",nav_about:"हमारे बारे में",nav_projects:"प्रोजेक्ट गैलरी",nav_process:"हमारा तरीका",nav_contact:"संपर्क",login:"लॉगिन",
+    hero_eyebrow:"25+ वर्षों का अटूट भरोसा • मंडावरा, झुंझुनूं",hero_h1:"मजबूत नींव, बेहतरीन कारीगरी एवं <em>आधुनिक भवन निर्माण</em>।",hero_desc:"गांव व कस्बों के लिए टिकाऊ, सुंदर और वास्तु सम्मत मकानों का निर्माण। नींव खुदाई से लेकर RCC छत ढलाई, चिनाई, प्लास्टर, टाइल्स और चाबी सौंपने तक का पूरा काम लिखित अनुबंध के साथ।",btn_call:"9785438345 पर कॉल करें",btn_wa:"WhatsApp पर बात करें",btn_projects:"प्रोजेक्ट्स देखें",
+    proof1:"25+ वर्ष अनुभव",proof2:"लिखित कानूनी अनुबंध",proof3:"100+ सफल मकान",founder_label:"संचालक एवं मुख्य ठेकेदार",founder_name:"प्रकाश चन्द स्वामी",founder_title:"संचालक एवं मुख्य ठेकेदार (25+ वर्ष अनुभव)",mini1:"नक्शा एवं डिजाइन",mini1d:"2D नक्शा और 3D फ्रंट एलिवेशन मार्गदर्शन",mini2:"संपूर्ण निर्माण",mini2d:"नींव से फिनिशिंग तक पूरा काम",mini3:"मंडावरा कार्यालय",mini3d:"उदयपुरवाटी, झुंझुनूं, राजस्थान",
+    stat_exp:"वर्षों का अनुभव",stat_homes:"सफल मकान",stat_services:"मुख्य सेवाएँ",stat_contract:"लिखित अनुबंध विकल्प",
+    exp_years:"वर्षों का निर्माण अनुभव",about_badge:"हमारे बारे में",about_title:"मकान सिर्फ बनाते नहीं — <span class='gold'>भरोसा भी बनाते हैं।</span>",about_desc:"Prakash Swami Constructions का focus residential construction को व्यवस्थित, transparent और customer-focused तरीके से पूरा करना है। नींव से लेकर finishing और handover तक हर stage को स्पष्ट रखने पर हमारा जोर है।",check1:"अनुभवी कारीगर और site supervision",check2:"उच्च गुणवत्ता वाले material पर focus",check3:"लिखित agreement का विकल्प",check4:"काम की progress की स्पष्ट जानकारी",about_btn:"अपने प्रोजेक्ट पर बात करें",
+    services_badge:"हमारी प्रमुख सेवाएँ",services_title:"निर्माण का हर काम, <span class='gold'>पूरी मजबूती और सही तरीके से।</span>",services_desc:"नींव की खुदाई से लेकर finishing तक अनुभवी कारीगरों, modern tools और quality material के साथ काम करने का focus।",
+    srv1t:"नया मकान निर्माण",srv1d:"नींव खुदाई से चाबी सौंपने तक का पूरा काम। With Material या Labour Rate विकल्प।",srv2t:"RCC छत ढलाई एवं Shuttering",srv2d:"सरिया, plate shuttering, leveling, vibrator और concrete slab work पर focus।",srv3t:"दीवार चिनाई व Plinth Beam",srv3d:"ईंट/पत्थर की सीधी चिनाई, DPC, plinth protection, columns और beams का काम।",srv4t:"Cement Plaster",srv4d:"अंदरूनी और बाहरी दीवारों/छत के लिए smooth, level और neat plaster finishing।",srv5t:"Tiles, Marble & Flooring",srv5d:"कमरों, hall, stairs, kitchen और bathroom में tiles, marble और granite fitting।",srv6t:"2D नक्शा & 3D Front Elevation",srv6d:"वास्तु अनुसार 2D floor plan, room measurements और सुंदर 3D front look guidance।",srv7t:"Boundary Wall & चारदीवारी",srv7d:"Plot, farm, farmhouse और home के लिए boundary wall, pillars, fencing और gate work।",srv8t:"Renovation & Waterproofing",srv8d:"पुराने मकान की repair, नई मंजिल, roof waterproofing और dampness solutions।",
+    why_badge:"क्यों हम?",why_title:"साफ बात, व्यवस्थित काम, बेहतर परिणाम।",why_desc:"Construction journey में हर जरूरी stage पर clarity और direct communication को प्राथमिकता।",why2_badge:"आपको क्या मिलेगा",why2_title:"एक contractor नहीं — <span class='gold'>एक जिम्मेदार construction partner.</span>",r1t:"लिखित अनुबंध",r1d:"काम और terms को पहले से स्पष्ट रखने का विकल्प।",r2t:"अनुभवी टीम",r2d:"Skilled workers और practical site execution पर focus।",r3t:"काम की प्रगति की जानकारी",r3d:"काम की स्थिति को समझना और update पाना आसान।",r4t:"सीधी बातचीत",r4d:"जरूरत के समय सीधे team से बात करने की सुविधा।",
+    process_badge:"हमारा तरीका",process_title:"चार आसान steps में <span class='gold'>construction journey.</span>",p1t:"आपकी जरूरत",p1d:"Call या WhatsApp पर काम की जानकारी और photos भेजें।",p2t:"Site Discussion",p2d:"काम, जगह और requirement को समझकर discussion किया जाता है।",p3t:"Estimate / Quote",p3d:"काम के अनुसार अनुमानित लागत और contract details पर बात होती है।",p4t:"Construction",p4d:"काम शुरू करके quality और timely completion पर focus किया जाता है।",
+    gallery_badge:"प्रोजेक्ट गैलरी",gallery_title:"हमारा काम — <span class='gold'>real project photos.</span>",gallery_desc:"Dashboard से जो projects add होंगे वे यहाँ live दिखाई देंगे। नीचे पुराने website के local project images के लिए fallback भी रखा गया है।",
+    cta_badge:"मुफ्त परामर्श",cta_title:"अपने घर की planning आज से शुरू करें।",cta_desc:"मकान, RCC, plaster, tiles, boundary wall या renovation के लिए अपनी requirement भेजें।",call_short:"कॉल करें",
+    contact_badge:"संपर्क करें",contact_title:"अपने project पर बात करें।",contact_desc:"Call, WhatsApp या enquiry form के माध्यम से अपनी requirement भेजें।",phone_label:"फोन / हेल्पलाइन",address:"ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)",service_area:"उदयपुरवाटी और आसपास के क्षेत्र",map_btn:"Google Maps में Location खोलें",
+    form_badge:"पूछताछ फॉर्म",form_title:"अपने काम का Free Quote पूछें",form_desc:"मकान, छत, plaster, tiles, boundary wall या renovation के लिए enquiry भेजें।",f_name:"नाम",f_phone:"मोबाइल",f_type:"काम का प्रकार",f_location:"स्थान",f_details:"काम की जानकारी",f_submit:"WhatsApp पर Enquiry भेजें",f_note:"Submit करने पर WhatsApp खुलेगा और message तैयार मिलेगा।",
+    team_badge:"हमारी टीम",team_title:"प्रकाश चन्द स्वामी",team_desc:"संचालक एवं मुख्य ठेकेदार। Residential construction, RCC work, masonry, plaster, tiles, boundary wall और renovation projects की site planning और execution पर focus।",tb1:"25+ वर्ष अनुभव",tb2:"Site Supervision",tb3:"Residential Construction",team_call:"सीधे बात करें",card_badge:"विज़िटिंग कार्ड",
+    footer_about:"25+ वर्षों के अनुभव के साथ मंडावरा, झुंझुनूं और आसपास के क्षेत्रों में residential construction, RCC और finishing services।",footer_links:"मुख्य लिंक्स",footer_portal:"पोर्टल व लॉगिन",free_consult:"मुफ्त परामर्श",footer_contact:"संपर्क जानकारी",footer_loc:"मंडावरा, झुंझुनूं (राजि.)",rights:"सर्वाधिकार सुरक्षित।",lb_wa:"इस प्रोजेक्ट के बारे में पूछें",lb_close:"बंद करें"
   },
-  en: {
-    btn_toggle: "हिंदी",
-    site_title: "Prakash Swami Constructions — Building Contractor in Jhunjhunu & Udaipurwati | Home Construction Experts",
-    top_office: "Office:",
-    top_address: "Village & Post: Mandawara, Tehsil: Udaipurwati, Dist: Jhunjhunu (Raj.)",
-    nav_home: "Home",
-    nav_services: "Services",
-    nav_about: "About Us",
-    nav_projects: "Project Gallery",
-    nav_contact: "Contact",
-    nav_consult: "Free Enquiry",
-    hero_eyebrow: "25+ Years of Proven Trust • Mandawara, Jhunjhunu",
-    hero_h1: "Strong Foundations, Fine Craftsmanship & <em>Modern Construction</em>.",
-    hero_desc: "Durable, aesthetically modern, and 100% Vastu-compliant home construction for villages and towns. Complete turnkey building from foundation excavation to RCC slab casting, masonry, plaster, tiles, and key handover with legal contracts.",
-    btn_call: "Call 9785438345",
-    btn_whatsapp: "Chat on WhatsApp",
-    btn_view_projects: "View Projects",
-    btn_install_app: "Install Our Mobile App",
-    stat_exp: "Years Experience",
-    stat_homes: "Completed Homes",
-    stat_material: "Premium Materials",
-    stat_contract_val: "Written",
-    stat_contract: "Legal Agreement",
-    founder_name: "Prakash Chand Swami",
-    founder_title: "Founder & Lead Contractor (25+ Yrs Exp.)",
-    btn_enquiry_card: "Enquire Now",
-    sec_services_badge: "Our Core Services",
-    sec_services_title: "Every construction task, delivered with strength and precision.",
-    sec_services_desc: "From ground excavation to final handover, every job is handled by seasoned masons using modern tools and top-tier materials.",
-    srv_1_title: "1. Turnkey Home Construction (With Material & Labour)",
-    srv_1_desc: "End-to-end house building from foundation digging to key handover. Available in both 'With Material' and 'Labour Rate' packages.",
-    srv_2_title: "2. RCC Roof Slab Casting & Shuttering",
-    srv_2_desc: "Reinforced steel framing, heavy-duty plate shuttering, precision leveling, vibrator compaction, and 100% leak-proof concrete casting.",
-    srv_3_title: "3. Brick Masonry & Plinth Beam Construction",
-    srv_3_desc: "High-precision plumb-line brick & stone masonry, DPC damp proofing, plinth protection, and heavy reinforced column beams.",
-    srv_4_title: "4. Interior & Exterior Cement Plastering",
-    srv_4_desc: "Flawlessly level, smooth, and weather-resistant single/double coat cement plaster finishing for long-lasting walls.",
-    srv_5_title: "5. Tiles, Marble & Granite Flooring",
-    srv_5_desc: "Precision installation of vitrified tiles, marble, and granite in bedrooms, halls, stairs, kitchens, and bathrooms with exact slope alignment.",
-    srv_6_title: "6. 2D Floor Plans & 3D Front Elevation",
-    srv_6_desc: "100% Vastu-compliant 2D architectural floor layouts with exact room dimensions (Feet & Inches) and luxury 3D front facades.",
-    srv_7_title: "7. Boundary Walls & Compound Fencing",
-    srv_7_desc: "Durable 6-8 ft boundary walls, reinforced pillars, wire fencing, and gate masonry for plots, farms, and villas.",
-    srv_8_title: "8. Home Renovation, Remodeling & Waterproofing",
-    srv_8_desc: "Structural remodeling of older homes, building upper floors, rooftop waterproofing, and permanent dampness solutions.",
-    btn_quote: "Get Quotation",
-    btn_talk: "Call Directly",
-    btn_inquire: "Enquire Now",
-    btn_call_short: "Call Now",
-    btn_map: "Request 2D/3D Map",
-    about_eyebrow: "Our Founder & Team",
-    about_title: "Trust and structural integrity are our true hallmark.",
-    about_p1: "<b>PRAKASH SWAMI CONSTRUCTIONS</b>, founded by <b>Prakash Chand Swami</b>, has built dream homes for hundreds of families across Mandawara, Jhunjhunu, Udaipurwati, and Shekhawati over the past 25+ years.",
-    about_p2: "Our principle is simple: <b>Zero hidden charges, only grade-A building materials (UltraTech/ACC Cement, Tata/Jindal Steel), master craftsmen, and legally binding agreements with timely project handover.</b>",
-    apt_1: "100% High-Grade Material",
-    apt_2: "Master Craftsmen & Masons",
-    apt_3: "Legally Binding Contracts",
-    apt_4: "Timely Project Delivery",
-    sec_gallery_badge: "Real Work Gallery",
-    sec_gallery_title: "Real Homes & Projects Built by Us",
-    sec_gallery_desc: "Browse our completed and ongoing construction projects across Mandawara, Jhunjhunu, and Shekhawati. Tap any card to view photos & specs.",
-    sec_process_badge: "Transparent Workflow",
-    sec_process_title: "From Consultation to Handover in 4 Easy Steps.",
-    sec_process_desc: "We execute every project with structured transparency, milestone schedules, and legal safety.",
-    proc_1_title: "1. Discussion & Site Visit",
-    proc_1_desc: "Consult over phone and schedule an on-site plot visit and soil assessment.",
-    proc_2_title: "2. Planning & Written Contract",
-    proc_2_desc: "Vastu planning, rate finalizing, milestone payment terms, and signed legal contract.",
-    proc_3_title: "3. Robust Construction Execution",
-    proc_3_desc: "High-grade structural construction from foundation to roof casting by master masons.",
-    proc_4_title: "4. Finishing & Final Handover",
-    proc_4_desc: "Plastering, flooring, fixtures, quality inspections, and on-time key handover.",
-    sec_contact_badge: "Contact Us",
-    sec_contact_title: "Start Building Your Dream Home Today.",
-    sec_contact_desc: "Call or message us on WhatsApp, or send your requirements in the form below.",
-    form_title: "Free Consultation & Quotation Form",
-    form_name: "Your Full Name",
-    form_phone: "Mobile Number (10 Digits)",
-    form_address: "Site Address / Village",
-    form_type: "Type of Construction Work",
-    form_msg: "Message / Specific Requirements (Optional)",
-    form_submit: "Send Enquiry via WhatsApp",
-    cnt_phone: "Phone / Helpline:",
-    cnt_address_label: "Address:",
-    portal_title: "Portal Access (Admin / Customer / Worker)",
-    portal_desc: "Sign in to view active project progress, legal agreements, site attendance, and digital payments.",
-    footer_about: "Backed by 25+ years of excellence, Prakash Swami Constructions is a premier name in turnkey building, RCC slab casting, and architectural finishing across Rajasthan.",
-    footer_links: "Quick Navigation",
-    footer_portal_head: "Portals & Login",
-    footer_contact_head: "Direct Contacts",
-    footer_loc: "Mandawara, Jhunjhunu (Raj.)",
-    footer_rights: "All rights reserved.",
-    lb_btn_wa: "Inquire About Cost & Specs on WhatsApp",
-    lb_btn_close: "Close",
-    gallery_view_btn: "View Photos & Specs",
-    gallery_site: "Site"
+  en:{
+    top_tag:"25+ Years of Trust • Strong Foundations • Better Workmanship",nav_home:"Home",nav_services:"Services",nav_about:"About Us",nav_projects:"Project Gallery",nav_process:"Our Process",nav_contact:"Contact",login:"Login",
+    hero_eyebrow:"25+ Years of Trust • Mandawara, Jhunjhunu",hero_h1:"Strong Foundations, Better Workmanship & <em>Modern Construction.</em>",hero_desc:"Durable, beautiful and Vastu-conscious homes for villages and towns. From excavation to RCC slab, masonry, plaster, tiles and handover — complete work with the option of a written agreement.",btn_call:"Call 9785438345",btn_wa:"Chat on WhatsApp",btn_projects:"View Projects",
+    proof1:"25+ Years Experience",proof2:"Written Agreement",proof3:"100+ Completed Homes",founder_label:"OWNER & LEAD CONTRACTOR",founder_name:"Prakash Chand Swami",founder_title:"Owner & Lead Contractor (25+ Years Experience)",mini1:"Planning & Design",mini1d:"2D plans and 3D front elevation guidance",mini2:"Complete Construction",mini2d:"Complete work from foundation to finishing",mini3:"Mandawara Office",mini3d:"Udaipurwati, Jhunjhunu, Rajasthan",
+    stat_exp:"Years of Experience",stat_homes:"Completed Homes",stat_services:"Core Services",stat_contract:"Written Agreement Option",
+    exp_years:"Years of Construction Experience",about_badge:"ABOUT US",about_title:"We don't just build homes — we build <span class='gold'>trust.</span>",about_desc:"Prakash Swami Constructions focuses on structured, transparent and customer-focused residential construction. We aim to keep every important stage clear from foundation to finishing and handover.",check1:"Experienced craftsmen & site supervision",check2:"Focus on quality materials",check3:"Written agreement option",check4:"Clear project progress updates",about_btn:"Discuss Your Project",
+    services_badge:"OUR SERVICES",services_title:"Every construction job, <span class='gold'>done the right way.</span>",services_desc:"From excavation to finishing, our focus is experienced workmanship, modern tools and quality materials.",
+    srv1t:"Complete Home Construction",srv1d:"Complete work from excavation to handover. Available as With Material or Labour Rate.",srv2t:"RCC Slab & Shuttering",srv2d:"Rebar, plate shuttering, leveling, vibrator and concrete slab work.",srv3t:"Brick Masonry & Plinth Beam",srv3d:"Straight brick/stone masonry, DPC, plinth protection, columns and beams.",srv4t:"Cement Plaster",srv4d:"Smooth, level and neat interior/exterior wall and ceiling plaster finishing.",srv5t:"Tiles, Marble & Flooring",srv5d:"Tiles, marble and granite fitting for rooms, halls, stairs, kitchens and bathrooms.",srv6t:"2D Plan & 3D Front Elevation",srv6d:"Vastu-conscious 2D floor plans, room measurements and 3D front elevation guidance.",srv7t:"Boundary Wall & Compound Wall",srv7d:"Boundary walls, pillars, fencing and main gate work for plots, farms and homes.",srv8t:"Renovation & Waterproofing",srv8d:"Repair, additional floors, roof waterproofing and dampness solutions.",
+    why_badge:"WHY US?",why_title:"Clear communication. Organised work. Better outcomes.",why_desc:"We prioritise clarity and direct communication at every important stage of the construction journey.",why2_badge:"WHAT YOU GET",why2_title:"Not just a contractor — <span class='gold'>a responsible construction partner.</span>",r1t:"Written Agreement",r1d:"An option to keep scope and terms clear from the beginning.",r2t:"Experienced Team",r2d:"Focus on skilled workers and practical site execution.",r3t:"Progress Visibility",r3d:"Make it easy to understand and follow project progress.",r4t:"Direct Communication",r4d:"Direct access to the team when you need it.",
+    process_badge:"OUR PROCESS",process_title:"Your construction journey in <span class='gold'>four simple steps.</span>",p1t:"Your Requirement",p1d:"Send work details and photos by call or WhatsApp.",p2t:"Site Discussion",p2d:"Understand the work, location and requirements.",p3t:"Estimate / Quote",p3d:"Discuss estimated cost and contract details for the work.",p4t:"Construction",p4d:"Start the work with a focus on quality and timely completion.",
+    gallery_badge:"PROJECT GALLERY",gallery_title:"Our Work — <span class='gold'>real project photos.</span>",gallery_desc:"Projects added from the dashboard will appear here live. Local project images are also kept as a fallback.",
+    cta_badge:"FREE CONSULTATION",cta_title:"Start planning your home today.",cta_desc:"Send your requirement for home construction, RCC, plaster, tiles, boundary wall or renovation.",call_short:"Call Us",
+    contact_badge:"GET IN TOUCH",contact_title:"Let's talk about your project.",contact_desc:"Send your requirement through a call, WhatsApp or the enquiry form.",phone_label:"Phone / Helpline",address:"Village & Post: Mandawara, Tehsil: Udaipurwati, District: Jhunjhunu, Rajasthan",service_area:"Udaipurwati and nearby areas",map_btn:"Open Location in Google Maps",
+    form_badge:"ENQUIRY FORM",form_title:"Ask for a Free Quote",form_desc:"Send an enquiry for home construction, roof, plaster, tiles, boundary wall or renovation.",f_name:"Name",f_phone:"Mobile",f_type:"Work Type",f_location:"Location",f_details:"Work Details",f_submit:"Send Enquiry on WhatsApp",f_note:"Submitting will open WhatsApp with your message ready to send.",
+    team_badge:"OUR LEAD",team_title:"Prakash Chand Swami",team_desc:"Owner & Lead Contractor. Focused on site planning and execution for residential construction, RCC work, masonry, plaster, tiles, boundary walls and renovation projects.",tb1:"25+ Years Experience",tb2:"Site Supervision",tb3:"Residential Construction",team_call:"Talk Directly",card_badge:"VISITING CARD",
+    footer_about:"With 25+ years of experience, providing residential construction, RCC and finishing services in Mandawara, Jhunjhunu and nearby areas.",footer_links:"Quick Links",footer_portal:"Portals & Login",free_consult:"Free Consultation",footer_contact:"Contact Information",footer_loc:"Mandawara, Jhunjhunu (Rajasthan)",rights:"All rights reserved.",lb_wa:"Ask About This Project",lb_close:"Close"
   }
 };
 
-function applyLanguage(lang) {
-  currentLang = lang;
-  localStorage.setItem('ps_site_lang', lang);
-  document.documentElement.lang = lang;
-  
-  const t = I18N[lang] || I18N.hi;
+let currentLang = localStorage.getItem("ps_site_lang") || "hi";
+if(!I18N[currentLang]) currentLang="hi";
 
-  // 1. Update button text
-  const btnText = document.getElementById('langBtnText');
-  if (btnText) btnText.textContent = t.btn_toggle;
-
-  // 2. Update page title
-  const siteTitle = document.getElementById('siteTitle');
-  if (siteTitle) siteTitle.textContent = t.site_title;
-
-  // 3. Update all data-i18n tags
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key]) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = t[key];
-      } else {
-        el.innerHTML = t[key];
-      }
-    }
+function applyLanguage(lang=currentLang){
+  currentLang=lang;
+  const t=I18N[currentLang];
+  document.body.classList.toggle("hi",currentLang==="hi");
+  document.documentElement.lang=currentLang;
+  document.title=t.site_title || (currentLang==="hi" ? "Prakash Swami Constructions — भवन निर्माण" : "Prakash Swami Constructions");
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.getAttribute("data-i18n");
+    if(t[key]!==undefined) el.innerHTML=t[key];
   });
+  document.querySelectorAll("input[data-ph-hi]").forEach(el=>{
+    el.placeholder=currentLang==="hi"?el.dataset.phHi:el.dataset.phEn;
+  });
+  document.querySelectorAll("textarea[data-ph-hi]").forEach(el=>{
+    el.placeholder=currentLang==="hi"?el.dataset.phHi:el.dataset.phEn;
+  });
+  document.querySelectorAll("select option[data-hi]").forEach(o=>o.textContent=currentLang==="hi"?o.dataset.hi:o.dataset.en);
+  document.getElementById("langBtnText").textContent=currentLang==="hi"?"English":"हिंदी";
+  localStorage.setItem("ps_site_lang",currentLang);
+  renderGallery();
+}
+function toggleLanguage(){applyLanguage(currentLang==="hi"?"en":"hi")}
+function toggleMenu(){document.getElementById("navMenu").classList.toggle("open")}
+document.querySelectorAll("#navMenu a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navMenu").classList.remove("open")));
 
-  // 4. Update Hero H1
-  const heroH1 = document.getElementById('heroH1');
-  if (heroH1) heroH1.innerHTML = t.hero_h1;
+/* =========================================================
+   LIVE SUPABASE GALLERY — preserves the existing dashboard flow
+   ========================================================= */
+const SUPABASE_URL="https://aamstyeeewncmgqdxpoh.supabase.co";
+const SUPABASE_KEY="sb_publishable_fOzZvfiio6HSaEgplYUgOA_lWy1tbVe";
+const db=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 
-  // 5. Update Lightbox button texts
-  const lbWa = document.getElementById('lbWaBtnText');
-  const lbCl = document.getElementById('lbCloseText');
-  if (lbWa) lbWa.textContent = t.lb_btn_wa;
-  if (lbCl) lbCl.textContent = t.lb_btn_close;
+const fallbackProjects=[
+ {title_hi:"१. पूर्ण हुआ मकान",title_en:"1. Completed Home",location:"मंडावरा",desc_hi:"संपूर्ण residential construction project.",desc_en:"Complete residential construction project.",image_url:"project-house-1.jpg.jpeg",category:"Completed"},
+ {title_hi:"२. निर्माण कार्य",title_en:"2. Construction Work",location:"उदयपुरवाटी",desc_hi:"निर्माण कार्य और site execution.",desc_en:"Construction work and site execution.",image_url:"project-house-2.jpg.jpeg",category:"Construction"},
+ {title_hi:"३. RCC एवं छत कार्य",title_en:"3. RCC & Roof Work",location:"झुंझुनूं",desc_hi:"RCC slab और roof construction.",desc_en:"RCC slab and roof construction.",image_url:"project-house-3.jpg.jpeg",category:"RCC"},
+ {title_hi:"४. मकान निर्माण",title_en:"4. Home Construction",location:"मंडावरा",desc_hi:"Residential house construction.",desc_en:"Residential house construction.",image_url:"project-house-4.jpg.jpeg",category:"Residential"},
+ {title_hi:"५. आधुनिक मकान",title_en:"5. Modern Home",location:"नवलगढ़",desc_hi:"आधुनिक front और residential work.",desc_en:"Modern residential front and construction work.",image_url:"project-house-5.jpg.jpeg",category:"Residential"},
+ {title_hi:"६. फ्रंट एलिवेशन",title_en:"6. Front Elevation",location:"उदयपुरवाटी",desc_hi:"सुंदर front elevation work.",desc_en:"Modern front elevation work.",image_url:"project-house-6.jpg.jpeg",category:"Elevation"},
+ {title_hi:"७. प्लास्टर एवं फिनिशिंग",title_en:"7. Plaster & Finishing",location:"मंडावरा",desc_hi:"अंदरूनी और बाहरी finishing.",desc_en:"Interior and exterior finishing.",image_url:"project-house-7.jpg.jpeg",category:"Finishing"},
+ {title_hi:"८. बाउंड्री वॉल व चारदीवारी",title_en:"8. Boundary Wall",location:"मंडावरा",desc_hi:"मजबूत boundary wall construction.",desc_en:"Strong compound wall construction.",image_url:"project-house-8.jpg.jpeg",category:"Compound"},
+ {title_hi:"९. रेनोवेशन व नई मंजिल",title_en:"9. Renovation & New Floor",location:"उदयपुरवाटी",desc_hi:"पुराने ढांचे की मजबूती और नई मंजिल का निर्माण.",desc_en:"Strengthening an existing structure and adding a new floor.",image_url:"project-house-9.jpg.jpeg",category:"Renovation"},
+ {title_hi:"१०. विलेज हाउस व बरामदा",title_en:"10. Village House & Veranda",location:"मंडावरा",desc_hi:"विलेज स्टाइल residential house.",desc_en:"Village-style residential house.",image_url:"project-house-10.jpg.jpeg",category:"Completed"},
+ {title_hi:"११. सीढ़ी टावर व पैरापेट वॉल",title_en:"11. Stair Tower & Parapet Wall",location:"झुंझुनूं",desc_hi:"Mumty, parapet wall और waterproofing work.",desc_en:"Stair tower, parapet wall and waterproofing work.",image_url:"project-house-11.jpg.png",category:"Completed"},
+ {title_hi:"१२. मॉडर्न फ्रंट एलिवेशन",title_en:"12. Modern Front Elevation",location:"नवलगढ़ साइट",desc_hi:"आधुनिक colour combination, texture और front gate pillar design.",desc_en:"Modern colour combination, texture and front gate pillar design.",image_url:"project-house-12.jpg.png",category:"Elevation"}
+];
 
-  // 6. Refresh Gallery Cards to match language
-  renderGalleryCards();
+let globalProjects=[];
+
+function normaliseProject(p){
+  return {
+    ...p,
+    title:p.title || (currentLang==="hi"?p.title_hi:p.title_en),
+    description:p.description || (currentLang==="hi"?p.desc_hi:p.desc_en),
+    location:p.location || "",
+    category:p.category || "Project"
+  };
 }
 
-function toggleLanguage() {
-  const nextLang = (currentLang === 'hi') ? 'en' : 'hi';
-  applyLanguage(nextLang);
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  applyLanguage(currentLang);
-});
-</script>
-
-<!-- ==========================================
-     SUPABASE LIVE GALLERY ENGINE
-     ========================================== -->
-<script>
-const SUPABASE_URL = 'https://aamstyeeewncmgqdxpoh.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_fOzZvfiio6HSaEgplYUgOA_lWy1tbVe';
-const dbClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
-
-let globalProjectsList = [];
-
-async function loadMainWebsiteProjects() {
-  if (dbClient) {
-    try {
-      const { data, error } = await dbClient
-        .from('gallery_projects')
-        .select('*')
-        .order('created_at', { ascending: false });
-      if (!error && data) {
-        globalProjectsList = data;
-      }
-    } catch (e) {
-      console.warn('Gallery load error:', e);
-    }
+async function loadProjects(){
+  let live=[];
+  if(db){
+    try{
+      const {data,error}=await db.from("gallery_projects").select("*").order("created_at",{ascending:false});
+      if(!error && data) live=data;
+    }catch(e){console.warn("Gallery load error",e)}
   }
-  renderGalleryCards();
+  globalProjects=(live.length?live:fallbackProjects).map(normaliseProject);
+  renderGallery();
 }
 
-function renderGalleryCards() {
-  const container = document.getElementById('liveGalleryContainer');
-  if (!container) return;
-
-  const t = I18N[currentLang] || I18N.hi;
-
-  if (!globalProjectsList || globalProjectsList.length === 0) {
-    container.innerHTML = `
-      <div style="text-align:center; grid-column:1/-1; padding:40px 20px; color:#cbd5e1; background:var(--navy-card); border-radius:14px; border:1.5px dashed var(--line); width:100%;">
-        <i class="fa-solid fa-images" style="font-size:32px; opacity:0.6; margin-bottom:10px; color:var(--gold);"></i>
-        <h4 style="font-size:15px; font-weight:700; color:#fff;">${currentLang === 'en' ? 'No projects currently available in gallery' : 'वर्तमान में कोई प्रोजेक्ट फ़ोटो उपलब्ध नहीं है'}</h4>
-        <p style="font-size:12.5px; margin-top:4px; color:#94a3b8;">${currentLang === 'en' ? 'New projects added from admin dashboard will appear here live.' : 'एडमिन डैशबोर्ड से नई फ़ोटो जोड़ते ही वह यहाँ लाइव दिखने लगेगी।'}</p>
-      </div>
-    `;
+function renderGallery(){
+  const box=document.getElementById("liveGalleryContainer");
+  if(!box)return;
+  if(!globalProjects.length){
+    box.innerHTML='<div class="empty"><i class="fa-solid fa-images"></i><h3>'+ (currentLang==="hi"?"अभी कोई प्रोजेक्ट उपलब्ध नहीं है":"No projects available yet") +'</h3><p>'+ (currentLang==="hi"?"Dashboard से project जोड़ते ही यहाँ live दिखाई देगा।":"Projects added from the dashboard will appear here live.") +'</p></div>';
     return;
   }
+  box.innerHTML=globalProjects.map((p,i)=>{
+    const title=currentLang==="hi"?(p.title_hi||p.title):(p.title_en||p.title);
+    const desc=currentLang==="hi"?(p.desc_hi||p.description):(p.desc_en||p.description);
+    return `<article class="gallery-card reveal" onclick="showProject(${i})">
+      <div class="gallery-thumb"><img src="${escapeHtml(p.image_url||"")}" alt="${escapeHtml(title||"Project")}" loading="lazy"><span class="gallery-badge">${escapeHtml(p.category||"Project")}</span></div>
+      <div class="gallery-info"><h3>${escapeHtml(title||"Project")}</h3><p class="gallery-loc"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(p.location||"")}</p><button type="button" class="btn btn-gold" style="width:100%;padding:10px" onclick="event.stopPropagation();showProject(${i})"><i class="fa-solid fa-eye"></i> ${currentLang==="hi"?"विवरण देखें":"View Details"}</button></div>
+    </article>`;
+  }).join("");
+  document.querySelectorAll("#liveGalleryContainer .reveal").forEach(el=>setTimeout(()=>el.classList.add("show"),30));
+}
+function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 
-  container.innerHTML = globalProjectsList.map((p, idx) => `
-    <div class="gallery-card" onclick="showProjectLightbox(${idx})">
-      <div class="gallery-thumb">
-        <img src="${p.image_url}" alt="${p.title || 'Project'}" loading="lazy">
-        <span class="gallery-badge">${p.category || 'Project'}</span>
-      </div>
-      <div class="gallery-info">
-        <div>
-          <h3>${p.title || (currentLang === 'en' ? 'Project' : 'प्रोजेक्ट')}</h3>
-          <p class="gallery-loc">
-            <i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> ${p.location || t.gallery_site}
-          </p>
-        </div>
-        <button type="button" class="btn-sm btn-gold" style="width:100%; justify-content:center; padding:10px; font-weight:800; font-size:13px;" onclick="event.stopPropagation(); showProjectLightbox(${idx});">
-          <i class="fa-solid fa-eye"></i> ${t.gallery_view_btn}
-        </button>
-      </div>
-    </div>
-  `).join('');
+function showProject(i){
+  const p=globalProjects[i];if(!p)return;
+  const title=currentLang==="hi"?(p.title_hi||p.title):(p.title_en||p.title);
+  const desc=currentLang==="hi"?(p.desc_hi||p.description):(p.desc_en||p.description);
+  document.getElementById("lbImg").src=p.image_url||"";
+  document.getElementById("lbTitle").textContent=title||"Project";
+  document.getElementById("lbLocation").innerHTML=p.location?`<i class="fa-solid fa-location-dot gold"></i> ${currentLang==="hi"?"स्थान:":"Location:"} ${escapeHtml(p.location)}`:"";
+  document.getElementById("lbDesc").innerHTML=escapeHtml(desc||"");
+  document.getElementById("lbWa").href="https://wa.me/919785438345?text="+encodeURIComponent((currentLang==="hi"?"नमस्ते प्रकाश स्वामी जी, मुझे इस प्रोजेक्ट के बारे में जानकारी चाहिए:\n":"Hello Prakash Swami Ji, I would like information about this project:\n")+title+(p.location?`\n${currentLang==="hi"?"स्थान":"Location"}: ${p.location}`:""));
+  document.getElementById("lightbox").style.display="flex";
+}
+function closeLightbox(){document.getElementById("lightbox").style.display="none"}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});
+
+/* WhatsApp enquiry — language matches selected language */
+function handleContactSubmit(e){
+  e.preventDefault();
+  const name=document.getElementById("cfName").value.trim();
+  const phone=document.getElementById("cfPhone").value.trim();
+  const address=document.getElementById("cfAddress").value.trim();
+  const type=document.getElementById("cfType").value;
+  const msg=document.getElementById("cfMsg").value.trim();
+  const en=currentLang==="en";
+  const text=(en?"Hello Prakash Swami Ji,":"नमस्ते प्रकाश स्वामी जी,")+
+    "\n"+(en?"My Name: ":"मेरा नाम: ")+name+
+    "\n"+(en?"Mobile: ":"मोबाइल: ")+phone+
+    "\n"+(en?"Location: ":"स्थान: ")+address+
+    "\n"+(en?"Work Type: ":"कार्य का प्रकार: ")+type+
+    "\n"+(en?"Details: ":"विवरण: ")+(msg||"-");
+  window.open("https://wa.me/919785438345?text="+encodeURIComponent(text),"_blank");
 }
 
-function showProjectLightbox(idx) {
-  const p = globalProjectsList[idx];
-  if (!p) return;
+/* animations */
+const observer=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")}),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+window.addEventListener("scroll",()=>{
+  document.getElementById("topbtn").style.display=scrollY>650?"grid":"none";
+});
 
-  const t = I18N[currentLang] || I18N.hi;
-  const modal = document.getElementById('lightboxModal');
-  const img = document.getElementById('lbImg');
-  const titleEl = document.getElementById('lbTitle');
-  const descEl = document.getElementById('lbDesc');
-  const btn = document.getElementById('lbWaBtn');
-
-  if (img) img.src = p.image_url || '';
-  if (titleEl) {
-    titleEl.innerHTML = `${p.title || 'Project Details'} <span style="font-size:11px; background:var(--gold); color:#0a1628; padding:3px 8px; border-radius:4px; margin-left:8px; vertical-align:middle; font-weight:800;">${p.category || 'Project'}</span>`;
-  }
-  
-  if (descEl) {
-    const locLabel = currentLang === 'en' ? 'Location:' : 'स्थान:';
-    descEl.innerHTML = `
-      ${p.location ? `<p style="font-size:13.5px; font-weight:700; color:var(--gold); margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i> ${locLabel} ${p.location}</p>` : ''}
-      <div style="font-size:14px; color:#cbd5e1; line-height:1.7; background:#070d18; padding:16px; border-radius:12px; border:1px solid var(--line);">
-        ${p.description ? p.description.split('\n').join('<br>') : (currentLang === 'en' ? 'No additional description provided.' : 'विवरण उपलब्ध नहीं है।')}
-      </div>
-    `;
-  }
-
-  if (btn) {
-    const titleText = p.title || 'Project';
-    const locText = p.location ? ` (${p.location})` : '';
-    const prefix = currentLang === 'en' 
-      ? `Hello Prakash Swami Ji, I liked the project '${titleText}'${locText} on your website. Please share estimated cost and details.`
-      : `नमस्ते प्रकाश स्वामी जी, मुझे आपकी वेबसाइट पर '${titleText}'${locText} वाला कार्य बहुत पसंद आया। कृपया इसकी अनुमानित लागत व जानकारी बताएं।`;
-    
-    btn.href = `https://wa.me/919785438345?text=${encodeURIComponent(prefix)}`;
-  }
-
-  if (modal) {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-window.addEventListener('DOMContentLoaded', loadMainWebsiteProjects);
+/* start */
+document.getElementById("year").textContent=new Date().getFullYear();
+applyLanguage(currentLang);
+loadProjects();
 </script>
-
 </body>
 </html>
