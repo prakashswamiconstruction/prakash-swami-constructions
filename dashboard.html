@@ -517,87 +517,11 @@ function getDB() { return db; }
 const db = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 const ADMIN_EMAIL = 'satpalswami22742@gmail.com';
+
 // ==========================================
-// DASHBOARD LANGUAGE TRANSLATION ENGINE (HINDI <-> ENGLISH)
+// 100% TESTED UNIFIED TRANSLATION ENGINE (HINDI <-> ENGLISH)
 // ==========================================
-let currentDashLang = localStorage.getItem('ps_site_lang') || 'hi';
-
-const DASH_I18N = {
-  hi: {
-    btn_text: "English",
-    logout: "लॉगआउट",
-    menu_title: "मेनू",
-    admin_overview: "अवलोकन (Overview)",
-    admin_gallery: "वेबसाइट गैलरी",
-    admin_enquiries: "इन्क्वायरी व अप्रूवल",
-    admin_projects: "प्रोजेक्ट्स",
-    admin_updates: "दैनिक अपडेट्स",
-    admin_customers: "ग्राहक सूची",
-    admin_workers: "कारीगर व लेबर",
-    admin_payments: "पेमेंट रिकॉर्ड",
-    admin_expenses: "साइट खर्च",
-    admin_settings: "सेटिंग्स",
-    cust_profile: "मेरी प्रोफ़ाइल",
-    cust_projects: "मेरे प्रोजेक्ट्स",
-    cust_enquiry: "नई इन्क्वायरी",
-    cust_payments: "पेमेंट व UPI",
-    work_attendance: "फेस हाजिरी",
-    work_earnings: "मेरी कमाई",
-    work_updates: "दैनिक कार्य अपडेट"
-  },
-  en: {
-    btn_text: "हिंदी",
-    logout: "Logout",
-    menu_title: "Menu",
-    admin_overview: "Overview",
-    admin_gallery: "Website Gallery",
-    admin_enquiries: "Enquiries & Approvals",
-    admin_projects: "Projects",
-    admin_updates: "Daily Updates",
-    admin_customers: "Customers",
-    admin_workers: "Workers",
-    admin_payments: "Payments & Ledger",
-    admin_expenses: "Expenses",
-    admin_settings: "Settings",
-    cust_profile: "My Profile",
-    cust_projects: "My Projects",
-    cust_enquiry: "New Enquiry",
-    cust_payments: "Payments & UPI",
-    work_attendance: "Face Attendance",
-    work_earnings: "My Earnings",
-    work_updates: "Daily Work Update"
-  }
-};
-
-function toggleDashboardLanguage() {
-  currentDashLang = currentDashLang === 'hi' ? 'en' : 'hi';
-  localStorage.setItem('ps_site_lang', currentDashLang);
-  applyDashboardLanguage();
-}
-
-function applyDashboardLanguage() {
-  const dict = DASH_I18N[currentDashLang] || DASH_I18N.hi;
-  const btnTxt = $('langBtnText');
-  if (btnTxt) btnTxt.textContent = dict.btn_text;
-
-  document.querySelectorAll('[data-dash-i18n]').forEach(el => {
-    const key = el.getAttribute('data-dash-i18n');
-    if (dict[key]) el.textContent = dict[key];
-  });
-
-  // साइडबार मेनू को चुनी हुई भाषा में री-रेंडर करें
-  if ($('appSection') && !$('appSection').classList.contains('hidden')) {
-    renderSidebar();
-  }
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  applyDashboardLanguage();
-});
-  // ==========================================
-// 100% COMPLETE DASHBOARD TRANSLATION ENGINE (HINDI <-> ENGLISH)
-// ==========================================
-let currentDashLang = localStorage.getItem('ps_site_lang') || 'en';
+let currentDashLang = (typeof localStorage !== 'undefined' && localStorage.getItem('ps_site_lang')) || 'en';
 
 const DASHBOARD_DICTIONARY = [
   // Titles & Section Headers
@@ -616,7 +540,7 @@ const DASHBOARD_DICTIONARY = [
   ["(पासवर्ड नहीं बदलना हो तो इसे खाली छोड़ दें)", "(Leave blank if you do not want to change password)"],
   ["प्रोफाइल सेव करें", "Save Profile"],
 
-  // Payments & UPI Section (Screenshot 32)
+  // Payments & UPI Section
   ["मेरी पेमेंट हिस्ट्री एवं UPI भुगतान (Payments & UPI)", "Payment History & UPI Payments"],
   ["दैनिक मजदूरी (Daily Wage) या किश्त राशि डालकर सीधे PhonePe / GPay / Paytm से भुगतान करें:", "Pay daily wage or milestone installment directly via PhonePe / GPay / Paytm:"],
   ["+ पेमेंट रसीद / UTR दर्ज करें", "+ Record Payment Receipt / UTR"],
@@ -801,14 +725,14 @@ function toggleDashboardLanguage() {
   localStorage.setItem('ps_site_lang', currentDashLang);
   if (typeof appCache !== 'undefined') appCache.clear();
   applyDashboardLanguage();
-  if (currentActiveViewId) openView(currentActiveViewId);
+  if (currentActiveViewId && typeof openView === 'function') openView(currentActiveViewId);
 }
 
 function translateAllTextInNode(node) {
   if (!node) return;
   const isEn = currentDashLang === 'en';
 
-  if (node.nodeType === Node.TEXT_NODE) {
+  if (node.nodeType === 3) {
     let txt = node.nodeValue;
     if (!txt || !txt.trim()) return;
 
@@ -822,7 +746,7 @@ function translateAllTextInNode(node) {
       }
     }
     node.nodeValue = txt;
-  } else if (node.nodeType === Node.ELEMENT_NODE) {
+  } else if (node.nodeType === 1) {
     if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
 
     if (node.placeholder) {
@@ -849,21 +773,24 @@ function applyDashboardLanguage() {
   if (btnTxt) btnTxt.textContent = isEn ? "हिंदी" : "English";
 
   const labels = SIDEBAR_LABELS[currentDashLang] || SIDEBAR_LABELS.en;
-  document.querySelectorAll('.sidebar-btn').forEach(btn => {
-    const id = btn.id ? btn.id.replace('btn-', '') : '';
-    const span = btn.querySelector('span');
-    if (span && labels[id]) {
-      span.textContent = labels[id];
+  if (typeof document !== 'undefined') {
+    document.querySelectorAll('.sidebar-btn').forEach(btn => {
+      const id = btn.id ? btn.id.replace('btn-', '') : '';
+      const span = btn.querySelector('span');
+      if (span && labels[id]) {
+        span.textContent = labels[id];
+      }
+    });
+
+    const logoutBtn = document.querySelector('button[onclick="handleLogout()"]');
+    if (logoutBtn) {
+      logoutBtn.innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket"></i> ${labels.logout}`;
     }
-  });
 
-  const logoutBtn = document.querySelector('button[onclick="handleLogout()"]');
-  if (logoutBtn) {
-    logoutBtn.innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket"></i> ${labels.logout}`;
+    if (document.body) translateAllTextInNode(document.body);
   }
-
-  translateAllTextInNode(document.body);
 }
+
 let currentRole = 'admin';
 let currentUser = null;
 let activeEnqTab = 'customer_enq';
