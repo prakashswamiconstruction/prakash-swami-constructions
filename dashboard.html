@@ -542,20 +542,43 @@ const DASHBOARD_DICTIONARY = [
 
   // Payments & UPI
   ["मेरी पेमेंट हिस्ट्री एवं UPI भुगतान (Payments & UPI)", "Payment History & UPI Payments"],
-  ["दैनिक मजदूरी (Daily Wage) या किश्त राशि डालकर सीधे PhonePe / GPay / Paytm से भुगतान करें:", "Pay daily wage or milestone installment directly via PhonePe / GPay / Paytm:"],
+  ["दैनिक मजदूरी (Daily Wage) या किश्त का सीधा UPI भुगतान", "Direct UPI Payment for Daily Wage & Installments"],
+  ["दैनिक मजदूरी (Daily Wage) या किश्त राशि डालकर सीधे PhonePe / GPay / Paytm से भुगतान करें:", "Pay daily wage or installment directly via PhonePe / GPay / Paytm:"],
   ["+ पेमेंट रसीद / UTR दर्ज करें", "+ Record Payment Receipt / UTR"],
   ["ठेकेदार को डायरेक्ट UPI भुगतान (Direct Contractor UPI Pay)", "Direct Contractor UPI Payment"],
-  ["दैनिक मजदूरी (Daily Wage) या किश्त का सीधा UPI भुगतान", "Direct UPI Payment for Daily Wage & Installments"],
   ["भुगतान राशि दर्ज करें (Enter Amount ₹):", "Enter Payment Amount (₹):"],
   ["उदा. 1500 या 5000", "e.g. 1500 or 5000"],
   ["UPI App में खोलें & Pay करें", "Open in UPI App & Pay"],
   ["भुगतान रसीदें एवं इतिहास (Payment Receipts)", "Payment Receipts & History"],
   ["कुल रसीदें:", "Total Receipts:"],
+  ["कोई पेमेंट हिस्ट्री नहीं है। ऊपर दिए बटन से पेमेंट करने के बाद अपनी रसीद दर्ज करें।", "No payment history found. Record your receipt after making a payment using the button above."],
+
+  // Table Headers & Statuses
   ["दिनांक", "Date"],
   ["माध्यम", "Method"],
+  ["Transaction Ref / UTR", "Transaction Ref / UTR"],
   ["राशि (₹)", "Amount (₹)"],
   ["Note / विवरण", "Note / Description"],
-  ["कोई पेमेंट हिस्ट्री नहीं है। ऊपर दिए बटन से पेमेंट करने के बाद अपनी रसीद दर्ज करें।", "No payment history found. Record your receipt after making a payment using the button above."],
+  ["स्थिति (Status)", "Status"],
+  ["तारीख (Date)", "Date"],
+  ["समय (Scan Time)", "Scan Time"],
+  ["स्कैन फोटो", "Scanned Photo"],
+  ["दिहाड़ी दर", "Daily Wage"],
+  ["कुल रिकॉर्ड:", "Total Records:"],
+  ["स्वीकृत (Present) ✅", "Approved (Present) ✅"],
+  ["स्वीकृत (Present)", "Approved (Present)"],
+  ["स्वीकृत", "Approved"],
+  ["अस्वीकृत ❌", "Rejected ❌"],
+  ["अस्वीकृत", "Rejected"],
+  ["लंबित (Pending) ⏳", "Pending Approval ⏳"],
+  ["लंबित", "Pending"],
+  ["रजिस्टर्ड फेस एक्टिव (Face ID Active)", "Face ID Active"],
+  ["आज की तारीख:", "Today's Date:"],
+  ["आज की हाजिरी सफलतापूर्वक दर्ज हो चुकी है!", "Today's attendance has been recorded successfully!"],
+  ["स्थिति:", "Status:"],
+  ["समय:", "Time:"],
+  ["दैनिक हाजिरी (Live Face Recognition Attendance)", "Daily Attendance (Live Face Recognition)"],
+  ["मेरी हाजिरी का पूरा इतिहास (Date-wise Attendance History)", "Date-wise Attendance History"],
 
   // Projects & Contracts
   ["मेरे प्रोजेक्ट्स व अनुबंध", "My Projects & Legal Agreements"],
@@ -576,24 +599,7 @@ const DASHBOARD_DICTIONARY = [
   ["अनुमानित बजट (₹)", "Estimated Budget (₹)"],
   ["इन्क्वायरी सबमिट करें", "Submit Enquiry"],
 
-  // Workers & Attendance
-  ["दैनिक हाजिरी (Live Face Recognition Attendance)", "Daily Attendance (Live Face Recognition)"],
-  ["दर:", "Rate:"],
-  ["कुल स्वीकृत हाजिरी:", "Total Approved Attendance:"],
-  ["दिन", "Days"],
-  ["आज की तारीख:", "Today's Date:"],
-  ["आज की हाजिरी सफलतापूर्वक दर्ज हो चुकी है!", "Today's attendance has been successfully recorded!"],
-  ["स्थिति:", "Status:"],
-  ["समय:", "Time:"],
-  ["लाइव फेस स्कैन हाजिरी", "Live Face Scan Attendance"],
-  ["कैमरे के सामने सीधा चेहरा रखें। सिस्टम आपके रजिस्टर्ड फेस से मिलान करके हाजिरी लगाएगा:", "Position your face in front of the camera. System will verify against your registered face ID:"],
-  ["कैमरा चालू करें (Start Camera)", "Start Camera"],
-  ["फेस स्कैन करें & मिलान जांचें", "Scan Face & Verify Match"],
-  ["मेरी हाजिरी का पूरा इतिहास (Date-wise Attendance History)", "Attendance History Log"],
-  ["कुल रिकॉर्ड:", "Total Records:"],
-  ["स्वीकृत (Present) ✅", "Approved (Present) ✅"],
-  ["अस्वीकृत ❌", "Rejected ❌"],
-  ["लंबित (Pending) ⏳", "Pending Approval ⏳"],
+  // Workers
   ["मेरी कमाई व मजदूरी हिसाब", "My Earnings & Wage Ledger"],
   ["स्वीकृत कार्य दिवस", "Approved Work Days"],
   ["प्राप्त मजदूरी", "Wage Received"],
@@ -722,16 +728,45 @@ const SIDEBAR_LABELS = {
 };
 
 function translateViewContainer(container) {
-  if (!container || currentDashLang !== 'en') return;
-  let html = container.innerHTML;
-  for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
-    const hi = DASHBOARD_DICTIONARY[i][0];
-    const en = DASHBOARD_DICTIONARY[i];
-    if (html.includes(hi)) {
-      html = html.split(hi).join(en);
+  if (!container) return;
+  const isEn = (currentDashLang === 'en');
+  
+  function walk(node) {
+    if (!node) return;
+    if (node.nodeType === 3) { // Text Node
+      let txt = node.nodeValue;
+      if (txt && txt.trim()) {
+        for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
+          const hi = DASHBOARD_DICTIONARY[i][0];
+          const en = DASHBOARD_DICTIONARY[i];
+          if (isEn && txt.includes(hi)) {
+            txt = txt.split(hi).join(en);
+          } else if (!isEn && txt.includes(en)) {
+            txt = txt.split(en).join(hi);
+          }
+        }
+        node.nodeValue = txt;
+      }
+    } else if (node.nodeType === 1) { // Element Node
+      if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+      if (node.placeholder) {
+        for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
+          const hi = DASHBOARD_DICTIONARY[i][0];
+          const en = DASHBOARD_DICTIONARY[i];
+          if (isEn && node.placeholder.includes(hi)) {
+            node.placeholder = node.placeholder.split(hi).join(en);
+          } else if (!isEn && node.placeholder.includes(en)) {
+            node.placeholder = node.placeholder.split(en).join(hi);
+          }
+        }
+      }
+      for (let child = node.firstChild; child; child = child.nextSibling) {
+        walk(child);
+      }
     }
   }
-  container.innerHTML = html;
+
+  walk(container);
 }
 
 function toggleDashboardLanguage() {
@@ -747,8 +782,6 @@ function toggleDashboardLanguage() {
 
   renderSidebar();
 }
-
-let currentRole = 'admin';
 let currentUser = null;
 let activeEnqTab = 'customer_enq';
 
