@@ -601,9 +601,9 @@
   <section id="contact" class="section-alt">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow eyebrow-yellow"><i class="fa-solid fa-envelope-open-text"></i> संपर्क करें</div>
-        <h2>अपने प्रोजेक्ट की बात आज ही करें।</h2>
-        <p>हमसे फोन या व्हाट्सएप पर बात करें या नीचे दिए गए फॉर्म में अपनी जानकारी भेजें।</p>
+        <div class="eyebrow eyebrow-yellow"><i class="fa-solid fa-envelope-open-text"></i> <span data-i18n="sec_contact_badge">संपर्क करें</span></div>
+        <h2 data-i18n="sec_contact_title">अपने प्रोजेक्ट की बात आज ही करें।</h2>
+        <p data-i18n="sec_contact_desc">हमसे फोन या व्हाट्सएप पर बात करें या नीचे दिए गए फॉर्म में अपनी जानकारी भेजें।</p>
       </div>
 
       <div class="contact-grid">
@@ -617,62 +617,62 @@
               <input id="cfName" required placeholder="अपना पूरा नाम लिखें">
             </div>
             <div class="form-group">
-              <label for="cfPhone" data-i18n="form_phone">मोबाइल नंबर</label>
+              <label for="cfPhone" data-i18n="form_phone">मोबाइल नंबर (Mobile Number)</label>
               <input id="cfPhone" type="tel" pattern="[0-9]{10}" required placeholder="१० अंकों का मोबाइल नंबर">
             </div>
             <div class="form-group">
-              <label for="cfAddress" data-i18n="form_addr">साइट का पता / गाँव</label>
+              <label for="cfAddress" data-i18n="form_address">साइट का पता / गाँव (Site Address / Village)</label>
               <input id="cfAddress" required placeholder="गाँव, तहसील, जिला">
             </div>
             <div class="form-group">
-              <label for="cfType" data-i18n="form_type">कार्य का प्रकार</label>
+              <label for="cfType" data-i18n="form_type">कार्य का प्रकार (Type of Work)</label>
               <select id="cfType">
-                <option value="नया मकान निर्माण (Complete Home Construction)">१. नया मकान निर्माण (Complete Home Construction)</option>
-                <option value="RCC छत ढलाई एवं शटरिंग">२. RCC छत ढलाई एवं शटरिंग</option>
-                <option value="दीवार चिनाई व प्लिंथ बीम">३. दीवार चिनाई व प्लिंथ बीम</option>
-                <option value="अंदरूनी व बाहरी प्लास्टर कार्य">४. अंदरूनी व बाहरी प्लास्टर कार्य</option>
-                <option value="टाइल्स, मार्बल व फ्लोरिंग फिटिंग">५. टाइल्स, मार्बल व फ्लोरिंग फिटिंग</option>
-                <option value="2D नक्शा व 3D डिजाइन">६. 2D नक्शा व 3D डिजाइन</option>
-                <option value="बाउंड्री वॉल व चारदीवारी निर्माण">७. बाउंड्री वॉल व चारदीवारी निर्माण</option>
-                <option value="रेनोवेशन, मरम्मत व वॉटरप्रूफिंग">८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग</option>
+                <option value="नया मकान निर्माण (Complete Home Construction)" data-i18n="srv_1_title">१. नया मकान निर्माण (Complete Home Construction)</option>
+                <option value="RCC छत ढलाई एवं शटरिंग" data-i18n="srv_2_title">२. RCC छत ढलाई एवं शटरिंग</option>
+                <option value="दीवार चिनाई व प्लिंथ बीम" data-i18n="srv_3_title">३. दीवार चिनाई व प्लिंथ बीम</option>
+                <option value="अंदरूनी व बाहरी प्लास्टर कार्य" data-i18n="srv_4_title">४. अंदरूनी व बाहरी प्लास्टर कार्य</option>
+                <option value="टाइल्स, मार्बल व फ्लोरिंग फिटिंग" data-i18n="srv_5_title">५. टाइल्स, मार्बल व फ्लोरिंग फिटिंग</option>
+                <option value="2D नक्शा व 3D डिजाइन" data-i18n="srv_6_title">६. 2D नक्शा व 3D डिजाइन</option>
+                <option value="बाउंड्री वॉल व चारदीवारी निर्माण" data-i18n="srv_7_title">७. बाउंड्री वॉल व चारदीवारी निर्माण</option>
+                <option value="रेनोवेशन, मरम्मत व वॉटरप्रूफिंग" data-i18n="srv_8_title">८. रेनोवेशन, मरम्मत व वॉटरप्रूफिंग</option>
               </select>
             </div>
             <div class="form-group">
               <label for="cfMsg" data-i18n="form_msg">संदेश / विवरण (वैकल्पिक)</label>
               <textarea id="cfMsg" rows="3" placeholder="प्लॉट साइज या कोई विशेष बात..."></textarea>
             </div>
-            <button type="submit" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="form_btn">Send Enquiry via WhatsApp</span></button>
+            <button type="submit" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="form_submit">इन्क्वायरी भेजें (WhatsApp)</span></button>
           </form>
         </div>
 
-        <!-- २. दायाँ कॉलम: प्रकाश चन्द स्वामी विवरण + विज़िटिंग कार्ड + पोर्टल लॉगिन -->
+        <!-- २. दायाँ कॉलम: प्रकाश चन्द स्वामी संपर्क विवरण + विज़िटिंग कार्ड + पोर्टल लॉगिन -->
         <div style="display:flex; flex-direction:column; gap:20px;">
           
-          <!-- A. प्रकाश चन्द स्वामी जी का संपर्क विवरण -->
+          <!-- A. प्रकाश चन्द स्वामी जी का संपर्क विवरण (भाषा के साथ ऑटोमैटिक बदलेगा) -->
           <div style="background:var(--navy-card); padding:26px; border-radius:16px; border:1.5px solid var(--line); box-shadow:var(--shadow); color:#fff;">
             <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
               <img src="prakash-chand-swami-4.jpg.jpg" onerror="this.onerror=null; this.src='prakash-chand-swami-4.jpg';" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);" alt="Prakash Chand Swami">
               <div>
-                <h3 style="font-size:18px; font-weight:800; color:var(--text-white);">प्रकाश चन्द स्वामी</h3>
-                <p style="font-size:12px; color:var(--gold); font-weight:700;">PRAKASH SWAMI CONSTRUCTIONS</p>
+                <h3 style="font-size:18px; font-weight:800; color:var(--text-white);" data-i18n="founder_name">प्रकाश चन्द स्वामी</h3>
+                <p style="font-size:12px; color:var(--gold); font-weight:700;" data-i18n="founder_title">संचालक एवं मुख्य ठेकेदार (25+ वर्ष अनुभव)</p>
               </div>
             </div>
 
-            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> <span data-i18n="contact_phone">फोन / हेल्पलाइन:</span></b> <a href="tel:9785438345" style="color:#fff; font-weight:700;">9785438345</a></p>
+            <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-phone" style="color:var(--gold);"></i> <span data-i18n="cnt_phone">फोन / हेल्पलाइन:</span></b> <a href="tel:9785438345" style="color:#fff; font-weight:700;">9785438345</a></p>
             <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp:</b> <a href="https://wa.me/919785438345" target="_blank" style="color:#22c55e; font-weight:700;">9785438345</a></p>
             <p style="margin-bottom:10px; font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-qrcode" style="color:var(--gold);"></i> UPI ID:</b> 9785438345@axl</p>
-            <p style="font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <span data-i18n="contact_addr">पता:</span></b> ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</p>
+            <p style="font-size:14px; color:#cbd5e1;"><b><i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> <span data-i18n="cnt_address_label">पता:</span></b> <span data-i18n="top_address">ग्राम व पोस्ट: मंडावरा, तहसील: उदयपुरवाटी, जिला: झुंझुनूं (राजि.)</span></p>
           </div>
 
-          <!-- B. सत्यपाल स्वामी का विज़िटिंग कार्ड -->
+          <!-- B. विज़िटिंग कार्ड -->
           <div style="border-radius:16px; overflow:hidden; border:1.5px solid var(--line); box-shadow:var(--shadow); background:var(--navy-card);">
             <img src="satpal-swami-card.png" alt="Satpal Swami - Prakash Swami Constructions" style="width:100%; display:block; border-radius:14px;">
           </div>
 
-          <!-- C. पोर्टल एक्सेस (डैशबोर्ड लॉगिन) -->
+          <!-- C. पोर्टल लॉगिन बॉक्स -->
           <div style="background:var(--navy-primary); color:#fff; padding:24px; border-radius:16px; text-align:center; border:2px solid var(--gold); box-shadow:0 10px 30px rgba(7,13,24,0.45);">
-            <h4 style="color:var(--gold); font-size:16px; margin-bottom:8px;" data-i18n="portal_title">Portal Access (Admin / Customer / Worker)</h4>
-            <p style="font-size:13px; color:#cbd5e1; margin-bottom:16px;" data-i18n="portal_desc">Sign in to view active project progress, legal agreements, site attendance, and digital payments.</p>
+            <h4 style="color:var(--gold); font-size:16px; margin-bottom:8px;" data-i18n="portal_title">पोर्टल लॉगिन (Admin / Customer / Worker)</h4>
+            <p style="font-size:13px; color:#cbd5e1; margin-bottom:16px;" data-i18n="portal_desc">अपने प्रोजेक्ट्स, डिजिटल अनुबंध, हाजिरी और भुगतान देखने के लिए डैशबोर्ड में लॉगिन करें।</p>
             <a href="dashboard.html" class="btn btn-gold" style="width:100%;"><i class="fa-solid fa-right-to-bracket"></i> Dashboard Login</a>
           </div>
 
