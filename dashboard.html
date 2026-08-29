@@ -524,7 +524,7 @@ const ADMIN_EMAIL = 'satpalswami22742@gmail.com';
 let currentDashLang = (typeof localStorage !== 'undefined' && localStorage.getItem('ps_site_lang')) || 'en';
 
 const DASHBOARD_DICTIONARY = [
-  // Titles & Section Headers
+  // Profile
   ["मेरी प्रोफ़ाइल (My Profile)", "My Profile"],
   ["मेरी प्रोफ़ाइल", "My Profile"],
   ["प्रोफ़ाइल विवरण एवं फ़ोटो बदलें", "Edit Profile Details & Photo"],
@@ -540,11 +540,12 @@ const DASHBOARD_DICTIONARY = [
   ["(पासवर्ड नहीं बदलना हो तो इसे खाली छोड़ दें)", "(Leave blank if you do not want to change password)"],
   ["प्रोफाइल सेव करें", "Save Profile"],
 
-  // Payments & UPI Section
+  // Payments & UPI
   ["मेरी पेमेंट हिस्ट्री एवं UPI भुगतान (Payments & UPI)", "Payment History & UPI Payments"],
   ["दैनिक मजदूरी (Daily Wage) या किश्त राशि डालकर सीधे PhonePe / GPay / Paytm से भुगतान करें:", "Pay daily wage or milestone installment directly via PhonePe / GPay / Paytm:"],
   ["+ पेमेंट रसीद / UTR दर्ज करें", "+ Record Payment Receipt / UTR"],
   ["ठेकेदार को डायरेक्ट UPI भुगतान (Direct Contractor UPI Pay)", "Direct Contractor UPI Payment"],
+  ["दैनिक मजदूरी (Daily Wage) या किश्त का सीधा UPI भुगतान", "Direct UPI Payment for Daily Wage & Installments"],
   ["भुगतान राशि दर्ज करें (Enter Amount ₹):", "Enter Payment Amount (₹):"],
   ["उदा. 1500 या 5000", "e.g. 1500 or 5000"],
   ["UPI App में खोलें & Pay करें", "Open in UPI App & Pay"],
@@ -602,7 +603,7 @@ const DASHBOARD_DICTIONARY = [
   ["फोटो चुनें", "Choose Photo"],
   ["फोटो अपलोड करें", "Upload Photo"],
 
-  // Admin Views & Management
+  // Admin Views
   ["वेबसाइट गैलरी मैनेजमेंट (Website Gallery)", "Website Gallery Management"],
   ["यहाँ से आप सीधे फ़ोन से मुख्य वेबसाइट की गैलरी में नए मकानों की फ़ोटो जोड़, बदल या हटा सकते हैं।", "Add, edit, or remove house photos on the live website gallery directly from your phone."],
   ["+ नई प्रोजेक्ट फ़ोटो जोड़ें", "+ Add New Project Photo"],
@@ -720,75 +721,31 @@ const SIDEBAR_LABELS = {
   }
 };
 
+function translateViewContainer(container) {
+  if (!container || currentDashLang !== 'en') return;
+  let html = container.innerHTML;
+  for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
+    const hi = DASHBOARD_DICTIONARY[i][0];
+    const en = DASHBOARD_DICTIONARY[i];
+    if (html.includes(hi)) {
+      html = html.split(hi).join(en);
+    }
+  }
+  container.innerHTML = html;
+}
+
 function toggleDashboardLanguage() {
   currentDashLang = currentDashLang === 'hi' ? 'en' : 'hi';
   localStorage.setItem('ps_site_lang', currentDashLang);
   if (typeof appCache !== 'undefined') appCache.clear();
-  applyDashboardLanguage();
-  if (currentActiveViewId && typeof openView === 'function') openView(currentActiveViewId);
-}
-
-function translateAllTextInNode(node) {
-  if (!node) return;
-  const isEn = currentDashLang === 'en';
-
-  if (node.nodeType === 3) {
-    let txt = node.nodeValue;
-    if (!txt || !txt.trim()) return;
-
-    for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
-      const hi = DASHBOARD_DICTIONARY[i][0];
-      const en = DASHBOARD_DICTIONARY[i];
-      if (isEn && txt.includes(hi)) {
-        txt = txt.split(hi).join(en);
-      } else if (!isEn && txt.includes(en)) {
-        txt = txt.split(en).join(hi);
-      }
-    }
-    node.nodeValue = txt;
-  } else if (node.nodeType === 1) {
-    if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
-
-    if (node.placeholder) {
-      for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
-        const hi = DASHBOARD_DICTIONARY[i][0];
-        const en = DASHBOARD_DICTIONARY[i];
-        if (isEn && node.placeholder.includes(hi)) {
-          node.placeholder = node.placeholder.split(hi).join(en);
-        } else if (!isEn && node.placeholder.includes(en)) {
-          node.placeholder = node.placeholder.split(en).join(hi);
-        }
-      }
-    }
-
-    for (let child = node.firstChild; child; child = child.nextSibling) {
-      translateAllTextInNode(child);
-    }
-  }
-}
-
-function applyDashboardLanguage() {
-  const isEn = currentDashLang === 'en';
+  
   const btnTxt = $('langBtnText');
-  if (btnTxt) btnTxt.textContent = isEn ? "हिंदी" : "English";
+  if (btnTxt) btnTxt.textContent = currentDashLang === 'en' ? "हिंदी" : "English";
 
-  const labels = SIDEBAR_LABELS[currentDashLang] || SIDEBAR_LABELS.en;
-  if (typeof document !== 'undefined') {
-    document.querySelectorAll('.sidebar-btn').forEach(btn => {
-      const id = btn.id ? btn.id.replace('btn-', '') : '';
-      const span = btn.querySelector('span');
-      if (span && labels[id]) {
-        span.textContent = labels[id];
-      }
-    });
+  const logoutTxt = $('logoutBtnText');
+  if (logoutTxt) logoutTxt.textContent = currentDashLang === 'en' ? "Logout" : "लॉगआउट";
 
-    const logoutBtn = document.querySelector('button[onclick="handleLogout()"]');
-    if (logoutBtn) {
-      logoutBtn.innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket"></i> ${labels.logout}`;
-    }
-
-    if (document.body) translateAllTextInNode(document.body);
-  }
+  renderSidebar();
 }
 
 let currentRole = 'admin';
@@ -1089,41 +1046,41 @@ function launchDashboard() {
 
 function renderSidebar() {
   const nav = $('sidebarNav');
-  const dict = DASH_I18N[currentDashLang] || DASH_I18N.hi;
+  const dict = SIDEBAR_LABELS[currentDashLang] || SIDEBAR_LABELS.en;
   let menus = [];
 
   if (currentRole === 'admin') {
     menus = [
-      { id: 'overview', icon: 'fa-chart-pie', label: dict.admin_overview },
-      { id: 'gallery_mgmt', icon: 'fa-images', label: dict.admin_gallery },
-      { id: 'enquiries', icon: 'fa-inbox', label: dict.admin_enquiries },
-      { id: 'projects', icon: 'fa-trowel-bricks', label: dict.admin_projects },
-      { id: 'daily_updates', icon: 'fa-pen-ruler', label: dict.admin_updates },
-      { id: 'customers', icon: 'fa-users', label: dict.admin_customers },
-      { id: 'workers', icon: 'fa-helmet-safety', label: dict.admin_workers },
-      { id: 'payments', icon: 'fa-money-bill-wave', label: dict.admin_payments },
-      { id: 'expenses', icon: 'fa-receipt', label: dict.admin_expenses },
-      { id: 'settings', icon: 'fa-gear', label: dict.admin_settings }
+      { id: 'overview', icon: 'fa-chart-pie', label: dict.overview },
+      { id: 'gallery_mgmt', icon: 'fa-images', label: dict.gallery_mgmt },
+      { id: 'enquiries', icon: 'fa-inbox', label: dict.enquiries },
+      { id: 'projects', icon: 'fa-trowel-bricks', label: dict.projects },
+      { id: 'daily_updates', icon: 'fa-pen-ruler', label: dict.daily_updates },
+      { id: 'customers', icon: 'fa-users', label: dict.customers },
+      { id: 'workers', icon: 'fa-helmet-safety', label: dict.workers },
+      { id: 'payments', icon: 'fa-money-bill-wave', label: dict.payments },
+      { id: 'expenses', icon: 'fa-receipt', label: dict.expenses },
+      { id: 'settings', icon: 'fa-gear', label: dict.settings }
     ];
   } else if (currentRole === 'customer') {
     menus = [
-      { id: 'my_profile', icon: 'fa-user', label: dict.cust_profile },
-      { id: 'my_projects', icon: 'fa-house-chimney', label: dict.cust_projects },
-      { id: 'my_enquiries', icon: 'fa-paper-plane', label: dict.cust_enquiry },
-      { id: 'my_payments', icon: 'fa-wallet', label: dict.cust_payments }
+      { id: 'my_profile', icon: 'fa-user', label: dict.my_profile },
+      { id: 'my_projects', icon: 'fa-house-chimney', label: dict.my_projects },
+      { id: 'my_enquiries', icon: 'fa-paper-plane', label: dict.my_enquiries },
+      { id: 'my_payments', icon: 'fa-wallet', label: dict.my_payments }
     ];
   } else {
     menus = [
-      { id: 'worker_attendance', icon: 'fa-camera', label: dict.work_attendance },
-      { id: 'worker_earnings', icon: 'fa-hand-holding-dollar', label: dict.work_earnings },
-      { id: 'worker_updates', icon: 'fa-pen-to-square', label: dict.work_updates }
+      { id: 'worker_attendance', icon: 'fa-camera', label: dict.worker_attendance },
+      { id: 'worker_earnings', icon: 'fa-hand-holding-dollar', label: dict.worker_earnings },
+      { id: 'worker_updates', icon: 'fa-pen-to-square', label: dict.worker_updates }
     ];
   }
 
   nav.innerHTML = `
     <div class="sidebar-mobile-header">
       <div style="font-weight:800; font-size:15px; color:#fff; display:flex; align-items:center; gap:8px;">
-        <i class="fa-solid fa-helmet-safety" style="color:var(--accent);"></i> ${dict.menu_title}
+        <i class="fa-solid fa-helmet-safety" style="color:var(--accent);"></i> ${dict.menu}
       </div>
       <button onclick="toggleMobileSidebar(false)" style="background:transparent; border:0; color:#94a3b8; font-size:26px; cursor:pointer; padding:2px 8px;">&times;</button>
     </div>
@@ -1133,9 +1090,8 @@ function renderSidebar() {
     </button>
   `).join('');
 
-  if (!currentActiveViewId) {
-    openView(menus[0].id, $(`btn-${menus[0].id}`));
-  }
+  const targetView = currentActiveViewId || menus[0].id;
+  openView(targetView, $(`btn-${targetView}`));
 }
 
 function toggleMobileSidebar(forceState) {
@@ -1243,10 +1199,10 @@ async function openView(viewId, btnElement) {
     if (main.innerHTML && !main.innerHTML.includes('alert-error')) {
       appCache.set('view_html_' + currentRole + '_' + viewId, main.innerHTML);
     }
-  } catch (err) {
+} catch (err) {
     main.innerHTML = `<div class="card alert-box alert-error">Error loading section: ${err.message}</div>`;
   } finally {
-    applyDashboardLanguage();
+    translateViewContainer(main);
     showTopLoader(false);
   }
 }
