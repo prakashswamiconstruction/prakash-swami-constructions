@@ -125,7 +125,79 @@
       .hero h1{font-size:43px;letter-spacing:-2px}.hero-desc{font-size:14px}.hero-founder{grid-template-columns:90px 1fr}.hero-founder img{width:90px;height:115px}
       section{padding:70px 0}.stats-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid rgba(255,255,255,.08)}.services-grid,.gallery-grid,.process-grid{grid-template-columns:1fr}.about-photo img{height:390px}.experience{right:10px}.checks{grid-template-columns:1fr}.why-photo{min-height:390px}.cta-grid{flex-direction:column;align-items:flex-start}.contact-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-grid{grid-template-columns:1fr}.team-photo img{height:390px;margin:auto}.topbtn{right:14px}.float{right:13px}.gallery-thumb{height:230px}
     }
-  </style>
+  
+    /* ===== PREMIUM NAVY + GOLD BOXES ONLY ===== */
+    .service, .reason, .step, .gallery-card, .form-card {
+      background: linear-gradient(145deg, #0b1729 0%, #07111f 100%);
+      border: 1px solid rgba(215,170,69,.55);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(7,17,31,.12), inset 0 1px 0 rgba(255,255,255,.035);
+    }
+
+    .service:hover, .reason:hover, .step:hover, .gallery-card:hover, .form-card:hover {
+      transform: translateY(-5px);
+      border-color: #d7aa45;
+      box-shadow: 0 22px 45px rgba(7,17,31,.22), 0 0 0 1px rgba(215,170,69,.10);
+    }
+
+    .service h3, .reason h3, .step h3, .gallery-info h3, .field label {
+      color: #fff;
+    }
+
+    .service p, .reason p, .step p, .gallery-loc, .form-note {
+      color: #b9c4d4;
+    }
+
+    .service-icon {
+      background: #d7aa45;
+      color: #07111f;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 8px 20px rgba(215,170,69,.18);
+    }
+
+    .reason {
+      position: relative;
+      overflow: hidden;
+    }
+    .reason:after, .step:after, .service:before {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+      border: 1px solid rgba(215,170,69,.10);
+    }
+    .reason:after { width: 110px; height: 110px; right: -48px; top: -48px; }
+    .step:after { width: 125px; height: 125px; right: -58px; bottom: -62px; }
+    .service:before { width: 115px; height: 115px; right: -55px; top: -55px; }
+
+    .reason i {
+      background: rgba(215,170,69,.14);
+      color: #f0c85c;
+      border: 1px solid rgba(215,170,69,.28);
+    }
+
+    .step-no { color: rgba(215,170,69,.72); }
+    .step i { color: #f0c85c; }
+
+    .gallery-card { overflow: hidden; }
+    .gallery-info { background: transparent; }
+    .gallery-loc i { color: #f0c85c; }
+
+    .form-card input, .form-card select, .form-card textarea {
+      background: #0b1729;
+      color: #fff;
+      border-color: rgba(215,170,69,.35);
+    }
+    .form-card input::placeholder, .form-card textarea::placeholder { color: #8491a5; }
+    .form-card input:focus, .form-card select:focus, .form-card textarea:focus {
+      border-color: #d7aa45;
+      box-shadow: 0 0 0 4px rgba(215,170,69,.10);
+    }
+
+    .service, .reason, .step, .gallery-card, .form-card {
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+</style>
 </head>
 
 <body class="hi">
@@ -540,15 +612,11 @@ async function loadProjects(){
     }catch(e){console.warn("Gallery load error",e)}
   }
 
-  // Dashboard Gallery Management uses the same gallery_projects table.
-  // Keep dashboard-added projects live and retain local defaults as fallback.
-  const liveNormalised=live.map(normaliseProject);
-  const liveTitles=new Set(liveNormalised.map(p=>String(p.title||p.title_hi||p.title_en||'').trim().toLowerCase()));
-  const defaults=fallbackProjects
-    .filter(p=>!liveTitles.has(String(p.title_hi||p.title_en||p.title||'').trim().toLowerCase()))
-    .map(normaliseProject);
-
-  globalProjects=[...liveNormalised,...defaults];
+  // Only show projects uploaded/published from the admin dashboard.
+  // Do not render hard-coded fallback cards, so empty/non-existent image cards never appear.
+  globalProjects=live
+    .map(normaliseProject)
+    .filter(p=>String(p.image_url||'').trim() !== '');
   renderGallery();
 }
 
@@ -563,7 +631,7 @@ function renderGallery(){
     const title=currentLang==="hi"?(p.title_hi||p.title):(p.title_en||p.title);
     const desc=currentLang==="hi"?(p.desc_hi||p.description):(p.desc_en||p.description);
     return `<article class="gallery-card reveal" onclick="showProject(${i})">
-      <div class="gallery-thumb"><img src="${escapeHtml(p.image_url||"")}" alt="${escapeHtml(title||"Project")}" loading="lazy"><span class="gallery-badge">${escapeHtml(p.category||"Project")}</span></div>
+      <div class="gallery-thumb"><img src="${escapeHtml(p.image_url||"")}" alt="${escapeHtml(title||"Project")}" loading="lazy" onerror="this.closest('.gallery-card')?.remove()"><span class="gallery-badge">${escapeHtml(p.category||"Project")}</span></div>
       <div class="gallery-info"><h3>${escapeHtml(title||"Project")}</h3><p class="gallery-loc"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(p.location||"")}</p><button type="button" class="btn btn-gold" style="width:100%;padding:10px" onclick="event.stopPropagation();showProject(${i})"><i class="fa-solid fa-eye"></i> ${currentLang==="hi"?"विवरण देखें":"View Details"}</button></div>
     </article>`;
   }).join("");
