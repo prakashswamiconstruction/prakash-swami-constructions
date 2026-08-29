@@ -493,7 +493,7 @@
         <i class="fa-regular fa-bell"></i>
         <span id="notifBadge" class="notif-badge hidden">0</span>
       </button>
-      <button class="btn-secondary" onclick="handleLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+      <button class="btn-secondary" onclick="handleLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span id="logoutBtnText">Logout</span></button>
     </div>
   </header>
 
@@ -556,7 +556,7 @@ const DASHBOARD_DICTIONARY = [
   // Table Headers & Statuses
   ["दिनांक", "Date"],
   ["माध्यम", "Method"],
-  ["Transaction Ref / UTR", "Transaction Ref / UTR"],
+  ["लेनदेन संदर्भ / UTR", "Transaction Ref / UTR"],
   ["राशि (₹)", "Amount (₹)"],
   ["Note / विवरण", "Note / Description"],
   ["स्थिति (Status)", "Status"],
@@ -628,13 +628,13 @@ const DASHBOARD_DICTIONARY = [
   ["वेबसाइट पर पब्लिश करें", "Publish to Website"],
   ["अपडेट सेव करें", "Save Updates"],
   ["रद्द करें", "Cancel"],
-  ["Enquiries & Approvals Hub", "Enquiries & Approvals Hub"],
-  ["Customer Enquiries", "Customer Enquiries"],
-  ["Worker Attendance Requests", "Worker Attendance Requests"],
+  ["इन्क्वायरी एवं स्वीकृति केंद्र", "Enquiries & Approvals Hub"],
+  ["ग्राहक इन्क्वायरी", "Customer Enquiries"],
+  ["कर्मचारी हाजिरी अनुरोध", "Worker Attendance Requests"],
   ["कोई इन्क्वायरी नहीं मिली।", "No enquiries found."],
   ["कोई हाजिरी अनुरोध नहीं है।", "No attendance requests found."],
-  ["Approve & Contract", "Approve & Contract"],
-  ["All Construction Projects", "All Construction Projects"],
+  ["स्वीकृत करें एवं अनुबंध", "Approve & Contract"],
+  ["सभी निर्माण प्रोजेक्ट", "All Construction Projects"],
   ["+ अनुबंध बनाएं", "+ Create Agreement"],
   ["प्रोजेक्ट नोट लिखें / बदलें", "Edit Project Note"],
   ["नोट सेव करें", "Save Note"],
@@ -707,7 +707,7 @@ const SIDEBAR_LABELS = {
     btn_text: "English",
     logout: "लॉगआउट",
     menu: "मेनू",
-    overview: "अवलोकन (Overview)",
+    overview: "अवलोकन",
     gallery_mgmt: "वेबसाइट गैलरी",
     enquiries: "इन्क्वायरी व अप्रूवल",
     projects: "प्रोजेक्ट्स",
@@ -727,59 +727,142 @@ const SIDEBAR_LABELS = {
   }
 };
 
+function cleanHindiText(text) {
+  if (!text) return text;
+  // Remove English explanations written in brackets from Hindi labels.
+  // Example: "मेरी प्रोफ़ाइल (My Profile)" -> "मेरी प्रोफ़ाइल"
+  return String(text)
+    .replace(/\s*\((?=[^)]*[A-Za-z])[^)]*\)/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function translatePlainText(text, toEnglish) {
+  if (!text || !text.trim()) return text;
+
+  const pairs = [];
+  const seen = new Set();
+
+  for (const pair of DASHBOARD_DICTIONARY) {
+    if (!Array.isArray(pair) || pair.length < 2) continue;
+
+    const rawHi = String(pair[0] ?? '');
+    const en = String(pair[1] ?? '');
+    const pureHi = cleanHindiText(rawHi);
+
+    // In Hindi mode, also normalize an already mixed Hindi/English label.
+    if (!toEnglish && rawHi && pureHi && rawHi !== pureHi) {
+      const key = rawHi + '=>HI=>' + pureHi;
+      if (!seen.has(key)) {
+        pairs.push([rawHi, pureHi]);
+        seen.add(key);
+      }
+    }
+
+    if (toEnglish) {
+      if (rawHi && en && rawHi !== en) {
+        const key = rawHi + '=>EN=>' + en;
+        if (!seen.has(key)) {
+          pairs.push([rawHi, en]);
+          seen.add(key);
+        }
+      }
+    } else if (en && pureHi && en !== pureHi) {
+      const key = en + '=>HI=>' + pureHi;
+      if (!seen.has(key)) {
+        pairs.push([en, pureHi]);
+        seen.add(key);
+      }
+    }
+  }
+
+  // Longest first prevents short entries such as "Status" from breaking
+  // longer labels such as "Payment Status".
+  pairs.sort((a, b) => b[0].length - a[0].length);
+
+  let result = String(text);
+  for (const [from, to] of pairs) {
+    if (from && result.includes(from)) {
+      result = result.split(from).join(to);
+    }
+  }
+  return result;
+}
+
 function translateViewContainer(container) {
   if (!container) return;
-  const isEn = (currentDashLang === 'en');
-  
+  const isEn = currentDashLang === 'en';
+
   function walk(node) {
     if (!node) return;
-    if (node.nodeType === 3) { // Text Node
-      let txt = node.nodeValue;
-      if (txt && txt.trim()) {
-        for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
-          const hi = DASHBOARD_DICTIONARY[i][0];
-          const en = DASHBOARD_DICTIONARY[i];
-          if (isEn && txt.includes(hi)) {
-            txt = txt.split(hi).join(en);
-          } else if (!isEn && txt.includes(en)) {
-            txt = txt.split(en).join(hi);
-          }
-        }
-        node.nodeValue = txt;
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      if (node.nodeValue && node.nodeValue.trim()) {
+        node.nodeValue = translatePlainText(node.nodeValue, isEn);
       }
-    } else if (node.nodeType === 1) { // Element Node
-      if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
-      if (node.placeholder) {
-        for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
-          const hi = DASHBOARD_DICTIONARY[i][0];
-          const en = DASHBOARD_DICTIONARY[i];
-          if (isEn && node.placeholder.includes(hi)) {
-            node.placeholder = node.placeholder.split(hi).join(en);
-          } else if (!isEn && node.placeholder.includes(en)) {
-            node.placeholder = node.placeholder.split(en).join(hi);
-          }
-        }
+      return;
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+    if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+
+    // Translate only UI attributes. Never touch value/data attributes because
+    // they may contain customer names, phone numbers, IDs, URLs, etc.
+    ['placeholder', 'title', 'aria-label'].forEach(attr => {
+      if (node.hasAttribute(attr)) {
+        const value = node.getAttribute(attr);
+        node.setAttribute(attr, translatePlainText(value, isEn));
       }
-      for (let child = node.firstChild; child; child = child.nextSibling) {
-        walk(child);
-      }
+    });
+
+    for (let child = node.firstChild; child; child = child.nextSibling) {
+      walk(child);
     }
   }
 
   walk(container);
 }
 
+function updateDashboardChrome() {
+  const isEn = currentDashLang === 'en';
+
+  const btnTxt = $('langBtnText');
+  if (btnTxt) btnTxt.textContent = isEn ? 'हिंदी' : 'English';
+
+  const logoutTxt = $('logoutBtnText');
+  if (logoutTxt) logoutTxt.textContent = isEn ? 'Logout' : 'लॉगआउट';
+
+  const roleBadge = $('roleBadge');
+  if (roleBadge) {
+    const roleNames = isEn
+      ? { admin: 'Admin', customer: 'Customer', worker: 'Worker' }
+      : { admin: 'एडमिन', customer: 'ग्राहक', worker: 'कारीगर' };
+    roleBadge.textContent = roleNames[currentRole] || currentRole;
+  }
+
+  const langBtn = $('langToggleBtn');
+  if (langBtn) {
+    langBtn.title = isEn ? 'हिंदी में बदलें' : 'Switch to English';
+  }
+
+  document.querySelectorAll('.notif-btn').forEach(btn => {
+    btn.title = isEn ? 'Notifications' : 'सूचनाएँ';
+  });
+
+  document.querySelectorAll('.mobile-menu-toggle').forEach(btn => {
+    btn.title = isEn ? 'Menu' : 'मेनू';
+  });
+}
+
 function toggleDashboardLanguage() {
   currentDashLang = currentDashLang === 'hi' ? 'en' : 'hi';
   localStorage.setItem('ps_site_lang', currentDashLang);
+
+  // Clear only the rendered HTML cache. Database data, user data and all
+  // application state remain untouched.
   if (typeof appCache !== 'undefined') appCache.clear();
-  
-  const btnTxt = $('langBtnText');
-  if (btnTxt) btnTxt.textContent = currentDashLang === 'en' ? "हिंदी" : "English";
 
-  const logoutTxt = $('logoutBtnText');
-  if (logoutTxt) logoutTxt.textContent = currentDashLang === 'en' ? "Logout" : "लॉगआउट";
-
+  updateDashboardChrome();
   renderSidebar();
 }
 let currentUser = null;
@@ -1073,6 +1156,7 @@ function launchDashboard() {
   badge.textContent = currentRole.toUpperCase();
   badge.className = `role-badge ${currentRole}`;
 
+  updateDashboardChrome();
   renderSidebar();
   loadNotificationsBadge();
 }
