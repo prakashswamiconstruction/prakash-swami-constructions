@@ -483,6 +483,11 @@
       <span id="roleBadge" class="role-badge admin">Admin</span>
     </div>
     <div class="header-right">
+      <!-- भाषा बदलने का बटन (Language Toggle) -->
+      <button id="langToggleBtn" class="btn-secondary" onclick="toggleDashboardLanguage()" style="font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+        <i class="fa-solid fa-globe"></i> <span id="langBtnText">English</span>
+      </button>
+      
       <!-- Notification Bell with Dismissable Red Badge -->
       <button class="notif-btn" onclick="openNotificationsModal()" title="Notifications">
         <i class="fa-regular fa-bell"></i>
@@ -512,7 +517,83 @@ function getDB() { return db; }
 const db = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 const ADMIN_EMAIL = 'satpalswami22742@gmail.com';
+// ==========================================
+// DASHBOARD LANGUAGE TRANSLATION ENGINE (HINDI <-> ENGLISH)
+// ==========================================
+let currentDashLang = localStorage.getItem('ps_site_lang') || 'hi';
 
+const DASH_I18N = {
+  hi: {
+    btn_text: "English",
+    logout: "लॉगआउट",
+    menu_title: "मेनू",
+    admin_overview: "अवलोकन (Overview)",
+    admin_gallery: "वेबसाइट गैलरी",
+    admin_enquiries: "इन्क्वायरी व अप्रूवल",
+    admin_projects: "प्रोजेक्ट्स",
+    admin_updates: "दैनिक अपडेट्स",
+    admin_customers: "ग्राहक सूची",
+    admin_workers: "कारीगर व लेबर",
+    admin_payments: "पेमेंट रिकॉर्ड",
+    admin_expenses: "साइट खर्च",
+    admin_settings: "सेटिंग्स",
+    cust_profile: "मेरी प्रोफ़ाइल",
+    cust_projects: "मेरे प्रोजेक्ट्स",
+    cust_enquiry: "नई इन्क्वायरी",
+    cust_payments: "पेमेंट व UPI",
+    work_attendance: "फेस हाजिरी",
+    work_earnings: "मेरी कमाई",
+    work_updates: "दैनिक कार्य अपडेट"
+  },
+  en: {
+    btn_text: "हिंदी",
+    logout: "Logout",
+    menu_title: "Menu",
+    admin_overview: "Overview",
+    admin_gallery: "Website Gallery",
+    admin_enquiries: "Enquiries & Approvals",
+    admin_projects: "Projects",
+    admin_updates: "Daily Updates",
+    admin_customers: "Customers",
+    admin_workers: "Workers",
+    admin_payments: "Payments & Ledger",
+    admin_expenses: "Expenses",
+    admin_settings: "Settings",
+    cust_profile: "My Profile",
+    cust_projects: "My Projects",
+    cust_enquiry: "New Enquiry",
+    cust_payments: "Payments & UPI",
+    work_attendance: "Face Attendance",
+    work_earnings: "My Earnings",
+    work_updates: "Daily Work Update"
+  }
+};
+
+function toggleDashboardLanguage() {
+  currentDashLang = currentDashLang === 'hi' ? 'en' : 'hi';
+  localStorage.setItem('ps_site_lang', currentDashLang);
+  applyDashboardLanguage();
+}
+
+function applyDashboardLanguage() {
+  const dict = DASH_I18N[currentDashLang] || DASH_I18N.hi;
+  const btnTxt = $('langBtnText');
+  if (btnTxt) btnTxt.textContent = dict.btn_text;
+
+  document.querySelectorAll('[data-dash-i18n]').forEach(el => {
+    const key = el.getAttribute('data-dash-i18n');
+    if (dict[key]) el.textContent = dict[key];
+  });
+
+  // साइडबार मेनू को चुनी हुई भाषा में री-रेंडर करें
+  if ($('appSection') && !$('appSection').classList.contains('hidden')) {
+    renderSidebar();
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  applyDashboardLanguage();
+});
 let currentRole = 'admin';
 let currentUser = null;
 let activeEnqTab = 'customer_enq';
@@ -811,40 +892,41 @@ function launchDashboard() {
 
 function renderSidebar() {
   const nav = $('sidebarNav');
+  const dict = DASH_I18N[currentDashLang] || DASH_I18N.hi;
   let menus = [];
 
   if (currentRole === 'admin') {
     menus = [
-      { id: 'overview', icon: 'fa-chart-pie', label: 'Overview' },
-      { id: 'gallery_mgmt', icon: 'fa-images', label: 'Website Gallery' },
-      { id: 'enquiries', icon: 'fa-inbox', label: 'Enquiries & Approvals' },
-      { id: 'projects', icon: 'fa-trowel-bricks', label: 'Projects' },
-      { id: 'daily_updates', icon: 'fa-pen-ruler', label: 'Daily Updates' },
-      { id: 'customers', icon: 'fa-users', label: 'Customers' },
-      { id: 'workers', icon: 'fa-helmet-safety', label: 'Workers' },
-      { id: 'payments', icon: 'fa-money-bill-wave', label: 'Payments' },
-      { id: 'expenses', icon: 'fa-receipt', label: 'Expenses' },
-      { id: 'settings', icon: 'fa-gear', label: 'Settings' }
+      { id: 'overview', icon: 'fa-chart-pie', label: dict.admin_overview },
+      { id: 'gallery_mgmt', icon: 'fa-images', label: dict.admin_gallery },
+      { id: 'enquiries', icon: 'fa-inbox', label: dict.admin_enquiries },
+      { id: 'projects', icon: 'fa-trowel-bricks', label: dict.admin_projects },
+      { id: 'daily_updates', icon: 'fa-pen-ruler', label: dict.admin_updates },
+      { id: 'customers', icon: 'fa-users', label: dict.admin_customers },
+      { id: 'workers', icon: 'fa-helmet-safety', label: dict.admin_workers },
+      { id: 'payments', icon: 'fa-money-bill-wave', label: dict.admin_payments },
+      { id: 'expenses', icon: 'fa-receipt', label: dict.admin_expenses },
+      { id: 'settings', icon: 'fa-gear', label: dict.admin_settings }
     ];
   } else if (currentRole === 'customer') {
     menus = [
-      { id: 'my_profile', icon: 'fa-user', label: 'My Profile' },
-      { id: 'my_projects', icon: 'fa-house-chimney', label: 'My Projects' },
-      { id: 'my_enquiries', icon: 'fa-paper-plane', label: 'New Enquiry' },
-      { id: 'my_payments', icon: 'fa-wallet', label: 'Payments & UPI' }
+      { id: 'my_profile', icon: 'fa-user', label: dict.cust_profile },
+      { id: 'my_projects', icon: 'fa-house-chimney', label: dict.cust_projects },
+      { id: 'my_enquiries', icon: 'fa-paper-plane', label: dict.cust_enquiry },
+      { id: 'my_payments', icon: 'fa-wallet', label: dict.cust_payments }
     ];
   } else {
     menus = [
-      { id: 'worker_attendance', icon: 'fa-camera', label: 'Face Attendance' },
-      { id: 'worker_earnings', icon: 'fa-hand-holding-dollar', label: 'My Earnings' },
-      { id: 'worker_updates', icon: 'fa-pen-to-square', label: 'Daily Work Update' }
+      { id: 'worker_attendance', icon: 'fa-camera', label: dict.work_attendance },
+      { id: 'worker_earnings', icon: 'fa-hand-holding-dollar', label: dict.work_earnings },
+      { id: 'worker_updates', icon: 'fa-pen-to-square', label: dict.work_updates }
     ];
   }
 
   nav.innerHTML = `
     <div class="sidebar-mobile-header">
       <div style="font-weight:800; font-size:15px; color:#fff; display:flex; align-items:center; gap:8px;">
-        <i class="fa-solid fa-helmet-safety" style="color:var(--accent);"></i> Menu
+        <i class="fa-solid fa-helmet-safety" style="color:var(--accent);"></i> ${dict.menu_title}
       </div>
       <button onclick="toggleMobileSidebar(false)" style="background:transparent; border:0; color:#94a3b8; font-size:26px; cursor:pointer; padding:2px 8px;">&times;</button>
     </div>
@@ -854,7 +936,9 @@ function renderSidebar() {
     </button>
   `).join('');
 
-  openView(menus[0].id, $(`btn-${menus[0].id}`));
+  if (!currentActiveViewId) {
+    openView(menus[0].id, $(`btn-${menus[0].id}`));
+  }
 }
 
 function toggleMobileSidebar(forceState) {
