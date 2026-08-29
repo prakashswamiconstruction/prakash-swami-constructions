@@ -594,6 +594,276 @@ function applyDashboardLanguage() {
 window.addEventListener('DOMContentLoaded', () => {
   applyDashboardLanguage();
 });
+  // ==========================================
+// 100% COMPLETE DASHBOARD TRANSLATION ENGINE (HINDI <-> ENGLISH)
+// ==========================================
+let currentDashLang = localStorage.getItem('ps_site_lang') || 'en';
+
+const DASHBOARD_DICTIONARY = [
+  // Titles & Section Headers
+  ["मेरी प्रोफ़ाइल (My Profile)", "My Profile"],
+  ["मेरी प्रोफ़ाइल", "My Profile"],
+  ["प्रोफ़ाइल विवरण एवं फ़ोटो बदलें", "Edit Profile Details & Photo"],
+  ["अपनी प्रोफ़ाइल फ़ोटो अपलोड करें (Profile Photo)", "Upload Profile Photo"],
+  ["फ़ोन से फ़ोटो चुनें", "Choose Photo from Device"],
+  ["कोई फ़ोटो नहीं चुनी", "No Photo Selected"],
+  ["पूरा नाम (Full Name)", "Full Name"],
+  ["मोबाइल नंबर (Mobile Number)", "Mobile Number"],
+  ["ईमेल (Email Address)", "Email Address"],
+  ["पता / गाँव (Full Site Address / Village)", "Site Address / Village"],
+  ["नया पासवर्ड बदलें (New Password - Optional)", "Change Password (Optional)"],
+  ["यदि पासवर्ड बदलना चाहते हैं तो नया पासवर्ड दर्ज करें", "Enter new password if you wish to update"],
+  ["(पासवर्ड नहीं बदलना हो तो इसे खाली छोड़ दें)", "(Leave blank if you do not want to change password)"],
+  ["प्रोफाइल सेव करें", "Save Profile"],
+
+  // Payments & UPI Section (Screenshot 32)
+  ["मेरी पेमेंट हिस्ट्री एवं UPI भुगतान (Payments & UPI)", "Payment History & UPI Payments"],
+  ["दैनिक मजदूरी (Daily Wage) या किश्त राशि डालकर सीधे PhonePe / GPay / Paytm से भुगतान करें:", "Pay daily wage or milestone installment directly via PhonePe / GPay / Paytm:"],
+  ["+ पेमेंट रसीद / UTR दर्ज करें", "+ Record Payment Receipt / UTR"],
+  ["ठेकेदार को डायरेक्ट UPI भुगतान (Direct Contractor UPI Pay)", "Direct Contractor UPI Payment"],
+  ["भुगतान राशि दर्ज करें (Enter Amount ₹):", "Enter Payment Amount (₹):"],
+  ["उदा. 1500 या 5000", "e.g. 1500 or 5000"],
+  ["UPI App में खोलें & Pay करें", "Open in UPI App & Pay"],
+  ["भुगतान रसीदें एवं इतिहास (Payment Receipts)", "Payment Receipts & History"],
+  ["कुल रसीदें:", "Total Receipts:"],
+  ["दिनांक", "Date"],
+  ["माध्यम", "Method"],
+  ["राशि (₹)", "Amount (₹)"],
+  ["Note / विवरण", "Note / Description"],
+  ["कोई पेमेंट हिस्ट्री नहीं है। ऊपर दिए बटन से पेमेंट करने के बाद अपनी रसीद दर्ज करें।", "No payment history found. Record your receipt after making a payment using the button above."],
+
+  // Projects & Contracts
+  ["मेरे प्रोजेक्ट्स व अनुबंध", "My Projects & Legal Agreements"],
+  ["नया काम / इन्क्वायरी भेजें", "+ New Project / Enquiry"],
+  ["प्रोजेक्ट नाम", "Project Name"],
+  ["अनुबंध पत्र", "Agreement Document"],
+  ["प्रगति (Progress)", "Progress"],
+  ["कुल राशि", "Total Amount"],
+  ["जमा", "Paid"],
+  ["बकाया (Due)", "Due Balance"],
+  ["आपका कोई प्रोजेक्ट नहीं है।", "You have no active projects."],
+  ["तैयार हो रहा है...", "Drafting in progress..."],
+  ["अनुबंध देखें", "View Agreement"],
+  ["दैनिक कार्य फोटो व विवरण देखें", "View Daily Work Photos & Details"],
+  ["नया निर्माण कार्य आवेदन / इन्क्वायरी", "New Construction Work Application / Enquiry"],
+  ["कार्य का प्रकार / विवरण", "Work Details & Scope"],
+  ["कार्य स्थल का पता", "Site Address"],
+  ["अनुमानित बजट (₹)", "Estimated Budget (₹)"],
+  ["इन्क्वायरी सबमिट करें", "Submit Enquiry"],
+
+  // Workers & Attendance
+  ["दैनिक हाजिरी (Live Face Recognition Attendance)", "Daily Attendance (Live Face Recognition)"],
+  ["दर:", "Rate:"],
+  ["कुल स्वीकृत हाजिरी:", "Total Approved Attendance:"],
+  ["दिन", "Days"],
+  ["आज की तारीख:", "Today's Date:"],
+  ["आज की हाजिरी सफलतापूर्वक दर्ज हो चुकी है!", "Today's attendance has been successfully recorded!"],
+  ["स्थिति:", "Status:"],
+  ["समय:", "Time:"],
+  ["लाइव फेस स्कैन हाजिरी", "Live Face Scan Attendance"],
+  ["कैमरे के सामने सीधा चेहरा रखें। सिस्टम आपके रजिस्टर्ड फेस से मिलान करके हाजिरी लगाएगा:", "Position your face in front of the camera. System will verify against your registered face ID:"],
+  ["कैमरा चालू करें (Start Camera)", "Start Camera"],
+  ["फेस स्कैन करें & मिलान जांचें", "Scan Face & Verify Match"],
+  ["मेरी हाजिरी का पूरा इतिहास (Date-wise Attendance History)", "Attendance History Log"],
+  ["कुल रिकॉर्ड:", "Total Records:"],
+  ["स्वीकृत (Present) ✅", "Approved (Present) ✅"],
+  ["अस्वीकृत ❌", "Rejected ❌"],
+  ["लंबित (Pending) ⏳", "Pending Approval ⏳"],
+  ["मेरी कमाई व मजदूरी हिसाब", "My Earnings & Wage Ledger"],
+  ["स्वीकृत कार्य दिवस", "Approved Work Days"],
+  ["प्राप्त मजदूरी", "Wage Received"],
+  ["बकाया मजदूरी", "Pending Wage Due"],
+  ["साइट कार्य फोटो अपलोड करें", "Upload Daily Site Photo"],
+  ["कार्य विवरण", "Work Description"],
+  ["फोटो चुनें", "Choose Photo"],
+  ["फोटो अपलोड करें", "Upload Photo"],
+
+  // Admin Views & Management
+  ["वेबसाइट गैलरी मैनेजमेंट (Website Gallery)", "Website Gallery Management"],
+  ["यहाँ से आप सीधे फ़ोन से मुख्य वेबसाइट की गैलरी में नए मकानों की फ़ोटो जोड़, बदल या हटा सकते हैं।", "Add, edit, or remove house photos on the live website gallery directly from your phone."],
+  ["+ नई प्रोजेक्ट फ़ोटो जोड़ें", "+ Add New Project Photo"],
+  ["लाइव गैलरी एक्टिव:", "Live Gallery Active:"],
+  ["कुल", "Total"],
+  ["प्रोजेक्ट फ़ोटो मुख्य वेबसाइट पर लाइव दिख रही हैं।", "project photos are currently live on the main website."],
+  ["लाइव वेबसाइट गैलरी देखें", "View Live Website Gallery"],
+  ["स्थान:", "Location:"],
+  ["स्थान / साइट", "Location / Site"],
+  ["शीर्षक / नाम", "Title / Name"],
+  ["कैटेगरी", "Category"],
+  ["विवरण", "Description"],
+  ["कार्य का संक्षिप्त विवरण (Description)", "Brief Work Description"],
+  ["मकान की फ़ोटो चुनें (Photo Upload / Camera)", "Choose House Photo"],
+  ["नई फ़ोटो बदलें (वैकल्पिक)", "Change Photo (Optional)"],
+  ["वेबसाइट पर पब्लिश करें", "Publish to Website"],
+  ["अपडेट सेव करें", "Save Updates"],
+  ["रद्द करें", "Cancel"],
+  ["Enquiries & Approvals Hub", "Enquiries & Approvals Hub"],
+  ["Customer Enquiries", "Customer Enquiries"],
+  ["Worker Attendance Requests", "Worker Attendance Requests"],
+  ["कोई इन्क्वायरी नहीं मिली।", "No enquiries found."],
+  ["कोई हाजिरी अनुरोध नहीं है।", "No attendance requests found."],
+  ["Approve & Contract", "Approve & Contract"],
+  ["All Construction Projects", "All Construction Projects"],
+  ["+ अनुबंध बनाएं", "+ Create Agreement"],
+  ["प्रोजेक्ट नोट लिखें / बदलें", "Edit Project Note"],
+  ["नोट सेव करें", "Save Note"],
+  ["प्रोजेक्ट एडिट करें", "Edit Project"],
+  ["दैनिक कार्य प्रगति एवं साइट फ़ोटो (Daily Updates)", "Daily Site Updates & Progress Photos"],
+  ["साइट पर रोज होने वाले कार्यों और फ़ोटो का संपूर्ण रिकॉर्ड", "Complete daily site logs and work verification photos."],
+  ["+ नया दैनिक अपडेट जोड़ें", "+ Add New Daily Update"],
+  ["कोई दैनिक अपडेट दर्ज नहीं है", "No daily updates recorded yet."],
+  ["प्रोजेक्ट प्रोग्रेस देखें", "View Project Progress"],
+  ["संबंधित प्रोजेक्ट चुनें (Project)", "Select Project"],
+  ["आज का कार्य विवरण (Work Description)", "Today's Work Description"],
+  ["प्रोजेक्ट कार्य प्रगति % (Progress Percentage)", "Project Progress (%)"],
+  ["कार्य स्थल की फ़ोटो चुनें (Photo)", "Choose Site Photo"],
+  ["ग्राहक सूची एवं प्रोजेक्ट्स (Customers Management)", "Customers & Projects Directory"],
+  ["नया ग्राहक जोड़ें", "+ Add New Customer"],
+  ["कोई ग्राहक पंजीकृत नहीं है।", "No registered customers found."],
+  ["कारीगर / लेबर सूची (Workers & Masons)", "Workers & Masons Directory"],
+  ["नया कारीगर जोड़ें", "+ Add New Worker"],
+  ["कोई वर्कर नहीं मिला। नया वर्कर जोड़ें।", "No workers found. Add a new worker."],
+  ["दिहाड़ी दर (Wage/Day)", "Daily Wage Rate"],
+  ["हाजिरी (इस माह)", "Attendance (This Month)"],
+  ["पेमेंट एवं लेनदेन रिकॉर्ड (Payments & Ledger)", "Payments & Transaction Ledger"],
+  ["नया लेनदेन दर्ज करें", "+ Record New Transaction"],
+  ["कुल प्राप्त राशि (Inflow - Customers)", "Total Inflow (From Customers)"],
+  ["कुल दिया गया भुगतान (Outflow - Workers/Expenses)", "Total Outflow (Workers & Expenses)"],
+  ["पार्टी / नाम", "Party / Name"],
+  ["प्रकार", "Type"],
+  ["प्राप्त (In)", "Inflow (Received)"],
+  ["भुगतान (Out)", "Outflow (Paid)"],
+  ["साइट खर्च (Expenses)", "Site Expenses"],
+  ["कुल खर्च:", "Total Expenses:"],
+  ["खर्च जोड़ें", "+ Add Expense"],
+  ["मद / विवरण", "Expense Item / Title"],
+  ["बिज़नेस एवं सिक्योरिटी सेटिंग्स", "Business & Security Settings"],
+  ["व्यवसाय विवरण (Business Info)", "Business Information"],
+  ["व्यवसाय का नाम", "Business Name"],
+  ["हेल्पलाइन फोन / WhatsApp", "Helpline Phone / WhatsApp"],
+  ["कार्यालय पता", "Office Address"],
+  ["सेटिंग्स सेव करें", "Save Settings"],
+  ["एडमिन पासवर्ड बदलें (Change Admin Password)", "Change Admin Password"],
+  ["नया पासवर्ड (New Password)", "New Password"],
+  ["पासवर्ड पुष्टि करें (Confirm Password)", "Confirm Password"],
+  ["पासवर्ड अपडेट करें", "Update Password"]
+];
+
+const SIDEBAR_LABELS = {
+  en: {
+    btn_text: "हिंदी",
+    logout: "Logout",
+    menu: "Menu",
+    overview: "Overview",
+    gallery_mgmt: "Website Gallery",
+    enquiries: "Enquiries & Approvals",
+    projects: "Projects",
+    daily_updates: "Daily Updates",
+    customers: "Customers",
+    workers: "Workers",
+    payments: "Payments & Ledger",
+    expenses: "Expenses",
+    settings: "Settings",
+    my_profile: "My Profile",
+    my_projects: "My Projects",
+    my_enquiries: "New Enquiry",
+    my_payments: "Payments & UPI",
+    worker_attendance: "Face Attendance",
+    worker_earnings: "My Earnings",
+    worker_updates: "Daily Work Update"
+  },
+  hi: {
+    btn_text: "English",
+    logout: "लॉगआउट",
+    menu: "मेनू",
+    overview: "अवलोकन (Overview)",
+    gallery_mgmt: "वेबसाइट गैलरी",
+    enquiries: "इन्क्वायरी व अप्रूवल",
+    projects: "प्रोजेक्ट्स",
+    daily_updates: "दैनिक अपडेट्स",
+    customers: "ग्राहक सूची",
+    workers: "कारीगर व लेबर",
+    payments: "पेमेंट रिकॉर्ड",
+    expenses: "साइट खर्च",
+    settings: "सेटिंग्स",
+    my_profile: "मेरी प्रोफ़ाइल",
+    my_projects: "मेरे प्रोजेक्ट्स",
+    my_enquiries: "नई इन्क्वायरी",
+    my_payments: "पेमेंट व UPI",
+    worker_attendance: "फेस हाजिरी",
+    worker_earnings: "मेरी कमाई",
+    worker_updates: "दैनिक कार्य अपडेट"
+  }
+};
+
+function toggleDashboardLanguage() {
+  currentDashLang = currentDashLang === 'hi' ? 'en' : 'hi';
+  localStorage.setItem('ps_site_lang', currentDashLang);
+  if (typeof appCache !== 'undefined') appCache.clear();
+  applyDashboardLanguage();
+  if (currentActiveViewId) openView(currentActiveViewId);
+}
+
+function translateAllTextInNode(node) {
+  if (!node) return;
+  const isEn = currentDashLang === 'en';
+
+  if (node.nodeType === Node.TEXT_NODE) {
+    let txt = node.nodeValue;
+    if (!txt || !txt.trim()) return;
+
+    for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
+      const hi = DASHBOARD_DICTIONARY[i][0];
+      const en = DASHBOARD_DICTIONARY[i];
+      if (isEn && txt.includes(hi)) {
+        txt = txt.split(hi).join(en);
+      } else if (!isEn && txt.includes(en)) {
+        txt = txt.split(en).join(hi);
+      }
+    }
+    node.nodeValue = txt;
+  } else if (node.nodeType === Node.ELEMENT_NODE) {
+    if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+
+    if (node.placeholder) {
+      for (let i = 0; i < DASHBOARD_DICTIONARY.length; i++) {
+        const hi = DASHBOARD_DICTIONARY[i][0];
+        const en = DASHBOARD_DICTIONARY[i];
+        if (isEn && node.placeholder.includes(hi)) {
+          node.placeholder = node.placeholder.split(hi).join(en);
+        } else if (!isEn && node.placeholder.includes(en)) {
+          node.placeholder = node.placeholder.split(en).join(hi);
+        }
+      }
+    }
+
+    for (let child = node.firstChild; child; child = child.nextSibling) {
+      translateAllTextInNode(child);
+    }
+  }
+}
+
+function applyDashboardLanguage() {
+  const isEn = currentDashLang === 'en';
+  const btnTxt = $('langBtnText');
+  if (btnTxt) btnTxt.textContent = isEn ? "हिंदी" : "English";
+
+  const labels = SIDEBAR_LABELS[currentDashLang] || SIDEBAR_LABELS.en;
+  document.querySelectorAll('.sidebar-btn').forEach(btn => {
+    const id = btn.id ? btn.id.replace('btn-', '') : '';
+    const span = btn.querySelector('span');
+    if (span && labels[id]) {
+      span.textContent = labels[id];
+    }
+  });
+
+  const logoutBtn = document.querySelector('button[onclick="handleLogout()"]');
+  if (logoutBtn) {
+    logoutBtn.innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket"></i> ${labels.logout}`;
+  }
+
+  translateAllTextInNode(document.body);
+}
 let currentRole = 'admin';
 let currentUser = null;
 let activeEnqTab = 'customer_enq';
@@ -1049,6 +1319,7 @@ async function openView(viewId, btnElement) {
   } catch (err) {
     main.innerHTML = `<div class="card alert-box alert-error">Error loading section: ${err.message}</div>`;
   } finally {
+    applyDashboardLanguage();
     showTopLoader(false);
   }
 }
